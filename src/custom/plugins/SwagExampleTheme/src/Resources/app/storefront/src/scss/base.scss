@@ -1,0 +1,15 @@
+// Fixes border radius behavior for every missing component
+.filter-boolean,
+.filter-active {
+  border-radius: $border-radius;
+}
+
+.btn {
+  &.filter-reset-all {
+    border-radius: $border-radius;
+  }
+}
+
+.cart-item-img {
+  border-radius: $border-radius;
+}
