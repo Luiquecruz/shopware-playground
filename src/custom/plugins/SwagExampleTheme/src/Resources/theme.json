@@ -1,0 +1,22 @@
+{
+  "name": "SwagExampleTheme",
+  "author": "Luique Cruz",
+  "views": [
+     "@Storefront",
+     "@Plugins",
+     "@SwagExampleTheme"
+  ],
+  "style": [
+    "app/storefront/src/scss/overrides.scss",
+    "@Storefront",
+    "app/storefront/src/scss/base.scss"
+  ],
+  "script": [
+    "@Storefront",
+    "app/storefront/dist/storefront/js/swag-example-theme.js"
+  ],
+  "asset": [
+    "@Storefront",
+    "app/storefront/src/assets"
+  ]
+}
