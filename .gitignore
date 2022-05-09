@@ -1,0 +1,13 @@
+.DS_Store
+.idea/*
+.vscode/*
+/src/vendor/
+/src/public/bundles/
+/src/public/css/
+/src/public/fonts/
+/src/public/js/
+/src/public/media/
+/src/public/recovery/
+/src/public/theme/
+/src/public/.htaccess
+/src/.env
