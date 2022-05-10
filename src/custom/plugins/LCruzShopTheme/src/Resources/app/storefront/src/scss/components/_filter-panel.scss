@@ -1,0 +1,17 @@
+.filter-active {
+  border-radius: $border-radius;
+}
+
+.filter-active-preview {
+  border-radius: $border-radius;
+}
+
+.btn.filter-reset-all {
+  border-radius: $border-radius;
+}
+
+.is--sidebar {
+  .filter-panel-item-dropdown {
+    border-radius: 0 0 $border-radius $border-radius;
+  }
+}
