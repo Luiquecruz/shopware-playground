@@ -1,6 +1,6 @@
 {
   "name": "LCruzShopTheme",
-  "author": "Shopware AG",
+  "author": "Luique Cruz",
   "views": [
      "@Storefront",
      "@Plugins",
