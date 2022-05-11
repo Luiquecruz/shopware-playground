@@ -1,0 +1,3 @@
+{% macro generateId(prefix) %}
+    {{ prefix ~ '_' ~ random() }}
+{% endmacro %}
