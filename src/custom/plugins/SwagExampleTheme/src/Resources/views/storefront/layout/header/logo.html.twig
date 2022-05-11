@@ -1,10 +1,16 @@
 {% sw_extends '@Storefront/storefront/layout/header/logo.html.twig' %}
 
 {% block layout_header_logo_inner %}
+    {# inherit everything from the block  #}
+    {# {{ parent() }} #}
+
     <a class="header-logo-main-link"
        href="{{ path('frontend.home.page') }}"
        title="{{ "header.logoLink"|trans|striptags }}">
 
         <h1>SwagExemple .</h1>
     </a>
+
+    {# print all the available variables in the template #}
+    {# {{ dump() }} #}
 {% endblock %}
