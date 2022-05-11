@@ -1,0 +1,9 @@
+{% sw_extends '@Storefront/storefront/utilities/offcanvas.html.twig' %}
+
+{% block utilities_offcanvas_content %}
+    {# TIP 1A: To identify a custom field, use dump() function and search inside the context the field was added #}
+    {# TIP 1B: In this case, it is located at /page/product/customFields #}
+    {# TIP 1C: Try to aways use the i18n version which is located at /page/product/translated/customFields #}
+
+    {{ page.product.translated.customFields.custom_tabs_content | raw }}
+{% endblock %}
