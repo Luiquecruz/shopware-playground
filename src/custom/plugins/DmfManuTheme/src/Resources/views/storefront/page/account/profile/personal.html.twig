@@ -1,0 +1,63 @@
+{% sw_extends '@Storefront/storefront/page/account/profile/personal.html.twig' %}
+
+{% block component_address_personal_fields_salutation %}
+    <div class="form-group col-12">
+        {% block component_address_personal_fields_salutation_label %}
+            {{ parent() }}
+        {% endblock %}
+
+        {% block component_address_form_salutation_select %}
+            {{ parent() }}
+        {% endblock %}
+
+        {% block component_address_form_salutation_select_error %}
+            {{ parent() }}
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block component_address_personal_fields_title %}
+    {% if config('core.loginRegistration.showTitleField')  %}
+        <div class="form-group col-12">
+            {% block component_address_personal_fields_title_label %}
+                {{ parent() }}
+            {% endblock %}
+
+            {% block component_address_personal_fields_title_input %}
+                {{ parent() }}
+            {% endblock %}
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block component_address_personal_fields_first_name %}
+    <div class="form-group col-12">
+        {% block component_address_personal_fields_first_name_label %}
+            {{ parent() }}
+        {% endblock %}
+
+        {% block component_address_personal_fields_first_name_input %}
+            {{ parent() }}
+        {% endblock %}
+
+        {% block component_address_personal_fields_first_name_input_error %}
+            {{ parent() }}
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block component_address_personal_fields_last_name %}
+    <div class="form-group col-12">
+        {% block component_address_personal_fields_last_name_label %}
+            {{ parent() }}
+        {% endblock %}
+
+        {% block component_address_personal_fields_last_name_input %}
+            {{ parent() }}
+        {% endblock %}
+
+        {% block component_address_personal_fields_last_name_input_error %}
+            {{ parent() }}
+        {% endblock %}
+    </div>
+{% endblock %}

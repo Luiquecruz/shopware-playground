@@ -1,0 +1,114 @@
+.base-slider {
+    opacity: 1;
+    &-dots {
+        display: flex;
+        justify-content: center;
+    }
+    &-controls {
+        &-prev, &-next {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5);
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            border: none;
+            z-index: 1;
+            .icon {
+                width: 1.6rem;
+                height: 1.6rem;
+                & > svg {
+                    top:unset;
+                    color: #FFFFFF;
+                }
+            }
+
+            &:hover {
+                border-color: transparent;
+            }
+        } 
+
+        &-next {
+            .icon svg {
+                left: .2rem;
+            }
+        }
+        &-prev {
+            .icon svg {
+                right: .2rem;
+            }
+        }
+    }
+
+    &.has-nav {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .tns-nav {
+        display:flex;
+        text-align: center;
+        margin: 0;
+        bottom: 1rem;
+        z-index: 1;
+        justify-content: center;
+        button {
+            background: $ssik-base-slider-dots-bg;
+            &:hover,
+            &.tns-nav-active {
+                background: $ssik-base-slider-dots-hover-bg;
+            }
+        }
+    }
+
+    .base-slider-dots {
+        margin: 0;
+        bottom: 1rem;
+        .base-slider-dot {
+            font-size: 0;
+            background: $ssik-base-slider-dots-bg;
+            color: #FFFFFF;
+            margin: 0 .25rem;
+
+            height: 5px;
+            width: 5px;
+            padding: 5px;
+
+            &:hover,
+            &.tns-nav-active {
+                background: $ssik-base-slider-dots-hover-bg;
+                color: #000;
+            }
+        }
+    }
+
+    .tns-item:not(.tns-slide-active) {
+        visibility: hidden;
+    }
+
+    .image-slider-controls-prev.is-nav-prev-inside {
+        left: 3rem;
+    }
+
+    .image-slider-controls-next.is-nav-next-inside {
+        right: 3rem;
+    }
+
+    .base-slider-controls-prev {
+        left: 2px;
+    }
+
+    .base-slider-controls-next {
+        right: 2px;
+    }
+
+    &.product-slider:not(.js-slider-initialized) {
+        .product-slider-container {
+            height: 40rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.45s cubic-bezier(0.3, 0, 0.15, 1), visibility 0.45s linear;
+        }
+    }
+}

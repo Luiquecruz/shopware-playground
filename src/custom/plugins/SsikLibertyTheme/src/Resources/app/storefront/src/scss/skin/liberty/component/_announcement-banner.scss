@@ -1,0 +1,7 @@
+.announcement-banner {
+    padding: .75rem 0;
+    background: $ssik-announcement-banner-bg;
+    color: $ssik-announcement-banner-color;
+    @include font-size($ssik-announcement-banner-font-size);
+    font-weight: 700;
+}

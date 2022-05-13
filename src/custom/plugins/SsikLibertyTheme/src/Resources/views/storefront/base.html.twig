@@ -1,0 +1,34 @@
+{% sw_extends '@Storefront/storefront/base.html.twig' %}
+
+{% set isAdsBannerShow = config('SsikLibertyTheme.config.announcementbanner') %}
+
+{% block base_body_classes %}{{parent()}} v1.6.11 ssik-base{% endblock %}
+
+{% block base_header %}
+
+    {% block ssik_base_header_floating %}
+        {% sw_include '@Storefront/storefront/ssik/header-floating.html.twig' %} 
+    {% endblock %}
+
+    {% if isAdsBannerShow is same as('show') %}
+        {% block ssik_base_announcement_banner %}
+            {% sw_include '@Storefront/storefront/ssik/announcement-banner.html.twig' %}
+        {% endblock %}
+    {% endif %}
+
+    <div class="base-wrapper">
+        <div class="base-header-wrapper">
+            {{parent()}}
+{% endblock %}
+
+
+{% block base_navigation %}
+        {{parent()}}
+    </div> {# base-header-wrapper close #}
+{% endblock %}
+
+
+{% block base_footer %}
+        {{parent()}} 
+    </div> {# base-wrapper close #}
+{% endblock %}

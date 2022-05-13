@@ -1,0 +1,13 @@
+{% block ssik_layout_announcement_banner %}
+    <div class="announcement-banner">
+        {% block ssik_layout_announcement_banner_inner %}
+            <div class="container">
+                <div class="row">
+                    <div class="col-auto ml-auto mr-auto text-center">
+                        {{ "ssik.announcementbanner.text"|trans|sw_sanitize }}
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}

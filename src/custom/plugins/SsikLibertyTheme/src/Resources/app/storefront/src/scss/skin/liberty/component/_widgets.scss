@@ -1,0 +1,15 @@
+.widget {
+    position: relative;
+    display: flex;
+    align-items: center;
+    .icon {
+        width: 3rem;
+        height: 3rem;
+        color: $ssik-base-link-color;
+    }
+    .text {
+        padding-left: 1rem;
+        font-size: 1.4rem;
+        line-height: 1.4;
+    }
+}

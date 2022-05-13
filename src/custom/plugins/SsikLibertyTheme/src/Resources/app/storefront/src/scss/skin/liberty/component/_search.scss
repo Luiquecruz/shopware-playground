@@ -1,0 +1,44 @@
+.header-search {
+    &-icon {
+        display: flex;
+        width: 2rem;
+        height: 2rem;
+    }
+    &-input {
+        height: 4rem;
+        border:1px solid $ssik-header-search-input-border;
+        border-radius: 2rem;
+        background: $ssik-header-search-input-bg;
+        color: $ssik-header-search-input-color;
+        @include font-size($ssik-header-search-input-font-size);
+        &:focus {
+            border-color: darken($ssik-header-search-input-border, 2%);
+            background: darken($ssik-header-search-input-bg, 2%);
+
+            ~ .input-group-append .header-search-btn {
+                border-color: darken($ssik-header-search-input-border, 2%);
+                background: darken($ssik-header-search-input-bg, 2%);
+            }
+        }
+    }
+    &-btn {
+        border-radius: 2rem;
+        border:1px solid $ssik-header-search-input-border;
+        background: $ssik-header-search-input-bg;
+        border-left: none;
+        &:disabled {
+            border-color: $ssik-header-search-input-border;
+            background: $ssik-header-search-input-bg;
+        }
+
+        .icon {
+            color: $ssik-base-link-color;
+        }
+
+        &:hover {
+            .icon {
+                color: $ssik-base-link-hover-color;
+            }
+        }
+    }
+}

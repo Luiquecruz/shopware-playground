@@ -1,0 +1,25 @@
+.icon-ssik {
+    & > svg {
+        top:unset;
+        .btn & {
+            top:unset;
+        }
+    }
+    width: unset;
+    height: unset;
+    color: unset;
+
+    &.xxs {
+        width: .8rem;
+        height: .8rem;
+    }
+
+    &.md {
+        width: 3rem;
+        height: 3rem;
+    }
+}
+
+.icon-review {
+    color: $ssik-icon-review;
+}

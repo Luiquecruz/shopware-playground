@@ -1,0 +1,75 @@
+.header-floating {
+    display: none;
+    position: fixed;
+    top: -7.8rem;
+    left: 0;
+    right: 0;
+    z-index: 102;
+    transition: top .4s ease;
+    box-shadow: 0 4px 12px 0 rgba(0,0,0,.25);
+
+    @include media-breakpoint-up(lg) {
+        display: block;
+    }
+
+    &.show {
+        top:0;
+    }
+
+    &-offcanvas-btn {
+        background: #09f;
+        color: #FFF;
+        width: 20rem;
+    }
+
+    &-inner {
+        display: flex;
+        flex: 1;
+        align-items: center;
+        background: #FFF;
+        justify-content: space-between;
+    }
+
+    &-action {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.header-floating {
+    .main-navigation {
+        .container {
+            position: relative;
+        }
+    }
+    .header-cart-short {
+        display: flex;
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        //border-left: 1px solid darken($ssik-main-navigation-bg, 10%);
+        height: 100%;
+        background: $ssik-sticky-cart-btn-bg;
+        .header-cart-badge {
+            position: absolute;
+            left: .8rem;
+            top: .6rem;
+            
+        }
+        .header-cart-total {
+            //display: none;
+            font-size: 1.4rem;
+            color: $ssik-sticky-cart-btn-color;
+        }
+        .icon {
+            color: $ssik-sticky-cart-btn-color !important;
+        }
+    }
+}
+
+.header-cart-short {
+    display: none;
+}

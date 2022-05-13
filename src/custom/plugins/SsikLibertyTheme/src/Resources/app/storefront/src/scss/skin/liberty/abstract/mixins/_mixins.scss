@@ -1,0 +1,16 @@
+@mixin is-loading($color) {
+    &:after {
+        content: '';
+        position: absolute;
+        background: $color;
+        top: 0;
+        width: 100%;
+        height: .3rem;
+        animation: is-loading 3s linear infinite;
+    }
+}
+
+@keyframes is-loading {
+    from {left: 0%; width: 0; z-index:100;}
+    to {left: 0; width: 100%;}
+}

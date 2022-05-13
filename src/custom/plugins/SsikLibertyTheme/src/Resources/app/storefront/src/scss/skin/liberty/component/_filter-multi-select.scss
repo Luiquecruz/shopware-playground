@@ -1,0 +1,53 @@
+.filter-multi-select {
+    &-list {
+        //display: flex;
+        //flex-wrap: wrap;
+        padding: 1rem 0 1rem 0rem;
+        &-item {
+            padding: 0;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+            &.is-hidden {
+                display: none;
+            }
+        }
+    }
+    &-item-label {
+        padding: 0;
+    }
+    .is-more {
+        padding: .5rem;
+        font-size: 1.4rem;
+        min-height: 1.3125rem;
+        cursor: pointer;
+    }
+
+        
+}
+
+.filter-property-select-list-item {
+    .filter-property-select-preview {
+        border-radius: 0;
+        margin-right: .5rem;
+    }
+}
+
+.filter-rating-select-item-checkmark {
+    top: 1px;
+    right: 0px;
+    left:unset;
+}
+
+.filter-property-select-preview-checkmark {
+    top: .5rem;
+    left: .6rem;
+}
+
+.filter-rating-select-list-item {
+    margin-left: 0;
+}
+
+.filter-rating-select-item-label:hover .filter-rating-select-item-label-text {
+    color: #FF7B8C;
+    font-weight: 700;
+}

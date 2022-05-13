@@ -1,0 +1,38 @@
+{% sw_extends '@Storefront/storefront/section/cms-section-sidebar.html.twig' %}
+
+{% set sidebarClass = false %}
+
+{% block section_sidebar_content %}
+    {% for block in sidebarBlocks %}
+        {% if block.type is same as('category-navigation') or block.type is same as('sidebar-filter') %}        
+            {% set sidebarClass = true %}
+        {% endif %}
+    {% endfor %}
+
+    {% if sidebarClass %}
+        <div class="col-lg-3 col-xl-2 ssik-sidebar-content is-sidebar-nav">
+    {% endif %}
+        {{parent()}}
+    {% if sidebarClass %}
+        </div>
+    {% endif %}
+
+{% endblock %}
+
+{% block section_main_content %}
+
+    {% for block in sidebarBlocks %}
+        {% if block.type is same as('category-navigation') or block.type is same as('sidebar-filter') %}        
+            {% set sidebarClass = true %}
+        {% endif %}
+    {% endfor %}
+
+    {% if sidebarClass %}
+        <div class="col-lg-9 col-xl-10 ssik-sidebar-main-content is-sidebar-nav">
+    {% endif %}
+        {{parent()}}
+    {% if sidebarClass %}
+        </div>
+    {% endif %}
+    
+{% endblock %}

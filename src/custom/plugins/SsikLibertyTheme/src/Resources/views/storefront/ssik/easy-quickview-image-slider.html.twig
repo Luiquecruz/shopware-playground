@@ -1,0 +1,108 @@
+{% block ssik_easy_quickview_image_slider %}
+    {# @var mediaItems \Shopware\Core\Content\Media\MediaCollection #}
+    {% set imageCount = mediaItems|length %}
+
+    {# too many underneath thumbs or slider dots make them hard to see #}
+    {% set maxItemsToShowMobileNav = 5 %}
+    {% set maxItemsToShowNav = 8 %}
+
+    {% set gallerySliderOptions = {
+        slider: {
+            mode: 'gallery',
+            nav: false,
+            speed: 500,
+            gutter: 0,
+            controls: false,
+            autoHeight: false,
+            startIndex: startIndexSlider ? startIndexSlider : null
+        }
+    } %}
+    <div class="row gallery-slider-row is-single-image" {% if imageCount > 1 %} data-gallery-slider="true" data-gallery-slider-options='{{ gallerySliderOptions|json_encode }}'{% endif %}>
+        <div class="gallery-slider-col col-12 order-1">
+            <div class="base-slider gallery-slider">
+                {% block ssik_easy_quickview_image_slider_inner_wrapper %}
+                    {% if imageCount > 1 %}
+                        {% block ssik_easy_quickview_image_slider_inner_multiple_slides %}
+                            {% block ssik_easy_quickview_image_slider_inner_container %}
+                                <div class="gallery-slider-container" data-gallery-slider-container="true">
+                                    {% block ssik_easy_quickview_image_slider_inner_items %}
+                                        {% for image in mediaItems %}
+                                            {% block ssik_easy_quickview_image_slider_inner_item %}
+                                                <div class="gallery-slider-item-container">
+                                                    <div class="gallery-slider-item is-{{ displayMode }}"{% if minHeight and  (displayMode == "cover" or displayMode == "contain" ) %} style="min-height: {{ minHeight }}"{% endif %}>
+                                                        {% set attributes = {
+                                                            'class': 'img-fluid gallery-slider-image',
+                                                            'alt': (image.translated.alt ?: fallbackImageTitle),
+                                                            'title': (image.translated.title ?: fallbackImageTitle),
+                                                            'data-full-image': image.url
+                                                        } %}
+
+                                                        {% if displayMode == 'cover' or displayMode == 'contain' %}
+                                                            {% set attributes = attributes|merge({ 'data-object-fit': displayMode }) %}
+                                                        {% endif %}
+
+                                                        {% if isProduct %}
+                                                            {% set attributes = attributes|merge({ 'itemprop': 'image' }) %}
+                                                        {% endif %}
+
+                                                        {% sw_thumbnails 'gallery-slider-image-thumbnails' with {
+                                                            media: image
+                                                        } %}
+                                                    </div>
+                                                </div>
+                                            {% endblock %}
+                                        {% endfor %}
+                                    {% endblock %}
+                                </div>
+                            {% endblock %}
+                        {% endblock %}
+                    {% else %}
+                        {% block ssik_easy_quickview_image_slider_inner_single %}
+                            <div class="gallery-slider-single-image is-{{ displayMode }}"{% if minHeight %} style="min-height: {{ minHeight }}"{% endif %}>
+                                {% if imageCount > 0 %}
+                                    {% set attributes = {
+                                        'class': 'img-fluid gallery-slider-image',
+                                        'alt': (mediaItems|first.translated.alt ?: fallbackImageTitle),
+                                        'title': (mediaItems|first.translated.title ?: fallbackImageTitle),
+                                        'data-full-image': mediaItems|first.url
+                                    } %}
+
+                                    {% if displayMode == 'cover' or displayMode == 'contain' %}
+                                        {% set attributes = attributes|merge({ 'data-object-fit': displayMode }) %}
+                                    {% endif %}
+
+                                    {% if isProduct %}
+                                        {% set attributes = attributes|merge({ 'itemprop': 'image' }) %}
+                                    {% endif %}
+
+                                    {% sw_thumbnails 'gallery-slider-image-thumbnails' with {
+                                        media: mediaItems|first,
+                                    } %}
+                                {% else %}
+                                    {% sw_icon 'placeholder' style {
+                                        'size': 'fluid'
+                                    } %}
+                                {% endif %}
+                            </div>
+                        {% endblock %}
+                    {% endif %}
+                {% endblock %}
+                {% block ssik_easy_quickview_image_slider_dots %}
+                    {% if imageCount > 1 and navigationDots %}
+                        <div class="base-slider-dots {% if imageCount > maxItemsToShowNav %} hide-dots{% elseif imageCount > maxItemsToShowMobileNav %} hide-dots-mobile{% endif %}">
+                            {% block ssik_easy_quickview_image_slider_dots_buttons %}
+                                {% for image in mediaItems %}
+                                    {% block ssik_easy_quickview_image_slider_dots_button %}
+                                        <button class="base-slider-dot"
+                                                data-nav-dot="{{ loop.index }}"
+                                                tabindex="-1"></button>
+                                    {% endblock %}
+                                {% endfor %}
+                            {% endblock %}
+                        </div>
+                    {% endif %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>        
+{% endblock %}

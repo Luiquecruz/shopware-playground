@@ -1,0 +1,16 @@
+{% sw_extends '@Storefront/storefront/layout/header/logo.html.twig' %}
+
+{% block layout_header_logo_inner %}
+
+    <div class="nav-main-toggle">
+        <button class="btn nav-main-toggle-btn header-actions-btn"
+                type="button"
+                data-offcanvas-menu="true"
+                aria-label="{{ "general.menuLink"|trans|striptags }}">
+                    {% sw_icon 'stack' %}
+        </button>
+    </div>
+
+    {{parent()}}
+
+{% endblock %}

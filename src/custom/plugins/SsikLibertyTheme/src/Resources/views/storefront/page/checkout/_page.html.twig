@@ -1,0 +1,28 @@
+{% sw_extends '@Storefront/storefront/page/checkout/_page.html.twig' %}
+
+{% block page_checkout_container %}
+    <div class="row">
+        {% block page_checkout_main %}
+            <div class="col-lg-9 checkout-cart-container">
+                <div class="panel-wrap">
+                    {% block base_flashbags_checkout %}
+                        {{parent()}}
+                    {% endblock %}
+                    {% block page_checkout_main_content %}{{parent()}}{% endblock %}
+                </div>
+            </div>
+        {% endblock %}
+
+        {% block page_checkout_additional %}{{parent()}}{% endblock %}
+
+        {% block page_checkout_aside %}
+            <div class="col-lg-3">
+                <div class="panel-wrap">
+                    {% block page_checkout_aside_container %}
+                        {{parent()}}
+                    {% endblock %}
+                </div>
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}

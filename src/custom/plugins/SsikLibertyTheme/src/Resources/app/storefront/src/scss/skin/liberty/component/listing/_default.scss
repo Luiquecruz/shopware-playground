@@ -1,0 +1,188 @@
+.ssik-default {
+    .product-box {
+        border-radius: 0;
+
+        .product-info {
+            text-align: center;
+            .product-name {
+                line-height: 1.1;
+                font-size: 1.4rem;
+                color: $ssik-base-link-color;
+                height: unset;
+                min-height: 3.2rem;
+                &:hover {
+                    color: $ssik-base-link-hover-color;
+                }
+                @include media-breakpoint-up(md) {
+                    font-size: 1.6rem;
+                    min-height: 3.8rem;
+                }
+            }
+
+            &-brand {
+                line-height: 1.2;
+                font-size: 1.4rem;
+                padding-bottom: 1rem;
+                font-weight: 300;
+                color: $ssik-base-color-text;
+            }
+
+            .product-price-info {
+                .product-price-wrapper {
+                    min-height: 4rem;
+                    .product-price {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+            }
+
+            .product-rating {
+                margin: .25rem 0;
+                text-align: center;
+            
+                .product-review-rating {
+                    margin-right: unset;
+                }
+
+                .icon-star {
+                    width: 1.2rem;
+                    height: 1.2rem;
+                }
+            }
+        }
+
+        .product-image-wrapper {
+            height: 30rem;
+            .product-image {
+                max-height: 30rem;
+            }
+            .product-wishlist {
+                display: none;
+            }
+        }
+
+        .product-variant-characteristics,
+        .product-description,
+        .product-price-info .product-price-unit,
+        .product-price-info .product-cheapest-price {
+            display: none;
+        }
+
+        .product-wishlist {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin-top: 0;
+
+            &-action-circle {
+                //position: unset;
+                bottom: unset;
+                width: 3rem;
+                height: 3rem;
+                right: 0.5rem;
+                padding: unset;
+                z-index: 1;
+                top: 0.5rem;
+                &::before {
+                    content: none;
+                }
+            }
+            .icon-wishlist {
+                width: 1.5rem;
+                height: 1.5rem;
+                svg {
+                    top:2px;
+                }
+            }
+
+            .icon {
+                color:$ssik-header-action-btn-icon-color;
+            }
+            &:hover {
+                .icon {
+                    color:$ssik-header-action-btn-icon-hover-color;
+                }
+            }
+            .icon-wishlist-added {
+                color:$ssik-header-action-btn-icon-hover-color;
+            }
+        }
+
+        .product-wishlist + .easy-quick-btn {
+            top: 4rem;
+            right: .5rem;
+        }
+
+        .product-badges {
+            position: absolute;
+            top:0;
+            left: 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            
+            .badge {
+                border-radius: 0;
+                font-weight: normal;
+                padding: .5rem .8rem;
+                width: auto;
+                height: auto;
+                margin: 0;
+                line-height: 1;
+                height: auto;
+                &-new {
+                    background: $ssik-product-badges-new-bg;
+                }
+                &-freeshipp {
+                    background: $ssik-product-badges-freeshipp-bg;
+                }
+                &-topseller {
+                    background: $ssik-product-badges-topseller-bg;
+                }
+                span {
+                    display: block;
+                    line-height: 1;
+                    @include font-size($ssik-product-badges-font-size);
+                    color: $ssik-product-badges-color;
+                }
+            }
+        }
+
+        .product-action {
+            margin-bottom: 10px;
+            .btn {
+                display: inline-block;
+                width: auto;
+                height: auto;
+                font-size: 1rem;
+                padding: .5rem .5rem;
+                line-height: 1;
+                border-radius: .5rem;
+                margin: 0 auto;
+
+                @include media-breakpoint-up(md) {
+                    font-size: 1.4rem;
+                    padding: 1rem 1rem;
+                }
+    
+                .icon {
+                    display: none;
+                }
+
+                div[data-swag-paypal-express-button="true"] {
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                }  
+            }
+        }
+
+        &:hover {
+            .product-name {
+                color: $ssik-base-link-hover-color;
+            }
+
+            box-shadow: 0 10px 10px -10px rgb(0 0 0 / 35%);
+        }
+    }
+}

@@ -1,0 +1,11 @@
+.form-control {
+    @include font-size($ssik-input-font-size);
+    color: $ssik-input-color;
+    background-color: $ssik-input-bg;
+    border: 1px solid $ssik-input-border-color;
+    &:focus {
+        color: $ssik-input-focus-color;
+        background-color: $ssik-input-focus-bg;
+        border-color: $ssik-input-focus-border-color;
+    }
+}

@@ -1,0 +1,156 @@
+//reset
+.header-main > .container {
+    max-width: unset;
+    padding: unset;
+}
+
+.btn .icon > svg {
+    top: unset;
+}
+
+//Default
+.ssik-header-container {
+    .header-row {
+
+        padding: 2.5rem 0;
+
+        @media (max-width: 991px) {
+            padding: 1.5rem 0;
+        }
+
+        .header-logo-col {
+            
+            padding-bottom: 0;
+            
+            @include media-breakpoint-only(md) {
+                width: auto;
+                flex: auto;
+            }
+
+            @media (max-width: 900px) {
+                width: 100%;
+                flex: 0 0 100%;
+                margin-top: 0;
+                margin-bottom: 1.5rem;
+            }
+
+            .nav-main-toggle {
+                display: none;
+                
+                @media (min-width: 900px) and (max-width: 991px) {
+                    display: block;
+                }
+            }
+        }
+
+        .header-info-col {
+            display: none;
+
+            @include media-breakpoint-up(lg) {
+                display: block;
+            }
+            // @include media-breakpoint-up(xl) {
+            //     flex-grow: 1;
+            // }
+
+            &-button {
+                display: block;
+                border: 0;
+                background: none;
+                @include media-breakpoint-up(xl) {
+                    display: none;
+                }
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            &-inner {
+                @include media-breakpoint-up(lg) {
+                    display: none;     
+                    line-height: 1.2;
+                    padding: 1rem;  
+                    flex-direction: column;
+                    @include font-size($ssik-base-font-size);
+                    &.show  {
+                        display: flex;
+                        min-width: 25rem;
+                    }
+                }
+
+                @include media-breakpoint-up(xl) {
+                    display: flex;
+                    position: unset !important;
+                    transform: unset !important;
+                    float: unset;
+                    border: unset;
+                    justify-content: center;
+                    flex-direction: row;
+                    & > div {
+                        margin-right: 1rem;
+                    }
+                }
+            }
+
+            &-text {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+
+                .icon {
+                    margin-right: .75rem;
+                }
+
+                @include media-breakpoint-down(lg) {
+                    &:not(:last-child) {
+                        padding-bottom: 1rem;
+                    }
+                }
+            }
+        }
+
+        .header-search-col {
+
+            & > .row > .col-sm-auto {
+                @media (min-width: 901px) and (max-width: 991px) {
+                    display: none !important;
+                }
+            }
+
+            @include media-breakpoint-down(sm) {
+                flex-basis: 0;
+                flex-grow: 1;
+
+                & > .row > .col-sm-auto {
+                    display: block !important;
+                }
+
+                .header-search-form {
+                    margin-left: 4rem;
+                }
+            }
+
+            @include media-breakpoint-up(xl) {
+                min-width: 20rem;
+            }
+        }
+
+        .nav-main-toggle {
+            position: absolute;
+            top:.8rem;
+            left: 1rem;
+            z-index: 5;
+        }
+
+        .header-actions-col {
+            @include media-breakpoint-down(sm) {
+                order: 2;
+                flex: 0 0 auto;
+                width: auto;
+                .d-sm-none {
+                    display: none !important;
+                }
+            }
+        }
+    }
+}

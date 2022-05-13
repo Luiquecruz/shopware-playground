@@ -1,0 +1,18 @@
+.badge {
+    display: inline-flex;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+    line-height: 1;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 100%;
+    min-width: unset;
+    line-height: 1;
+    box-sizing:unset;
+    padding: unset;
+    background: $ssik-badge-default-bg;
+    color: $ssik-badge-default-color;
+}

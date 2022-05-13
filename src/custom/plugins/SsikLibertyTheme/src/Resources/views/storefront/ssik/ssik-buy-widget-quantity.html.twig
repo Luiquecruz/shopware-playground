@@ -1,0 +1,41 @@
+{% block ssik_component_buy_widget_quantity %}
+    <div class="quantity-counter {{modify}} " data-buy-widget-quantity="true">
+        {% block ssik_component_buy_widget_quantity_button_minus %}
+            <button type="button" class="btn quantity-counter-btn js-buy-widget-quantity-minus" aria-label="minus">
+                {% block ssik_component_buy_widget_quantity_button_minus_icon %}    
+                    {% sw_icon 'icon-minus' style { 'pack':'custom', 'namespace': 'SsikLibertyTheme', 'class':'ssik md' } %}
+                {% endblock %}
+            </button>
+        {% endblock %}
+        {% block ssik_component_buy_widget_quantity_value %}
+            <label class="quantity-counter-value" for="{% if quantityId %}qntID{{ quantityId }}{% else %}qntID{% endif %}">
+                quantity
+            {#<label class="quantity-counter-value">#}
+                <input type="number" 
+                    id="{% if quantityId %}qntID{{ quantityId }}{% else %}qntID{% endif %}"
+                    class="form-control  js-buy-widget-quantity-value" 
+                    value="{% if value %}{{value}}{% else %}1{% endif %}" 
+                    min="{{minPurchase}}" 
+                    max="{{maxPurchase}}" 
+                    step="{{step}}" 
+                    name="{% if quantityId %}lineItems[{{ quantityId }}][quantity]{% else %}quantity{% endif %}">
+                    {% if quantity == 1 %}
+                        {% if product.translated.packUnit %} {{ product.translated.packUnit }}{% endif %}
+                    {% else %}
+                        {% if product.translated.packUnitPlural %}
+                            {{ product.translated.packUnitPlural }}
+                        {% elseif product.translated.packUnit %}
+                            {{ product.translated.packUnit }}
+                        {% endif %}
+                    {% endif %}
+            </label>
+        {% endblock %}
+        {% block ssik_component_buy_widget_quantity_button_plus %}    
+            <button type="button" class="btn quantity-counter-btn js-buy-widget-quantity-plus" aria-label="plus">
+                {% block ssik_component_buy_widget_quantity_button_plus_icon %}    
+                    {% sw_icon 'icon-plus' style { 'pack':'custom', 'namespace': 'SsikLibertyTheme', 'class':'ssik md' } %}
+                {% endblock %}
+            </button>
+        {% endblock %}
+    </div>
+{% endblock %}

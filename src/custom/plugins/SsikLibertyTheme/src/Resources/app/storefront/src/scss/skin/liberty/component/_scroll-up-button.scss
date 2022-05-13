@@ -1,0 +1,38 @@
+.scroll-up-button {
+    .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 4rem;
+        height: 4rem;
+        border:0;
+        box-shadow: unset !important;
+        background: $ssik-scroll-up-button-bg;
+        .icon {
+            color: $ssik-scroll-up-button-color;
+            & > svg {
+                position: unset;
+            }
+        }
+        &:hover, &:focus, &:active {
+            background: $ssik-scroll-up-button-bg-hover !important;
+            .icon {
+                color: $ssik-scroll-up-button-color-hover;
+            }
+        }
+    }
+    .header-actions-btn {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        &:hover {
+            background: $ssik-scroll-up-button-bg-hover !important;
+            .icon {
+                color: $ssik-scroll-up-button-color-hover;
+            }
+        }
+    }
+}

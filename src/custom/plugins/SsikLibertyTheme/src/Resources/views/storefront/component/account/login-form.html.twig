@@ -1,0 +1,90 @@
+{% sw_extends '@Storefront/storefront/component/account/login.html.twig' %}
+
+{% block component_account_login_form %}
+    <form class="login-form"
+            action="{{ path('frontend.account.login') }}"
+            method="post"
+            data-form-csrf-handler="true"
+            data-form-validation="true">
+
+        {% block component_account_login_form_csrf %}
+           {{ parent() }}
+        {% endblock %}
+
+        {% block component_account_login_form_redirect %}
+            {% if controllerName is same as('Product') %}
+                <input type="hidden"
+                        name="redirectTo"
+                        value="frontend.detail.page">
+                <input type="hidden"
+                        name="redirectParameters"
+                        value='{"productId": "{{ page.reviews.productId }}"}'>
+            {% else %}
+                <input type="hidden"
+                        name="redirectTo"
+                        value="frontend.account.home.page">
+                <input type="hidden"
+                        name="redirectParameters"
+                        value="[]">
+            {% endif %}            
+        {% endblock %}
+
+        {% block component_account_login_form_description %}{% endblock %}
+
+        {% block component_account_login_form_error %}
+            {{ parent() }}
+        {% endblock %}
+
+        {% block component_account_login_form_fields %}
+            <div class="form-row">
+                {% block component_account_login_form_mail %}
+                    <div class="form-group col-md-8 offset-md-2">
+                        {% block component_account_login_form_mail_label %}
+                             {{ parent() }}
+                        {% endblock %}
+
+                        {% block component_account_login_form_mail_input %}
+                             {{ parent() }}
+                        {% endblock %}
+                    </div>
+                {% endblock %}
+
+                {% block component_account_login_form_password %}
+                    <div class="form-group col-md-8 offset-md-2">
+                        {% block component_account_login_form_password_label %}
+                             {{ parent() }}
+                        {% endblock %}
+                        {% block component_account_login_form_password_input %}
+                             {{ parent() }}
+                             <div class="login-password-recover">
+                                {% block component_account_login_password_recover_link %}
+                                    <a href="{{ seoUrl('frontend.account.recover.page') }}">
+                                        {{ 'account.loginPasswordRecover'|trans }}
+                                    </a>
+                                {% endblock %}
+                        </div>
+                        {% endblock %}
+                    </div>
+                {% endblock %}
+            </div>
+        {% endblock %}
+
+        {% block component_account_login_password_recover %}{% endblock %}
+
+        <div class="form-row">
+            <div class="form-group col-md-8 offset-md-2">
+                {% block component_account_login_submit %}
+                    {{ parent() }}
+                {% endblock %}
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-8 offset-md-2 text-center mt-5 mb-0">
+                <p class="mb-0">{{ 'ssik.loginform.ifisnologin'|trans|sw_sanitize }}</p>
+                <p class="mb-0"><a href="{{ seoUrl('frontend.account.register.page') }}">{{ 'account.registerTitle'|trans }}</a></p>
+            </div>
+        </div>
+        
+    </form>
+{% endblock %}

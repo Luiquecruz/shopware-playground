@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="SsikLibertyTheme\Core\Content\Product\SalesChannel\Listing\ProductListingSubscriber">
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+        <service id="SsikLibertyTheme\Core\Content\Product\SalesChannel\CrossSelling\ProductCrossSellingSubscriber">
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+        <service id="SsikLibertyTheme\Core\Content\Product\Cms\AddProductSliderCmsElementResolver">
+            <argument type="service" id="Shopware\Core\Content\ProductStream\Service\ProductStreamBuilder"/>
+            <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService"/>
+            <tag name="shopware.cms.data_resolver"/>
+        </service>
+    </services>
+</container>

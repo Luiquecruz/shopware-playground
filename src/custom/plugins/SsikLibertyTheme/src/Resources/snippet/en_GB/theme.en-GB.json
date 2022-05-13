@@ -1,0 +1,41 @@
+{
+    "ssik": {
+        "topbar": {
+            "contact": {
+                "phone": "+44 (0) 771 2009098",
+                "text": "9:00 a.m. to 6:00 p.m."
+            }
+        },
+        "header": {
+            "info" : {
+                "mobile": "Need help?"
+            },
+            "upsheader" : {
+                "one" : "Available 24/7 at<br><a href=\"tel:(+484) 490 012345 990\">(+484) 490 012345 991</a>",
+                "two" : "Need help? Call Us<br><a href=\"tel:(+484) 490 012345 990\">(+484) 490 012345 991</a>"
+            }
+        },
+        "announcementbanner": {
+            "text": "EXTRA 20% off Outlet*. Use Code: EXTRA20 at checkout!!"
+        },
+        "listing" : {
+            "boxLabelFreeShipp" : "Free shipping",
+            "quickview" : {
+                "title":"Quick View",
+                "gotodetail": "Read more"
+            }
+        },
+        "newsletter": {
+            "helptext": "We'll never share your email with anyone else.",
+            "submit": "Subscribe now"
+        },
+        "footer": {   
+            "newsletter": {
+                "title": "Subscribe now"
+            },
+            "system": {
+                "copy": "Your copyright"        
+            }
+        }
+    }
+}

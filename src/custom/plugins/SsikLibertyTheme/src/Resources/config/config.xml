@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/master/src/Core/System/SystemConfig/Schema/config.xsd">
+
+    
+    <card>
+        <title>Header</title>
+        <title lang="de-DE">Header</title>
+
+        <input-field type="bool">
+            <name>headerStickyNav</name>
+            <defaultValue>true</defaultValue>
+            <label>Enable sticky navigation?</label>
+            <label lang="de-DE">Sticky-Navigation aktivieren?</label>
+        </input-field>
+
+        <input-field type="bool">
+            <name>dropdown</name>
+            <defaultValue>true</defaultValue>
+            <label>Enable dropdown menu?</label>
+            <label lang="de-DE">Dropdown-Menü aktivieren?</label>
+        </input-field>
+
+        <input-field type="single-select">
+            <name>announcementbanner</name>
+            <options>
+                <option>
+                    <id>show</id>
+                    <name>Yes</name>
+                    <name lang="de-DE">Ja</name>
+                </option>
+                <option>
+                    <id>false</id>
+                    <name>No</name>
+                    <name lang="de-DE">Nein</name>
+                </option>
+            </options>
+            <defaultValue>show</defaultValue>
+            <label>Show the banner ads?</label>
+            <label lang="de-DE">Die Bannerwerbung anzeigen?</label>
+        </input-field>
+
+        <component name="sw-snippet-field">
+            <name>announcementbannerText</name>
+            <label>announcementbannerText</label>
+            <label lang="de-DE">announcementbannerText</label>
+            <helpText>announcementbannerText.</helpText>
+            <helpText lang="de-DE">announcementbannerText</helpText>
+            <snippet>ssik.announcementbanner.text</snippet>
+        </component>
+    </card>
+
+    <card>
+        <title>Text Block in Header</title>
+        <title lang="de-DE">Textbaustein im Header</title>
+
+        <input-field type="text">
+            <name>uspheadericon1</name>
+            <defaultValue>fas fa-truck</defaultValue>
+            <copyable>true</copyable>
+            <label>Icon for the first item</label>
+            <label lang="de-DE">Symbol für das erste Element</label>
+            <placeholder>fas fa-truck</placeholder>
+            <placeholder lang="de-DE">fas fa-truck</placeholder>
+            <helpText>Specify FontAwesome Classes</helpText>
+            <helpText lang="de-DE">Geben Sie FontAwesome-Klassen an</helpText>
+        </input-field>
+
+        <component name="sw-snippet-field">
+            <name>upsHeaderOne</name>
+            <label>Text for the first item</label>
+            <label lang="de-DE">Text für das erste Element</label>
+            <snippet>ssik.header.upsheader.one</snippet>
+        </component>
+
+        <input-field type="text">
+            <name>uspheadericon2</name>
+            <defaultValue>fas fa-box</defaultValue>
+            <copyable>true</copyable>
+            <label>Icon for the second item</label>
+            <label lang="de-DE">Symbol für das zweite Element</label>
+            <placeholder>fas fa-box</placeholder>
+            <placeholder lang="de-DE">fas fa-box</placeholder>
+            <helpText>Specify FontAwesome Classes</helpText>
+            <helpText lang="de-DE">Geben Sie FontAwesome-Klassen an</helpText>
+        </input-field>
+
+        <component name="sw-snippet-field">
+            <name>upsHeaderTwo</name>
+            <label>Text for the second item</label>
+            <label lang="de-DE">Text für das zweite Element</label>
+            <snippet>ssik.header.upsheader.two</snippet>
+        </component>
+
+    </card>
+    
+    <card>
+        <title>The Page of products’ list</title>
+        <title lang="de-DE">Die Produktelisteseite</title>
+
+        <input-field type="single-select">
+            <name>listingStyle</name>
+            <options>
+                <option>
+                    <id>default</id>
+                    <name>Default. As in the Shopware  Storefront.</name>
+                    <name lang="de-DE">Default. Wie in der Shopware Storefront.</name>
+                </option>
+                <option>
+                    <id>standard</id>
+                    <name>The Liberty Theme style</name>
+                    <name lang="de-DE">Der Liberty Theme Stil</name>
+                </option>
+            </options>
+            <defaultValue>default</defaultValue>
+            <label>Style of displaying product’s preview</label>
+            <label lang="de-DE">Der Produktvorschaustil</label>
+        </input-field>
+
+        <input-field type="single-select">
+            <name>productBoxHover</name>
+            <options>
+                <option>
+                    <id>imagehover</id>
+                    <name>Yes</name>
+                    <name lang="de-DE">Ja</name>
+                </option>
+                <option>
+                    <id>false</id>
+                    <name>No</name>
+                    <name lang="de-DE">Nein</name>
+                </option>
+            </options>
+            <defaultValue>imagehover</defaultValue>
+            <label>Change the product’s image by mouseover?</label>
+            <label lang="de-DE">Produktbild bei Mouseover ändern?</label>
+            <helpText>Works with the option "Style of displaying a product’s preview": the Liberty Theme style</helpText>
+            <helpText lang="de-DE">Funktioniert mit der Option "Der Produktvorschaustil": der Liberty Theme Stil</helpText>
+        </input-field>
+
+        <input-field type="single-select">
+            <name>quickviewShow</name>
+            <options>
+                <option>
+                    <id>true</id>
+                    <name>Yes</name>
+                    <name lang="de-DE">Ja</name>
+                </option>
+                <option>
+                    <id>false</id>
+                    <name>No</name>
+                    <name lang="de-DE">Nein</name>
+                </option>
+            </options>
+            <defaultValue>true</defaultValue>
+            <label>Activate short product’s overview? (QuickView)</label>
+            <label lang="de-DE">Kurz Produktansicht aktivieren?</label>
+            <helpText>Works with the option "Style of displaying a product’s preview": the Liberty Theme style</helpText>
+            <helpText lang="de-DE">Funktioniert mit der Option "Der Produktvorschaustil": der Liberty Theme Stil.</helpText>
+        </input-field>
+    </card>
+
+    <card>
+        <title>The page of detailed product’s description</title>
+        <title lang="de-DE">Die Seite der detailliert Produktbeschreibung</title>
+
+        <input-field type="single-select">
+            <name>counterShow</name>
+            <options>
+                <option>
+                    <id>false</id>
+                    <name>The select. Default as in Shopware Storefront.</name>
+                    <name lang="de-DE">Die Liste. Default wie in Shopware Storefront</name>
+                </option>
+                <option>
+                    <id>true</id>
+                    <name>The buttons Plus/Minus</name>
+                    <name lang="de-DE">Die Knöpfe Plus/Minus</name>
+                </option>
+            </options>
+            <defaultValue>true</defaultValue>
+            <label>The style of choosing the number of products to add to the cart.</label>
+            <label lang="de-DE">Der  Auswahlstil der Produktenanzahl, die in den Warenkorb gelegt werden sollen.</label>
+        </input-field>
+    </card>
+    
+    <card>
+        <title>Social Configuration</title>
+        <title lang="de-DE">Soziale Konfiguration</title>
+
+        <input-field>
+            <name>youtube</name>
+            <copyable>true</copyable>
+            <label>Enter your Youtube URL</label>
+            <label lang="de-DE">Geben Sie Ihre Youtube URL ein</label>
+            <placeholder>#</placeholder>
+            <placeholder lang="de-DE">#</placeholder>
+        </input-field>
+
+        <input-field>
+            <name>facebook</name>
+            <copyable>true</copyable>
+            <label>Enter your Facebook URL</label>
+            <label lang="de-DE">Geben Sie Ihre Facebook URL ein</label>
+            <placeholder>#</placeholder>
+            <placeholder lang="de-DE">#</placeholder>
+        </input-field>
+
+        <input-field>
+            <name>twitter</name>
+            <copyable>true</copyable>
+            <label>Enter your Twitter URL</label>
+            <label lang="de-DE">Geben Sie Ihre Twitter URL ein</label>
+            <placeholder>#</placeholder>
+            <placeholder lang="de-DE">#</placeholder>
+        </input-field>
+
+        <input-field>
+            <name>instagram</name>
+            <copyable>true</copyable>
+            <label>Enter your Instagram URL</label>
+            <label lang="de-DE">Geben Sie Ihre Instagram URL ein</label>
+            <placeholder>#</placeholder>
+            <placeholder lang="de-DE">#</placeholder>
+        </input-field>
+
+        <input-field>
+            <name>whatsapp</name>
+            <copyable>true</copyable>
+            <label>Enter your Whatsapp URL</label>
+            <label lang="de-DE">Geben Sie Ihre Whatsapp URL ein</label>
+            <placeholder>#</placeholder>
+            <placeholder lang="de-DE">#</placeholder>
+        </input-field>
+
+        <input-field>
+            <name>pinterest</name>
+            <copyable>true</copyable>
+            <label>Enter your Pinterest URL</label>
+            <label lang="de-DE">Geben Sie Ihre Pinterest URL ein</label>
+            <placeholder>#</placeholder>
+            <placeholder lang="de-DE">#</placeholder>
+        </input-field>
+
+        <input-field>
+            <name>tiktok</name>
+            <copyable>true</copyable>
+            <label>Enter your TikTok URL</label>
+            <label lang="de-DE">Geben Sie Ihre TikTok URL ein</label>
+            <placeholder>#</placeholder>
+            <placeholder lang="de-DE">#</placeholder>
+        </input-field>
+
+    </card>
+</config>

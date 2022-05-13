@@ -1,0 +1,200 @@
+{% block ssik_easy_quickview %}
+
+    {% set name = page.product.translated.name %}
+    {% set manufacturer = page.product.manufacturer %}
+
+    {% block ssik_easy_quickview_close %}
+        <button type="button" class="modal-close close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">
+                {% sw_icon 'x' style { 'size': 'sm' } %}
+            </span>
+        </button>
+    {% endblock %}
+
+    <div class="easy-quickview-container">
+        {% block ssik_easy_quickview_top %}
+            
+            {% block ssik_easy_quickview_img %}
+                <div class="easy-quickview-box">
+
+                    {% set mediaItems = page.product.media.media %}
+
+                    {% if page.product.media %}
+                        {% sw_include '@Storefront/storefront/ssik/easy-quickview-image-slider.html.twig' with {
+                            'mediaItems': mediaItems,
+                            'displayMode': 'cover',
+                            'minHeight': '500px',
+                            'navigationDots': true,
+                            'isProduct': true,
+                            'fallbackImageTitle': page.product.translated.name,
+                            'startIndexSlider': page.product.cover.position + 1
+                        } %}
+                    {% else %}
+                        {% sw_icon 'placeholder' style {
+                            'size': 'fluid'
+                        } %}
+                    {% endif %}
+                </div>
+            {% endblock %}
+
+            {% block ssik_easy_quickview_product %}
+                <div class="easy-quickview-box info">
+
+                    {% block ssik_easy_quickview_product_name %}
+                        <a href="{{ seoUrl('frontend.detail.page', {'productId': page.product.id}) }}" target="_blank" rel="noopener" title="{{ name }}" class="h4 quickview-minimal-product-name">
+                            {{ name }}
+                        </a>
+                    {% endblock %}
+
+                    <div class="quickview-minimal-product-system-info">
+                        {% block ssik_easy_quickview_product_number %}
+                            <p>
+                                <span class="product-detail-ordernumber-label">{{ "detail.productNumberLabel"|trans|sw_sanitize }}</span>
+                                <span class="product-detail-ordernumber">{{ page.product.productNumber }}</span>
+                            </p>
+                        {% endblock %}
+
+                        {% block ssik_easy_quickview_product_manufacturer %}
+                            {% if manufacturer %}
+                                <p>
+                                    <span class="product-detail-ordernumber-label">Brand:</span>
+                                    <span class="product-detail-ordernumber">{{ manufacturer.translated.name }}</span>
+                                </p>
+                            {% endif %}
+                        {% endblock %}
+                    </div>
+
+                    {% block ssik_easy_quickview_product_buy_widget %}
+                        <div class="product-detail-buy ">
+                            {% if page.product.manufacturer %}
+                                <meta itemprop="brand" content="{{ page.product.manufacturer.translated.name }}"/>
+                            {% endif %}
+
+                            {% if page.product.ean %}
+                                <meta itemprop="gtin13" content="{{ page.product.ean }}"/>
+                            {% endif %}
+
+                            {% if page.product.manufacturerNumber %}
+                                <meta itemprop="mpn" content="{{ page.product.manufacturerNumber }}"/>
+                            {% endif %}
+
+                            {% if page.product.weight %}
+                                <meta itemprop="weight" content="{{ page.product.weight }} kg"/>
+                            {% endif %}
+
+                            {% if page.product.height %}
+                                <meta itemprop="height" content="{{ page.product.height }} mm"/>
+                            {% endif %}
+
+                            {% if page.product.width %}
+                                <meta itemprop="width" content="{{ page.product.width }} mm"/>
+                            {% endif %}
+
+                            {% if page.product.length %}
+                                <meta itemprop="depth" content="{{ page.product.length }} mm"/>
+                            {% endif %}
+
+
+                            <meta itemprop="releaseDate" content="{{ page.product.releaseDate|format_date(pattern="Y-MM-dd", locale=app.request.locale) }}"/>
+                            <div itemprop="offers" itemscope itemtype="{% if page.product.calculatedPrices|length > 1 %}http://schema.org/AggregateOffer{% else %}http://schema.org/Offer{% endif %}">
+                                <meta itemprop="url" content="{{ seoUrl('frontend.detail.page', { productId: page.product.id }) }}"/>
+
+                                {% if page.product.calculatedPrices|length > 1 %}
+                                    {% set lowestPrice = false %}
+                                    {% set highestPrice = false %}
+
+                                    {% for price in page.product.calculatedPrices %}
+                                        {% if not lowestPrice or price.unitPrice < lowestPrice %}
+                                            {% set lowestPrice = price.unitPrice %}
+                                        {% endif %}
+                                        {% if not highestPrice or price.unitPrice > highestPrice %}
+                                            {% set highestPrice = price.unitPrice %}
+                                        {% endif %}
+                                    {% endfor %}
+
+                                    <meta itemprop="lowPrice" content="{{ lowestPrice }}"/>
+                                    <meta itemprop="highPrice" content="{{ highestPrice }}"/>
+                                    <meta itemprop="offerCount" content="{{ page.product.calculatedPrices|length }}"/>
+                                {% endif %}
+
+
+                                <meta itemprop="priceCurrency" content="{{ context.currency.translated.shortName }}"/>
+
+
+                                <div class="product-detail-price-container">
+                                    {% sw_include '@Storefront/storefront/page/product-detail/buy-widget-price.html.twig' %}
+                                </div>
+
+
+                                <div class="product-detail-tax-container">
+                                    {% if context.taxState == "gross" %}
+                                        {% set taxText = "general.grossTaxInformation"|trans|sw_sanitize %}
+                                    {% else %}
+                                        {% set taxText = "general.netTaxInformation"|trans|sw_sanitize %}
+                                    {% endif %}
+
+                                    <p class="product-detail-tax">
+                                        <a class="product-detail-tax-link" href="{{ path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') }) }}" 
+                                            title="{{ taxText }}" data-toggle="modal" data-url="{{ path('frontend.cms.page',{ id: config('core.basicInformation.shippingPaymentInfoPage') }) }}">
+                                            {{ taxText }}
+                                        </a>
+                                    </p>
+                                </div>
+
+
+                                <div class="product-detail-delivery-information">
+                                    {% sw_include '@Storefront/storefront/component/delivery-information.html.twig' %}
+                                </div>
+
+
+                                {% if page.product.parentId and page.configuratorSettings|length > 0 %}
+                                    <div class="product-detail-configurator-container">
+                                        {% sw_include '@Storefront/storefront/page/product-detail/configurator.html.twig' %}
+                                    </div>
+                                {% endif %}
+
+
+                                {% if page.product.active %}
+                                    <div class="product-detail-form-container">
+                                        {% sw_include '@Storefront/storefront/page/product-detail/buy-widget-form.html.twig' %}
+                                    </div>
+                                {% endif %}
+
+                            </div>
+
+
+                            {% if page.product.productNumber %}
+                                <div class="product-detail-ordernumber-container">
+                                    <span class="product-detail-ordernumber-label">
+                                        {{ "detail.productNumberLabel"|trans|sw_sanitize }}
+                                    </span>
+                                    <meta itemprop="productID" content="{{ page.product.id }}"/>
+                                    <span class="product-detail-ordernumber" itemprop="sku">
+                                        {{ page.product.productNumber }}
+                                    </span>
+                                </div>
+                            {% endif %}
+
+                        </div>
+                    {% endblock %}
+
+                    {% if page.product.translated.description %}
+                        <div class="easy-quickview-description">
+                            <h3>{{ "detail.descriptionTitle"|trans|sw_sanitize }}</h3>
+                            {{ page.product.translated.description|sw_sanitize }}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endblock %}            
+        {% endblock %}
+    </div>
+    {% block ssik_easy_quickview_footer %}
+        <div class="quickview-minimal-footer">
+            <a href="{{ seoUrl('frontend.detail.page', {'productId': page.product.id}) }}"
+                title="{{ name }}"
+                class="btn btn-block btn-primary">
+                {{ 'ssik.listing.quickview.gotodetail'|trans|sw_sanitize }}
+            </a>
+        </div>
+    {% endblock %}
+{% endblock %}

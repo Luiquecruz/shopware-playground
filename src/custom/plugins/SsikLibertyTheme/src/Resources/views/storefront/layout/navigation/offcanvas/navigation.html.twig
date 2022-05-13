@@ -1,0 +1,39 @@
+{% sw_extends '@Storefront/storefront/layout/navigation/offcanvas/navigation.html.twig' %}
+
+{% block utilities_offcanvas_content %}
+    <div class="ssik-navigation-offcanvas">
+        <div class="ssik-navigation-offcanvas-header">
+            <div class="ssik-navigation-offcanvas-logo">
+                <a class="header-logo-main-link" href="{{ path('frontend.home.page') }}" title="{{ "header.logoLink"|trans|striptags }}">
+                    <picture class="header-logo-picture">
+                        {% if theme_config('sw-logo-tablet') and theme_config('sw-logo-tablet') != theme_config('sw-logo-desktop') %}
+                            <source srcset="{{ theme_config('sw-logo-tablet') |sw_encode_url }}"
+                                    media="(min-width: {{ theme_config('breakpoint.md') }}px) and (max-width: {{ theme_config('breakpoint.lg') - 1 }}px)">
+                        {% endif %}
+                        {% if theme_config('sw-logo-mobile') and theme_config('sw-logo-mobile') != theme_config('sw-logo-desktop') %}
+                            <source srcset="{{ theme_config('sw-logo-mobile') |sw_encode_url }}"
+                                    media="(max-width: {{ theme_config('breakpoint.md') - 1 }}px)">
+                        {% endif %}
+                        {% if theme_config('sw-logo-desktop') %}
+                            <img src="{{ theme_config('sw-logo-desktop') |sw_encode_url }}"
+                                    alt="{{ "header.logoLink"|trans|striptags }}"
+                                    class="img-fluid header-logo-main-img"/>
+                        {% endif %}
+                    </picture>
+                </a>
+            </div>
+             <button class="ssik-navigation-offcanvas-close js-offcanvas-close"></button>
+        </div>
+       
+        <div class="ssik-navigation-offcanvas-container">
+            {{parent()}}
+        </div>
+    </div>
+{% endblock %}
+
+{% block layout_navigation_offcanvas_navigation_actions %}
+    <div class="ssik-navigation-offcanvas-container-footer">
+        {% sw_include '@Storefront/storefront/ssik/header-info-col.html.twig' %}
+        {{parent()}}
+    </div>
+{% endblock %}

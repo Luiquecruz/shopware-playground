@@ -1,0 +1,159 @@
+{% sw_extends '@Storefront/storefront/component/product/card/box-standard.html.twig' %}
+
+{% set listingStyle = config('SsikLibertyTheme.config.listingStyle') %}
+{% set quickviewShow = config('SsikLibertyTheme.config.quickviewShow') %}
+{% set productBoxHover = config('SsikLibertyTheme.config.productBoxHover') %}
+
+{# for image hover     #}
+{% if productBoxHover is same as('imagehover') %}
+    {% set count = 0 %}
+    {% set productImgHoverMedia = '' %}
+    {% for key, imgHover in product.media.elements %}
+        {% if product.cover.id != key and count == 0 %}
+            {% set count = 1 %}
+            {% set productImgHoverMedia = imgHover.media %}
+        {% endif %} 
+    {% endfor %}
+    {% if productImgHoverMedia.thumbnails|length > 0 %}
+        {% set thumbnails = productImgHoverMedia.thumbnails|sort|reverse %}
+        {% set srcsetValue %}{% apply spaceless %}
+            {{ productImgHoverMedia|sw_encode_media_url }} {{ thumbnails|first.width + 1 }}w, {% for thumbnail in thumbnails %}{{ thumbnail.url | sw_encode_url }} {{ thumbnail.width }}w{% if not loop.last %}, {% endif %}{% endfor %}
+        {% endapply %}{% endset %}
+    {% endif %}
+{% endif %}
+
+{% block component_product_box_content %} 
+    <div class="card-body">
+        {% block component_product_box_badges %}
+            {{parent()}}
+        {% endblock %}
+
+        {% if config('core.cart.wishlistEnabled') %}
+            {% block component_product_box_wishlist_action %}
+                {% sw_include '@Storefront/storefront/component/product/card/wishlist.html.twig' with {
+                    appearance: 'circle',
+                    productId: id
+                } %}
+            {% endblock %}
+        {% endif %}
+
+        {% if quickviewShow is same as('true') %}
+            {% block ssik_component_product_box_quickview_action %}
+                <button role="button" data-easy-quick="{{id}}" class="easy-quick-btn" aria-label="{{ 'ssik.listing.quickview.title'|trans|sw_sanitize }}" title="{{ 'ssik.listing.quickview.title'|trans|sw_sanitize }}">
+                    {% sw_icon 'eye-open' %}
+                </button>
+            {% endblock %}
+        {% endif %}
+
+        {% block component_product_box_rich_snippets %}
+            {{parent()}}
+        {% endblock %}
+
+        {% block component_product_box_image %}
+            {% if listingStyle is not empty and listingStyle is not same as('default') %}
+                <div class="product-image-wrapper-aspect-ratio " 
+                    {% if productImgHoverMedia %}
+                        data-product-img-hover-src="{{productImgHoverMedia|sw_encode_media_url}}"     
+                    {% endif %}
+                   
+                    data-aspect-ratio="{{aspectRatio}}" style="--aspect-ratio:{{aspectRatio}};">
+                    {# parent _component_product_box_image_ body   #}
+                        <div class="product-image-wrapper">
+                            {# fallback if display mode is not set #}
+                            {% set displayMode = displayMode ?: 'standard' %}
+
+                            {# set display mode 'cover' for box-image with standard display mode #}
+                            {% if layout == 'image' and displayMode == 'standard' %}
+                                {% set displayMode = 'cover' %}
+                            {% endif %}
+
+                            <a href="{{ seoUrl('frontend.detail.page', {'productId': id}) }}"
+                                title="{{ name }}"
+                                class="product-image-link is-{{ displayMode }}">
+                                <div class="product-image-body">
+                                    {% if cover.url %}
+                                        {% set attributes = {
+                                            'class': 'product-image is-'~displayMode,
+                                            'alt': (cover.translated.alt ?: name),
+                                            'title': (cover.translated.title ?: name)
+                                        } %}
+
+                                        {% if displayMode == 'cover' or displayMode == 'contain' %}
+                                            {% set attributes = attributes|merge({ 'data-object-fit': displayMode }) %}
+                                        {% endif %}
+
+                                        {% sw_thumbnails 'product-image-thumbnails' with {
+                                            media: cover,
+                                            sizes: sizes
+                                        } %}
+                                    {% else %}
+                                        <div class="product-image-placeholder">
+                                            {% sw_icon 'placeholder' style {
+                                                'size': 'fluid'
+                                            } %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+
+                            </a>
+
+                            
+                        </div>
+                    {# parent _component_product_box_image_ body   #}
+
+                </div>
+            {% else %}
+                {{parent()}}
+            {% endif %}
+            
+        {% endblock %}
+
+        {% block component_product_box_info %}
+            {% if listingStyle is same as('standard') %}
+                <div class="product-info">
+                    {% block component_product_box_rating %}
+                        <div class="product-info-brand">
+                            <span>{{ product.manufacturer.name }}</span>
+                        </div>
+                        {% if config('core.listing.showReview') %}
+                            <div class="product-rating">
+                            {% sw_include '@Storefront/storefront/component/review/rating.html.twig' with {
+                                    points: product.ratingAverage,
+                                    style: 'text-primary'
+                                } %}
+                            </div>
+                        {% endif %}
+                    {% endblock %}
+
+                    {% block component_product_box_name %}
+                        {{parent()}}
+                    {% endblock %}
+
+                    {% block component_product_box_variant_characteristics %}
+                        {{parent()}}
+                    {% endblock %}
+
+                    {% block component_product_box_description %}
+                        {{parent()}}
+                    {% endblock %}
+
+                    {% block component_product_box_price %}
+                        {{parent()}}
+                    {% endblock %}
+
+                    {% block component_product_box_action %}
+                        {{parent()}}
+                    {% endblock %}
+                </div>
+            {% else %}
+                {{parent()}}
+            {% endif %}
+        {% endblock %}
+
+        {# {% if listingStyle is same as('standard') %}
+            <div class="product-action-wrapper" style="--aspect-ratio:{{aspectRatio}};">
+                {% sw_include '@Storefront/storefront/component/product/card/action.html.twig' %}
+            </div>
+        {% endif %} #}
+    </div>
+{% endblock %}

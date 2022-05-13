@@ -1,0 +1,17 @@
+{% sw_extends '@Storefront/storefront/layout/header/actions/account-widget.html.twig' %}
+
+{% block layout_header_actions_account_widget_dropdown_button %}
+    <button class="btn account-menu-btn header-actions-btn"
+            type="button"
+            id="accountWidget"
+            data-offcanvas-account-menu="true"
+            {{ dataBsToggleAttr }}="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-label="{{ "account.myAccount"|trans|striptags }}"
+            title="{{ "account.myAccount"|trans|striptags }}">
+        {% block ssik_layout_header_actions_account_widget_dropdown_button_content %}
+            {% sw_icon 'icon-user' style { 'pack':'custom', 'namespace': 'SsikLibertyTheme', 'class':'ssik md' } %}
+        {% endblock %}
+    </button>
+{% endblock %}

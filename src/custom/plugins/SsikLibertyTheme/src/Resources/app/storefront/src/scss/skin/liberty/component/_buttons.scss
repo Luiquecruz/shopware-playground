@@ -1,0 +1,49 @@
+.btn-primary {
+    @include button-variant($ssik-user-btn-bg, $ssik-user-btn-bg);
+    color: $ssik-user-btn-color;
+}
+
+.btn-buy {
+    @include button-variant($ssik-buy-btn-bg, $ssik-buy-btn-bg);
+    color: $ssik-buy-btn-color;
+}
+
+.btn-light {
+    @include button-variant($sw-color-brand-secondary, $sw-color-brand-secondary);
+    color: $sw-text-color;
+}
+
+.begin-checkout-btn {
+    @include button-variant($ssik-checkout-action-btn-primary-bg, $ssik-checkout-action-btn-primary-bg);
+    color: $ssik-checkout-action-btn-primary-color;
+}
+
+.cart-shipping-costs-btn {
+    display: block;
+    @include button-variant($ssik-checkout-shipping-btn-bg, $ssik-checkout-shipping-btn-bg);
+    color: $ssik-checkout-shipping-btn-color;
+}
+
+.register-submit .btn-primary,
+.login-submit .btn-primary,
+.account-recover-password-submit,
+.account-menu-login-button,
+.product-detail-review-teaser-btn
+{
+    @include button-variant($ssik-user-btn-bg, $ssik-user-btn-bg);
+    color: $ssik-user-btn-color;
+}
+
+.newsletter-form-submit {
+    @include button-variant($ssik-newsletter-form-submit-bg, $ssik-newsletter-form-submit-bg);
+    color: $ssik-newsletter-form-submit-color;
+}
+
+.btn.filter-panel-wrapper-toggle {
+    @include button-variant(#F9F9F9, #F9F9F9);
+    color: #113311;
+    .icon {
+        color: #113311;
+    }
+    line-height: 3.4rem;
+}

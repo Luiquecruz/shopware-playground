@@ -1,0 +1,76 @@
+html {
+    font-size: $root-font-size;
+    height: 100%;
+}
+
+body {
+    font-family: $ssik-base-font-family;
+    background: $ssik-base-background-color;
+    color: $ssik-base-color-text;
+    @include font-size($ssik-base-font-size);
+    height: 100%;
+}
+
+.base-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%; 
+}
+
+.container-main {
+  .is-ctl-navigation &,
+  .is-ctl-product & {
+      padding-top: 0;
+  }
+  @include media-breakpoint-down(sm) {
+    border-top: 1px solid $ssik-border-default-color;
+  }
+}
+
+.content-main {
+  flex: 1 0 auto;
+}
+.footer-main {
+  flex: 0 0 auto;
+}
+
+a {
+    color: $ssik-base-link-color;
+    transition: all .3s ease;
+    //transition: color 0.15s;
+    &:hover {
+        color: $ssik-base-link-hover-color;
+        text-decoration: none;
+    }
+}
+
+h1, .h1 {
+  line-height: 1.4;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6  {
+  font-family: $ssik-font-family-headline;
+}
+
+.spinner-border {
+  
+  border-color: $ssik-base-link-hover-color;
+  border-right-color: transparent;
+  //border-color: $ssik-base-link-hover-color;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+small, .small {
+  font-size: 1.1rem;
+}

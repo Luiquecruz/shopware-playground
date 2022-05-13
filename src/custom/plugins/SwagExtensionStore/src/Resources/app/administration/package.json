@@ -1,0 +1,36 @@
+{
+    "name": "swag-extension-store",
+    "version": "0.0.1",
+    "description": "Jest test for the administration part of th extension store",
+    "main": "index.js",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "unit": "jest --config jest.config.js --ci",
+        "unit-watch": "jest --config jest.config.js --watch",
+        "lint": "eslint --ext .js,.vue src",
+        "lint-ci": "npm run lint -- --format junit --output-file eslint.junit.xml"
+    },
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "@babel/plugin-proposal-class-properties": "7.10.4",
+        "@babel/plugin-transform-runtime": "7.5.5",
+        "@babel/preset-env": "7.11.0",
+        "@shopware-ag/eslint-config-base": "1.0.0",
+        "@shopware-ag/jest-preset-sw6-admin": "2.0.0",
+        "@vue/test-utils": "1.1.0",
+        "babel-eslint": "10.1.0",
+        "eslint-import-resolver-webpack": "0.11.1",
+        "eslint-plugin-internal-rules": "file:internal-rules",
+        "eslint-plugin-jest": "24.1.3",
+        "flush-promises": "1.0.2",
+        "jest": "26.4.2",
+        "vue-i18n": "8.14.0"
+    },
+    "dependencies": {
+        "vue": "2.6.10",
+        "vue-template-compiler": "2.6.10"
+    }
+}

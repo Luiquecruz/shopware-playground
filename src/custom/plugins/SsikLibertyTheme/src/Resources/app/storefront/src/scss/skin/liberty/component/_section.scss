@@ -1,0 +1,14 @@
+.section {
+    &-title {
+        font-weight: 700;
+        color: $ssik-base-h1-color;
+        @include font-size(22px);
+        margin-bottom: 0;
+        text-transform: uppercase;
+        &.in-sideber {
+            margin-top: 1rem; 
+            @include font-size(18px);
+            text-transform: none;
+        }
+    }
+}

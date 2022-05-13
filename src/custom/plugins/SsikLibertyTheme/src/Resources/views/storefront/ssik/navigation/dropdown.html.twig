@@ -1,0 +1,27 @@
+{% macro list(items) %}
+    {% import _self as tree %}
+    <ul class="dropdown-menu-list">
+        {% for item in items %}
+
+            {% set itemCategory = item.category %}
+            {% set itemName = itemCategory.translated.name %}
+            {% set itemId = itemCategory.id %}
+
+            <li class="dropdown-menu-item">
+                <a class="dropdown-menu-link {% if item.children|length > 0 %}is-dropdown{% endif %}"
+                   href="{% if itemCategory.externalLink %}{{ itemCategory.externalLink }}{% else %}{{ seoUrl('frontend.navigation.page', { navigationId: itemId }) }}{% endif %}">
+                    <span>{{ itemName }}</span>
+                    {% if item.children|length > 0 %} 
+                        {% sw_icon 'icon-arrow' style { 'pack':'custom', 'namespace': 'SsikLibertyTheme', 'class':'ssik xxs' } %}
+                    {% endif %}
+                </a>
+                {% if item.children %}
+                    {{ tree.list(item.children) }}
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endmacro %}
+
+{% import _self as tree %}
+{{ tree.list(navigationTree) }}

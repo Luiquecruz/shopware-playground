@@ -1,0 +1,32 @@
+.social-icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+        margin-right: 1rem;
+        border:1px solid;
+        border-radius: 100%;
+        width: 4rem;
+        height: 4rem;
+        @include font-size(20px);
+           
+        &:last-child {
+            margin-right: 0;   
+        }
+
+        background: $ssik-social-icon-bg;
+        //border-color: $ssik-social-icon-border;
+        color: $ssik-social-icon-color;
+
+        &:hover {
+            background: $ssik-social-icon-bg-hover;
+            border-color: $ssik-social-icon-border-hover;
+            color: $ssik-social-icon-color-hover;
+        }
+    }
+}

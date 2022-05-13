@@ -1,0 +1,16 @@
+.base-slider {
+    .cms-element-title {
+        font-size: inherit;
+        .cms-element-title-paragraph {
+            font-size: 2.2rem;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: $ssik-base-h1-color;
+        }
+    }
+}
+
+.cookie-permission-container {
+    font-size: inherit;
+}

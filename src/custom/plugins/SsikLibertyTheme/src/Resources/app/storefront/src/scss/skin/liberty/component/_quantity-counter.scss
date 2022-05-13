@@ -1,0 +1,100 @@
+.quantity-counter {
+    display: flex;
+    border: 1px solid $ssik-quantity-counter-border;
+    &-value {
+        font-size: 0;
+        .form-control {
+            border:0;
+            border-left: 1px solid $ssik-quantity-counter-border;
+            border-right: 1px solid $ssik-quantity-counter-border;
+            width: 4rem;
+            height: 4rem;
+            padding: 0;
+            background: $ssik-quantity-counter-bg;
+            text-align: center;
+            @include font-size($ssik-quantity-counter-font-size);
+            &:focus, &:active {
+                border-color: $ssik-quantity-counter-border;
+            }
+        }
+    }
+
+    &-btn {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        border: 0;
+        border-radius: 0;
+        padding: 0;
+        width: 4rem;
+        height: 4rem;
+        background: $ssik-quantity-counter-btn-bg;
+        .icon {
+            width: 1.6rem;
+            height: 1.6rem;
+            & > svg {
+                top:0;
+                color: #000;
+            }
+        }
+        &:focus, &:hover {
+            box-shadow: none;
+            background: darken($ssik-quantity-counter-btn-bg, 5%);
+        }
+    }
+
+    &.listing &-value{
+        width: 2.6rem;
+        .list & {
+            width: 100%;
+            flex-grow: 1;
+        }
+    }
+
+    &.listing &-btn {
+        line-height: 2.8rem;
+        width: 2.6rem;
+        .icon {
+            width: 1rem;
+            height: 1rem;
+        }
+    }
+
+    &.offcanvascart {
+        border: 0;
+    }
+
+    &.is-offcanvas &-value{
+        .form-control {
+            height: 3rem;
+            width: 3.5rem;
+            background: $ssik-quantity-offcanvas-counter-bg;
+            @include font-size($ssik-quantity-offcanvas-counter-font-size);
+        }
+    }
+
+    &.is-offcanvas &-btn {
+        height: 3rem;
+        width: 3rem;
+        .icon {
+            width: 1.2rem;
+            height: 1.2rem;
+        }
+
+        &:focus, &:hover {
+            background: darken($ssik-quantity-counter-btn-bg, 5%);
+        }
+    }
+
+    label {
+        margin-bottom: 0;
+    }
+}
+
+.is-counter .cart-item-quantity .custom-select {
+    display: none;
+}
+
+.quantity-counter + .product-detail-quantity-select {
+    display: none;
+}

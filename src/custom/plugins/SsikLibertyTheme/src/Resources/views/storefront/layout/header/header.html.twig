@@ -1,0 +1,22 @@
+{% sw_extends '@Storefront/storefront/layout/header/header.html.twig' %}
+
+{% block layout_top_bar %}
+    <div class="ssik-top-bar-container">
+        <div class="container">
+            {{parent()}}
+        </div>
+    </div>
+{% endblock %}
+
+{% block layout_header_navigation %}
+    <div class="container ssik-header-container">
+        {{parent()}}
+    </div>
+{% endblock %}
+
+{% block layout_header_logo %}
+    {{parent()}}
+    {% sw_include '@Storefront/storefront/ssik/header-info-col.html.twig' with {
+        asDropdown: true
+    } %}
+{% endblock %}

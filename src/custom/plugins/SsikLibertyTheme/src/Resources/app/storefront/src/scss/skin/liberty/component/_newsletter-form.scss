@@ -1,0 +1,52 @@
+.newsletter-form {
+    &-body {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    &-input, &-input:focus, &-input:active {
+        //padding-left: 0;
+        //border-left: 0;
+        border-color: $ssik-newsletter-form-input-border;
+        background: $ssik-newsletter-form-input-bg;
+        color:  $ssik-newsletter-form-input-color;
+        @include font-size($ssik-newsletter-form-input-font-size);
+    }
+    &-icon {
+        @include font-size(2.2rem);
+        //color: $ssik-input-icon-color;
+        padding-top: 0;
+        padding-bottom: 0;
+        border-right: 0;
+        border-color: $ssik-newsletter-form-input-bg;
+        background: $ssik-newsletter-form-input-bg;
+    }
+    &-captcha {
+        padding: 0 .5rem;
+        margin-bottom: .5rem;
+        label.form-label {
+            font-size: 1.1rem;
+        }
+        .basic-captcha-content-code {
+            max-width: unset;
+            margin-bottom: 0;
+        }
+        .basic-captcha-content-refresh-icon {
+            border: none;
+        }
+    }
+
+    .confirm-alert {
+        font-size: 1.2rem;
+        padding: 0.5rem 0;
+    }
+
+    .input-group-prepend {
+        margin-right: 0;
+    }
+}
+
+.newsletter-form-submit {
+    @include font-size($ssik-newsletter-form-submit-font-size);
+    border-radius: 2rem;
+    font-weight: normal;
+}

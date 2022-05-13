@@ -1,0 +1,30 @@
+/*
+     _            __
+    | |          / _|
+  __| |_ __ ___ | |_
+ / _` | '_ ` _ \|  _|
+| (_| | | | | | | |
+ \__,_|_| |_| |_|_|
+
+Copyright (c) digital.manufaktur GmbH
+
+Sidebar
+==============================================
+Custom styling for sidebar component.
+
+*/
+
+.cms-section-sidebar-sidebar-content {
+    padding-left: 0;
+}
+
+@include media-breakpoint-down(md) {
+    .cms-section-sidebar-sidebar-content {
+        padding-right: 0;
+    }
+
+    .cms-section-sidebar-main-content {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

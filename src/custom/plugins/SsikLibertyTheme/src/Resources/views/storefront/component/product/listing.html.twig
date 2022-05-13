@@ -1,0 +1,43 @@
+{% sw_extends '@Storefront/storefront/component/product/listing.html.twig' %}
+
+{% set listingStyle = config('SsikLibertyTheme.config.listingStyle') %}
+{% set productBoxHover = config('SsikLibertyTheme.config.productBoxHover') %}
+
+
+{% block element_product_listing_pagination_nav_top %}
+    {% block ssik_element_product_listing_title_page %}
+        <h1 itemprop="name" class="section-title">
+            {{page.header.navigation.active.name}}
+        </h1>
+    {% endblock %}
+    {{parent()}}
+{% endblock %}
+
+{% block element_product_listing_wrapper_content %}
+    <div class="ssik-listing {% if listingStyle is not empty and listingStyle is not same as('default') %}ssik-{{listingStyle}}{% else %}ssik-default{% endif %}"
+        {% if listingStyle is not empty and 
+            listingStyle is not same as('default') and 
+            productBoxHover is same as('imagehover') %}data-product-img-hover="true"{% endif %}>
+        {{parent()}}
+    </div>
+{% endblock %}
+
+{% block element_product_listing_col %}
+    {% if listingStyle is not same as('default') %}
+
+        {% set first = searchResult.elements|first %}
+        {% set cover = first.cover.media %}
+        {% set aspectRatio = (cover.metaData['width'] / cover.metaData['height']) %}
+
+        {% for product in searchResult %}
+            {% if product %}
+                    {% set cover = product.cover.media %}
+                    {% set itemRatio = (cover.metaData['width'] / cover.metaData['height']) %} 
+                    {% set aspectRatio = (itemRatio < aspectRatio) ? itemRatio : aspectRatio %} 
+            {% endif %}
+        {% endfor %}
+    {% endif %}   
+        
+    {{parent()}}
+
+{% endblock %}

@@ -1,0 +1,27 @@
+/*
+     _            __
+    | |          / _|
+  __| |_ __ ___ | |_
+ / _` | '_ ` _ \|  _|
+| (_| | | | | | | |
+ \__,_|_| |_| |_|_|
+
+Copyright (c) digital.manufaktur GmbH
+
+Container
+==============================================
+Contains custom styles for the container.
+
+*/
+
+.is-act-index {
+    .container-main {
+        padding-top: 0;
+    }
+}
+
+@if bool($dmf-newsletter-enable) == true {
+    .container-main {
+        padding-bottom: 0;
+    }
+}

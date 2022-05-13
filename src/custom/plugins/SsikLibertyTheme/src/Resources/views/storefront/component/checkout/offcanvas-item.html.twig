@@ -1,0 +1,24 @@
+{% sw_extends '@Storefront/storefront/component/checkout/offcanvas-item.html.twig' %}
+
+
+{% block component_offcanvas_product_buy_quantity %}
+    {{parent()}}
+    {% if config('SsikLibertyTheme.config.counterShow') is same as('true') %}
+        {% sw_include '@SsikLibertyTheme/storefront/ssik/ssik-buy-widget-quantity.html.twig' with {
+            modify: 'is-offcanvas',
+            value: quantity,
+            minPurchase: quantityInformation.minPurchase,
+            maxPurchase: maxQuantity,
+            step: quantityInformation.purchaseSteps
+        } %}
+    {% endif %}        
+{% endblock %}
+
+{% block component_offcanvas_product_remove_submit %}
+    <button type="submit"
+            title="{{ "checkout.removeLineItem"|trans|striptags }}"
+            data-product-id="{{ lineItem.id }}"
+            class="btn btn-light cart-item-remove-button">
+        {% sw_icon 'icon-trash' style { 'pack':'custom', 'namespace': 'SsikLibertyTheme', 'class':'ssik xxs' } %}
+    </button>
+{% endblock %}

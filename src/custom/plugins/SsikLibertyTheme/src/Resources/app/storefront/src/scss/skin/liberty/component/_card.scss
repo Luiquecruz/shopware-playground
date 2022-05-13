@@ -1,0 +1,5 @@
+.card {
+    &-title {
+        @include font-size(14px);
+    }
+}

@@ -1,0 +1,6 @@
+.cms-block-category-navigation {
+    display: none;
+    @include media-breakpoint-up(lg) {
+        display: block;
+    }
+}

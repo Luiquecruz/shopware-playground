@@ -1,0 +1,50 @@
+{% sw_extends '@Storefront/storefront/page/checkout/cart/index.html.twig' %}
+
+
+{% block page_checkout_cart_product_table %}
+    <div class="card checkout-product-table {% if config('SsikLibertyTheme.config.counterShow') is same as('true') %}is-counter{% endif %} ">
+        <div class="card-body">
+            {% block page_checkout_cart_table_header %}
+                {{parent()}}
+            {% endblock %}
+
+            {% block page_checkout_cart_table_items %}
+                {{parent()}}
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block page_checkout_cart_shipping_costs %}{% endblock %}
+
+{% block page_checkout_aside_actions %}
+
+    <div class="checkout-aside-action">
+        <form name="precalc"
+            method="post"
+            action="{{ path('frontend.checkout.configure') }}"
+            data-form-auto-submit="true">
+            {% block page_checkout_cart_shipping_costs_csrf %}
+                {{parent()}}
+            {% endblock %}
+
+            {% block page_checkout_cart_shipping_costs_trigger %}
+                {{parent()}}
+            {% endblock %}
+
+            {% block page_checkout_cart_shipping_costs_form_group %}
+                {{parent()}}
+            {% endblock %}
+        </form>
+    </div>
+
+    <div class="checkout-aside-action">
+        {% block page_checkout_cart_add_promotion %}
+            {{parent()}}
+        {% endblock %}
+    </div>
+
+    {% block page_checkout_cart_action_proceed %}
+        {{parent()}}
+    {% endblock %}
+{% endblock %}

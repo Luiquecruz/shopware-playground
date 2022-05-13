@@ -1,0 +1,86 @@
+{% sw_extends '@Storefront/storefront/layout/navigation/navigation.html.twig' %}
+
+{% set isDropdown = config('SsikLibertyTheme.config.dropdown') %}
+
+{% block layout_main_navigation_menu_home %}
+    {% if context.salesChannel.translated.homeEnabled %}
+        <div class="main-navigation-item">
+            <a class="nav-link main-navigation-link{% if controllerAction is same as('home') %} active{% endif %} home-link"
+                href="{{ path('frontend.home.page') }}"
+                itemprop="url"
+                title="{{ homeLabel|striptags }}">
+                <div class="main-navigation-link-text">
+                    <i class="fas fa-home"></i>
+                    {# <span itemprop="name">{{ homeLabel|sw_sanitize }}</span> #}
+                </div>
+            </a>
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block layout_main_navigation_menu_item %}
+    <div class="main-navigation-item {% if treeItem.children|length > 0 %}is-dropdown{% endif %}">
+        {% if category.type == 'folder' %}
+            <div class="nav-link main-navigation-link {% if treeItem.children|length > 0 %} is-dropdown {% endif %}"
+                {% if isDropdown == 1 %}
+                    data-main-menu-dropdown="true"
+                {% else %}
+                    {% if treeItem.children|length > 0 %}
+                        data-flyout-menu-trigger="{{ category.id }}"
+                    {% endif %}
+                {% endif %}
+                    title="{{ name }}">
+                <div class="main-navigation-link-text">
+                    <span itemprop="name">{{ name }}</span>
+                </div>
+
+                {% if treeItem.children|length > 0 %} 
+                    {% sw_icon 'icon-arrow' style { 'pack':'custom', 'namespace': 'SsikLibertyTheme', 'class':'ssik xxs' } %}
+                {% endif %}
+
+            </div>
+        {% else %}
+            <a class="nav-link main-navigation-link
+                    {% if category.id == page.header.navigation.active.id or category.id in activePath %} active{% endif %}
+                    {% if treeItem.children|length > 0 %} is-dropdown {% endif %}"
+                href="{{ category_url(category) }}"
+                itemprop="url"
+
+                {% if isDropdown != 1 %}
+                    {% if treeItem.children|length > 0 %}
+                        data-flyout-menu-trigger="{{ category.id }}"
+                    {% endif %}
+                {% endif %}
+
+                {% if category_linknewtab(category) %}target="_blank"{% endif %}
+                title="{{ name }}">
+                <div class="main-navigation-link-text">
+                    <span itemprop="name">{{ name }}</span>
+                </div>
+                {% if treeItem.children|length > 0 %} 
+                    {% sw_icon 'icon-arrow' style { 'pack':'custom', 'namespace': 'SsikLibertyTheme', 'class':'ssik xxs' } %}
+                {% endif %}
+            </a>
+            {% if isDropdown == 1 and treeItem.children|length > 0 %}
+                {% sw_include '@Storefront/storefront/ssik/navigation/dropdown.html.twig' with {navigationTree: treeItem.children} only %}
+            {% endif %}
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block layout_main_navigation_navbar %}
+    {{parent()}}
+
+    {% set remoteClickOptions = {
+        selector: ".header-cart-btn",
+        scrollToElement: true
+    } %}
+
+    <div class="header-cart-short js-cart-update"
+            data-remote-click="true"
+            data-header-floating-cart="true"
+            data-remote-click-options='{{ remoteClickOptions|json_encode }}'>
+        {% sw_icon 'icon-basket' style { 'pack':'custom', 'namespace': 'SsikLibertyTheme', 'class':'ssik md' } %}
+    </div>
+{% endblock %}
+

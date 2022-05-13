@@ -1,0 +1,9 @@
+{% block ssik_layout_header_floating %}
+
+    {% set isStickyNavigation = config('SsikLibertyTheme.config.headerStickyNav') %}
+
+    {% if isStickyNavigation == 1 %}
+        <div class="header-floating is-sticky" data-header-floating="true"></div>
+    {% endif %}
+    
+{% endblock %}

@@ -1,0 +1,33 @@
+{% sw_extends '@Storefront/storefront/page/checkout/checkout-item.html.twig' %}
+
+
+{% block page_checkout_item_tax_price %}
+    {% if context.salesChannel.taxCalculationType == 'horizontal' %}
+        <div class="page-cart-item-price cart-item-tax-price">
+            {% block page_checkout_item_tax_price_label %}
+                {{parent()}}
+            {% endblock %}
+
+            {% block page_checkout_item_tax_price_inner %}
+                {{parent()}}
+            {% endblock %}
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block page_checkout_item_quantity_redirect %}
+    <input type="hidden"
+           name="redirectTo"
+           value="frontend.checkout.confirm.page">
+{% endblock %}
+
+{% block page_checkout_item_remove_redirect %}
+    <input type="hidden"
+           name="redirectTo"
+           value="frontend.checkout.confirm.page">
+{% endblock %}
+
+{% block page_checkout_item_children %}
+    {% set childTemplate = '@Storefront/storefront/page/checkout/confirm/confirm-item.html.twig' %}
+    {{ parent() }}
+{% endblock %}

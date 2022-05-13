@@ -1,0 +1,24 @@
+{% sw_extends '@Storefront/storefront/component/product/card/badges.html.twig' %}
+
+
+{% block component_product_badges_topseller %}
+    {% if product.markAsTopseller %}
+        <div class="badge badge-warning badge-topseller">
+            <span>{{ "listing.boxLabelTopseller"|trans|sw_sanitize }}</span>
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block component_product_badges_new %}
+    {% if product.isNew %}
+        <div class="badge badge-success badge-new">
+            <span>{{ "listing.boxLabelNew"|trans|sw_sanitize }}</span>
+        </div>
+    {% endif %}
+    {% if product.shippingFree %}
+        <div class="badge badge-success badge-freeshipp">
+            <span>{{ 'ssik.listing.boxLabelFreeShipp'|trans|sw_sanitize }}</span>
+        </div>
+        {# {{ "listing.boxLabelNew"|trans|sw_sanitize }} #}
+    {% endif %}
+{% endblock %}

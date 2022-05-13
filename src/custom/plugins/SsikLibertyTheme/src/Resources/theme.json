@@ -1,0 +1,1404 @@
+{
+  "name": "SsikLibertyTheme",
+  "author": "wonderthemes.de",
+  "description": {
+    "en-GB": "Liberty Theme - free template for Shopware 6",
+    "de-DE": "kostenlose Vorlage für Shopware 6"
+  },
+  "previewMedia": "app/storefront/dist/assets/LibertyTheme-Preview.svg",
+  "views": [
+     "@Storefront",
+     "@Plugins",
+     "@SsikLibertyTheme"
+  ],
+  "style": [
+    "app/storefront/src/scss/overrides.scss",
+    "@Storefront",
+    "app/storefront/src/scss/base.scss"
+  ],
+  "script": [
+    "@Storefront",
+    "app/storefront/dist/storefront/js/fa.all.min.js",
+    "app/storefront/dist/storefront/js/ssik-liberty-theme.js"
+  ],
+  "asset": [
+    "@Storefront",
+    "app/storefront/src/assets"
+  ],
+  "config": {
+    "tabs": {
+      "header": {
+        "label": {
+            "en-GB": "Header",
+            "de-DE": "Header"
+        }
+      },
+      "mainmenu": {
+        "label": {
+            "en-GB": "Menu",
+            "de-DE": "Menü"
+        }
+      },
+      "footer": {
+        "label": {
+            "en-GB": "Footer",
+            "de-DE": "Footer"
+        }
+      },
+      "forms": {
+        "label": {
+            "en-GB": "Forms",
+            "de-DE": "Forms"
+        }
+      },
+      "listing": {
+        "label": {
+            "en-GB": "Product list",
+            "de-DE": "Produktliste"
+        }
+      },
+      "slider": {
+        "label": {
+            "en-GB": "Slider",
+            "de-DE": "Slider"
+        }
+      }
+    },
+    "blocks": {
+      "header": {
+        "header": {
+          "en-GB": "Header",
+          "de-DE": "Header"
+        },
+        "topbar": {
+          "en-GB": "Header Top Bar",
+          "de-DE": "Header Top Bar"
+        },
+        "search": {
+          "en-GB": "Header",
+          "de-DE": "Header"
+        },
+        "announcement-banner": {
+          "en-GB": "Announcement banner",
+          "de-DE": "Ankündigung banner"
+        }
+      },
+      "forms": {
+        "base": {
+          "en-GB": "Forms",
+          "de-DE": "Formular"
+        },
+        "focus": {
+          "en-GB": "Input focus",
+          "de-DE": "Input focus"
+        },
+        "counter": {
+          "en-GB": "Choice of quantity of goods",
+          "de-DE": "Wahl der Warenmenge"
+        },
+        "counteroffcanvas": {
+          "en-GB": "Choice of quantity of goods (Offcanvas)",
+          "de-DE": "Wahl der Warenmenge (Offcanvas)"
+        }
+      },
+      "mainmenu": {
+        "nav": {
+          "en-GB": "Main navigation",
+          "de-DE": "Hauptnavigation"
+        },
+        "flyout": {
+          "en-GB": "Drop-down menu",
+          "de-DE": "Dropdown-Menü"
+        },
+        "sticky": {
+          "en-GB": "Sticky menu",
+          "de-DE": "Sticky Menü"
+        }
+      },
+      "listing": {
+        "listing": {
+          "en-GB": "Product list",
+          "de-DE": "Produktliste"
+        },
+        "breadcrumb": {
+          "en-GB": "Breadcrumbs",
+          "de-DE": "Brotnavi"
+        },
+        "sidebar": {
+          "en-GB": "Sidebar",
+          "de-DE": "Sidebar"
+        },
+        "filter": {
+          "en-GB": "Filter",
+          "de-DE": "Filter"
+        },
+        "pagination": {
+          "en-GB": "Pagination",
+          "de-DE": "Seitennummerierung"
+        }
+      },
+      "footer": {
+        "footer": {
+          "en-GB": "Footer",
+          "de-DE": "Footer"
+        },
+        "newsletter": {
+          "en-GB": "Newsletter",
+          "de-DE": "Newsletter"
+        },
+        "footer-social": {
+          "en-GB": "Social links",
+          "de-DE": "Soziale Links"
+        }
+      },
+      "slider": {
+        "nav": {
+          "en-GB": "Nav (dots)",
+          "de-DE": "Nav (dots)"
+        }
+      }
+    },
+    "fields": {
+      "sw-color-brand-primary": {
+        "label": {
+          "en-GB": "Primary colour",
+          "de-DE": "Primärfarbe"
+        },
+        "type": "color",
+        "value": "#131313",
+        "editable": true,
+        "block": "themeColors",
+        "order": 100
+      },
+      "sw-color-brand-secondary": {
+        "label": {
+          "en-GB": "Secondary colour",
+          "de-DE": "Sekundärfarbe"
+        },
+        "type": "color",
+        "value": "#dbdbdb",
+        "editable": true,
+        "block": "themeColors",
+        "order": 200
+      },
+      "sw-border-color": {
+        "label": {
+          "en-GB": "Border",
+          "de-DE": "Rahmen"
+        },
+        "type": "color",
+        "value": "#ECECE7",
+        "editable": true,
+        "block": "themeColors",
+        "order": 300
+      },
+      "theme-base-link-color": {
+        "label": {
+          "en-GB": "Link Color",
+          "de-DE": "Linkfarbe"
+        },
+        "type": "color",
+        "value": "#484848",
+        "editable": true,
+        "block": "themeColors",
+        "order": 400
+      },
+      "theme-base-link-hover-color": {
+        "label": {
+          "en-GB": "Link Color hover",
+          "de-DE": "Linkfarbe aktiv"
+        },
+        "type": "color",
+        "value": "#722ED1",
+        "editable": true,
+        "block": "themeColors",
+        "order": 500
+      },
+      "sw-background-color": {
+        "label": {
+          "en-GB": "Background",
+          "de-DE": "Hintergrund"
+        },
+        "type": "color",
+        "value": "#FFFFFF",
+        "editable": true,
+        "block": "themeColors",
+        "order": 400
+      },
+      "sw-font-family-base": {
+        "label": {
+          "en-GB": "Fonttype text",
+          "de-DE": "Schriftart Text"
+        },
+        "type": "text",
+        "value": "'Ubuntu', sans-serif",
+        "editable": true,
+        "block": "typography",
+        "order": 100,
+        "custom": {
+          "componentName": "sw-single-select",
+          "options": [
+            {
+              "value": "'Ubuntu', sans-serif",
+              "label": {
+                "en-GB": "Ubuntu",
+                "de-DE": "Ubuntu"
+              }
+            },
+            {
+              "value": "'Lato', sans-serif",
+              "label": {
+                "en-GB": "Lato",
+                "de-DE": "Lato"
+              }
+            }
+          ]
+        }
+      },
+      "sw-text-color": {
+        "label": {
+          "en-GB": "Text colour",
+          "de-DE": "Textfarbe"
+        },
+        "type": "color",
+        "value": "#131313",
+        "editable": true,
+        "block": "typography",
+        "order": 200
+      },
+      "sw-color-buy-button": {
+        "label": {
+          "en-GB": "Buy button",
+          "de-DE": "Kaufen-Button"
+        },
+        "type": "color",
+        "value": "#722ED1",
+        "editable": true,
+        "block": "eCommerce",
+        "order": 200
+      },
+      "sw-color-buy-button-text": {
+        "label": {
+          "en-GB": "Buy button text",
+          "de-DE": "Kaufen-Button Text"
+        },
+        "type": "color",
+        "value": "#fff",
+        "editable": true,
+        "block": "eCommerce",
+        "order": 300
+      },
+      "sw-headline-color": {
+        "label": {
+          "en-GB": "Headline colour",
+          "de-DE": "Überschriftfarbe"
+        },
+        "type": "color",
+        "value": "#484848",
+        "editable": true,
+        "block": "typography",
+        "order": 400
+      },
+      "theme-base-font-size": {
+        "label": {
+          "en-GB": "Base text size",
+          "de-DE": "Größe des Basistextes"
+        },
+        "type": "text",
+        "value": "16px",
+        "editable": true,
+        "block": "typography",
+        "order": 200
+      },
+      "sw-font-family-headline": {
+        "label": {
+          "en-GB": "Fonttype headline",
+          "de-DE": "Schriftart Überschrift"
+        },
+        "type": "text",
+        "value": "'Ubuntu', sans-serif",
+        "editable": true,
+        "block": "typography",
+        "order": 300,
+        "custom": {
+          "componentName": "sw-single-select",
+          "options": [
+            {
+              "value": "'Ubuntu', sans-serif",
+              "label": {
+                "en-GB": "Ubuntu",
+                "de-DE": "Ubuntu"
+              }
+            },
+            {
+              "value": "'Lato', sans-serif",
+              "label": {
+                "en-GB": "Lato",
+                "de-DE": "Lato"
+              }
+            }
+          ]
+        }
+      },
+      
+      "theme-input-bg": {
+        "label": {
+          "en-GB": "Input background",
+          "de-DE": "Textfeld Hintergrund"
+        },
+        "type": "color",
+        "value": "#FFFFFF",
+        "editable": true,
+        "tab": "forms",
+        "block": "base"
+      },
+      "theme-input-font-size": {
+        "label": {
+          "en-GB": "Input font size",
+          "de-DE": "Input Schriftgröße"
+        },
+        "type": "text",
+        "value": "14px",
+        "editable": true,
+        "tab": "forms",
+        "block": "base"
+      },
+      "theme-input-color": {
+        "label": {
+          "en-GB": "Input text colour",
+          "de-DE": "Input Textfarbe"
+        },
+        "type": "color",
+        "value": "#131313",
+        "editable": true,
+        "tab": "forms",
+        "block": "base"
+      },
+      "theme-input-border-color": {
+        "label": {
+          "en-GB": "Input border color",
+          "de-DE": "Input Randfarbe"
+        },
+        "type": "color",
+        "value": "#ECECE7",
+        "editable": true,
+        "tab": "forms",
+        "block": "base"
+      },
+      "theme-input-focus-bg": {
+        "label": {
+          "en-GB": "Input focus background color",
+          "de-DE": "Input aktiv Hintergrundfarbe"
+        },
+        "type": "color",
+        "value": "#FFFFFF",
+        "editable": true,
+        "tab": "forms",
+        "block": "focus"
+      },
+      "theme-input-border-hover-color": {
+        "label": {
+          "en-GB": "Input hover border color",
+          "de-DE": "Input Hover-Rahmenfarbe"
+        },
+        "type": "color",
+        "value": "#722ED1",
+        "editable": true,
+        "tab": "forms",
+        "block": "focus"
+      },
+      "theme-input-focus-color": {
+        "label": {
+          "en-GB": "Input focus text color",
+          "de-DE": "Input aktiv Textfarbe"
+        },
+        "type": "color",
+        "value": "#722ED1",
+        "editable": true,
+        "tab": "forms",
+        "block": "focus"
+      },
+      "theme-input-focus-border-color": {
+        "label": {
+          "en-GB": "Input focus border color",
+          "de-DE": "Input aktiv Rahmenfarbe"
+        },
+        "type": "color",
+        "value": "#722ED1",
+        "editable": true,
+        "tab": "forms",
+        "block": "focus"
+      },
+      
+      "theme-pagination-page-link-bg": {
+        "label": {
+          "en-GB": "Pagination background color",
+          "de-DE": "Seitennummerierung Hintergrundfarbe"
+        },
+        "type": "color",
+        "value": "#FFFFFF",
+        "editable": true,
+        "tab": "listing",
+        "block": "pagination"
+      },
+
+      "theme-pagination-page-link-color": {
+        "label": {
+          "en-GB": "Pagination text color",
+          "de-DE": "Seitennummerierung Textfarbe"
+        },
+        "type": "color",
+        "value": "#333333",
+        "editable": true,
+        "tab": "listing",
+        "block": "pagination"
+      },
+
+      "theme-pagination-page-link-border": {
+        "label": {
+          "en-GB": "Pagination border",
+          "de-DE": "Seitennummerierung Rahmenfarbe"
+        },
+        "type": "color",
+        "value": "#722ED1",
+        "editable": true,
+        "tab": "listing",
+        "block": "pagination"
+      },
+
+      "theme-pagination-page-link-font-size": {
+        "label": {
+          "en-GB": "Pagination text size",
+          "de-DE": "Seitennummerierung Schriftgröße"
+        },
+        "type": "text",
+        "value": "16px",
+        "editable": true,
+        "tab": "listing",
+        "block": "pagination"
+      },
+
+      "theme-filter-panel-item-color": {
+        "label": {
+          "en-GB": "Filter panel item color",
+          "de-DE": "Elementfarbe des Filterfelds"
+        },
+        "type": "color",
+        "value": "#484848",
+        "editable": true,
+        "tab": "listing",
+        "block": "filter"
+      },
+      "theme-filter-panel-item-border-color": {
+        "label": {
+          "en-GB": "Filter panel item border color",
+          "de-DE": "Rahmenfarbe des Filterfelds"
+        },
+        "type": "color",
+        "value": "#dcdce2",
+        "editable": true,
+        "tab": "listing",
+        "block": "filter"
+      },
+      "theme-filter-panel-item-active-color": {
+        "label": {
+          "en-GB": "Filter panel item active color",
+          "de-DE": "Aktive Farbe des Filterfelds"
+        },
+        "type": "color",
+        "value": "#722ED1",
+        "editable": true,
+        "tab": "listing",
+        "block": "filter"
+      },
+      "theme-filter-panel-item-font-size": {
+        "label": {
+          "en-GB": "Filter panel item text size",
+          "de-DE": "Schriftgröße des Filterfelds"
+        },
+        "type": "text",
+        "value": "16px",
+        "editable": true,
+        "tab": "listing",
+        "block": "filter"
+      },
+      "theme-filter-panel-item-toogle-bg": {
+        "label": {
+          "en-GB": "Background",
+          "de-DE": "Hintergrund"
+        },
+        "type": "color",
+        "value": "#EAEBF0",
+        "editable": true,
+        "tab": "listing",
+        "block": "filter"
+      },
+      "theme-filter-panel-item-toogle-icon-color": {
+        "label": {
+          "en-GB": "Icon color",
+          "de-DE": "Symbolfarbe"
+        },
+        "type": "color",
+        "value": "#111111",
+        "editable": true,
+        "tab": "listing",
+        "block": "filter"
+      },
+      "theme-filter-panel-item-toogle-active-bg": {
+        "label": {
+          "en-GB": "Background on mouseover",
+          "de-DE": "Hintergrund bei Mouseover"
+        },
+        "type": "color",
+        "value": "#464646",
+        "editable": true,
+        "tab": "listing",
+        "block": "filter"
+      },
+      "theme-filter-panel-item-toogle-icon-active-color": {
+        "label": {
+          "en-GB": "Icon color on mouseover",
+          "de-DE": "Symbolfarbe beim Mouseover"
+        },
+        "type": "color",
+        "value": "#FFC700",
+        "editable": true,
+        "tab": "listing",
+        "block": "filter"
+      },
+
+      "theme-breadcrumb-page-color": {
+        "label": {
+          "en-GB": "Breadcrumb text color",
+          "de-DE": "Paniermehl Farbe"
+        },
+        "type": "color",
+        "value": "#131313",
+        "editable": true,
+        "tab": "listing",
+        "block": "breadcrumb"
+      },
+      "theme-breadcrumb-link-color": {
+        "label": {
+          "en-GB": "Breadcrumb link color",
+          "de-DE": "Farbe des Breadcrumb-Links"
+        },
+        "type": "color",
+        "value": "#131313",
+        "editable": true,
+        "tab": "listing",
+        "block": "breadcrumb"
+      },
+      "theme-breadcrumb-link-hover-color": {
+        "label": {
+          "en-GB": "Breadcrumb active link color",
+          "de-DE": "Farbe des aktiven Breadcrumb-Links"
+        },
+        "type": "color",
+        "value": "#808183",
+        "editable": true,
+        "tab": "listing",
+        "block": "breadcrumb"
+      },
+      "theme-breadcrumb-link-font-size": {
+        "label": {
+          "en-GB": "Breadcrumb link text size",
+          "de-DE": "Schriftgröße des Breadcrumb-Links"
+        },
+        "type": "text",
+        "value": "12px",
+        "editable": true,
+        "tab": "listing",
+        "block": "breadcrumb"
+      },
+
+      "theme-sidebar-bg": {
+        "label": {
+          "en-GB": "Sidebar background color",
+          "de-DE": "Hintergrundfarbe der Seitenleiste"
+        },
+        "type": "color",
+        "value": "#f5f5fa",
+        "editable": true,
+        "tab": "listing",
+        "block": "sidebar"
+      },
+
+      "theme-category-navigation-link-color": {
+        "label": {
+          "en-GB": "Link color",
+          "de-DE": "Verknüpfungsfarbe"
+        },
+        "type": "color",
+        "value": "#484848",
+        "editable": true,
+        "tab": "listing",
+        "block": "sidebar"
+      },
+
+      "theme-category-navigation-link-border": {
+        "label": {
+          "en-GB": "Border color",
+          "de-DE": "Rahmenfarbe"
+        },
+        "type": "color",
+        "value": "#DDDDE2",
+        "editable": true,
+        "tab": "listing",
+        "block": "sidebar"
+      },
+
+    
+      "theme-category-navigation-link-color-hover": {
+        "label": {
+          "en-GB": "Link color on mouseover",
+          "de-DE": "Link beim Mouseover"
+        },
+        "type": "color",
+        "value": "#722ED1",
+        "editable": true,
+        "tab": "listing",
+        "block": "sidebar"
+      },
+
+      "theme-category-navigation-link-font-size": {
+        "label": {
+          "en-GB": "Link text size",
+          "de-DE": "Textgröße des Links"
+        },
+        "type": "text",
+        "value": "14px",
+        "editable": true,
+        "tab": "listing",
+        "block": "sidebar"
+      },
+
+      "theme-main-navigation-bg": {
+        "label": {
+          "en-GB": "Main menu background color",
+          "de-DE": "Hintergrundfarbe des Hauptmenüs"
+        },
+        "type": "color",
+        "value": "#F4F3F7",
+        "editable": true,
+        "tab": "mainmenu",
+        "block": "nav"
+      },
+      "theme-main-navigation-item-hover-bg": {
+        "label": {
+          "en-GB": "Main menu active item background color",
+          "de-DE": "Hintergrundfarbe des aktiven Elements im Hauptmenü"
+        },
+        "type": "color",
+        "value": "#E5EFFE",
+        "editable": true,
+        "tab": "mainmenu",
+        "block": "nav"
+      },
+      "theme-main-navigation-item-hover-color": {
+        "label": {
+          "en-GB": "Main menu item hover text color",
+          "de-DE": "Hauptmenüpunkt-Hover-Textfarbe"
+        },
+        "type": "color",
+        "value": "#722ED1",
+        "editable": true,
+        "tab": "mainmenu",
+        "block": "nav"
+      },
+      "theme-main-navigation-item-hover-border": {
+        "label": {
+          "en-GB": "Main menu item hover border color",
+          "de-DE": "Hauptmenüpunkt Hover-Rahmenfarbe"
+        },
+        "type": "color",
+        "value": "#722ED1",
+        "editable": true,
+        "tab": "mainmenu",
+        "block": "nav"
+      },
+      "theme-main-navigation-font-size": {
+        "label": {
+          "en-GB": "Main menu item text size",
+          "de-DE": "Schriftgröße des Hauptmenüpunkts"
+        },
+        "type": "text",
+        "value": "16px",
+        "editable": true,
+        "tab": "mainmenu",
+        "block": "nav"
+      },
+      "theme-main-navigation-color-text": {
+        "label": {
+          "en-GB": "Main menu item color text",
+          "de-DE": "Hauptmenüpunkt Farbtext"
+        },
+        "type": "color",
+        "value": "#484848",
+        "editable": true,
+        "tab": "mainmenu",
+        "block": "nav"
+      },
+
+      "theme-main-navigation-home-link-hover-color": {
+        "label": {
+          "en-GB": "Home link hover color",
+          "de-DE": "Hover-Farbe für den Home-Link"
+        },
+        "type": "color",
+        "value": "#722ED1",
+        "editable": true,
+        "tab": "mainmenu",
+        "block": "nav"
+      },
+      
+      "theme-navigation-flyout-bg": {
+        "label": {
+          "en-GB": "Main dropdown menu background color",
+          "de-DE": "Hintergrundfarbe des Haupt-Dropdown-Menüs"
+        },
+        "type": "color",
+        "value": "#FFFFFF",
+        "editable": true,
+        "tab": "mainmenu",
+        "block": "flyout"
+      },
+
+      "theme-navigation-flyout-link-color": {
+        "label": {
+          "en-GB": "Main dropdown menu link color",
+          "de-DE": "Farbe des Haupt-Dropdown-Menüs"
+        },
+        "type": "color",
+        "value": "#484848",
+        "editable": true,
+        "tab": "mainmenu",
+        "block": "flyout"
+      },
+
+      "theme-navigation-flyout-link-hover-color": {
+        "label": {
+          "en-GB": "Main dropdown menu link active color",
+          "de-DE": "Aktive Farbe des Haupt-Dropdown-Menüs"
+        },
+        "type": "color",
+        "value": "#722ED1",
+        "editable": true,
+        "tab": "mainmenu",
+        "block": "flyout"
+      },
+      "theme-navigation-flyout-link-font-size": {
+        "label": {
+          "en-GB": "Main dropdown menu link text size",
+          "de-DE": "Schriftgröße des Haupt-Dropdown-Menüs"
+        },
+        "type": "text",
+        "value": "14px",
+        "editable": true,
+        "tab": "mainmenu",
+        "block": "flyout"
+      },
+
+      "theme-navigation-flyout-category-link-font-size": {
+        "label": {
+          "en-GB": "Main dropdown menu category text size",
+          "de-DE": "Schriftgröße der Haupt-Dropdown-Menükategorie"
+        },
+        "type": "text",
+        "value": "16px",
+        "editable": true,
+        "tab": "mainmenu",
+        "block": "flyout"
+      },
+
+
+      "theme-sticky-navigation-bg": {
+        "label": {
+          "en-GB": "Sticky menu background color",
+          "de-DE": "Hintergrundfarbe des Hauptmenüs"
+        },
+        "type": "color",
+        "value": "#F4F3F7",
+        "editable": true,
+        "tab": "mainmenu",
+        "block": "sticky"
+      },
+      "theme-sticky-navigation-item-hover-bg": {
+        "label": {
+          "en-GB": "Sticky menu active item background color",
+          "de-DE": "Hintergrundfarbe des aktiven Elements im Hauptmenü"
+        },
+        "type": "color",
+        "value": "#E5EFFE",
+        "editable": true,
+        "tab": "mainmenu",
+        "block": "sticky"
+      },
+      "theme-sticky-navigation-item-hover-color": {
+        "label": {
+          "en-GB": "Sticky menu item hover text color",
+          "de-DE": "Hauptmenüpunkt-Hover-Textfarbe"
+        },
+        "type": "color",
+        "value": "#722ED1",
+        "editable": true,
+        "tab": "mainmenu",
+        "block": "sticky"
+      },
+      "theme-sticky-navigation-item-hover-border": {
+        "label": {
+          "en-GB": "Sticky menu item hover border color",
+          "de-DE": "Hauptmenüpunkt Hover-Rahmenfarbe"
+        },
+        "type": "color",
+        "value": "#722ED1",
+        "editable": true,
+        "tab": "mainmenu",
+        "block": "sticky"
+      },
+      "theme-sticky-navigation-font-size": {
+        "label": {
+          "en-GB": "Sticky menu item text size",
+          "de-DE": "Schriftgröße des Hauptmenüpunkts"
+        },
+        "type": "text",
+        "value": "16px",
+        "editable": true,
+        "tab": "mainmenu",
+        "block": "sticky"
+      },
+      "theme-sticky-navigation-color-text": {
+        "label": {
+          "en-GB": "Sticky menu item color text",
+          "de-DE": "Hauptmenüpunkt Farbtext"
+        },
+        "type": "color",
+        "value": "#484848",
+        "editable": true,
+        "tab": "mainmenu",
+        "block": "sticky"
+      },
+
+      "theme-sticky-navigation-home-link-hover-color": {
+        "label": {
+          "en-GB": "Home link hover color",
+          "de-DE": "Hover-Farbe für den Home-Link"
+        },
+        "type": "color",
+        "value": "#722ED1",
+        "editable": true,
+        "tab": "mainmenu",
+        "block": "sticky"
+      },
+
+      "theme-sticky-cart-btn-bg": {
+        "label": {
+          "en-GB": "Button Cart background",
+          "de-DE": "Button Warenkorb Hintergrund"
+        },
+        "type": "color",
+        "value": "#722ED1",
+        "editable": true,
+        "tab": "mainmenu",
+        "block": "sticky"
+      },
+
+      "theme-sticky-cart-btn-color": {
+        "label": {
+          "en-GB": "Button Cart. Text color",
+          "de-DE": "Knopf Warenkorb. Textfarbe"
+        },
+        "type": "color",
+        "value": "#FFFFFF",
+        "editable": true,
+        "tab": "mainmenu",
+        "block": "sticky"
+      },
+
+      "theme-footer-bg": {
+        "label": {
+          "en-GB": "Background",
+          "de-DE": "Hintergrund"
+        },
+        "type": "color",
+        "value": "#f5f5f5",
+        "editable": true,
+        "tab": "footer",
+        "block": "footer"
+      },
+      
+      "theme-footer-link-color": {
+        "label": {
+          "en-GB": "Link color",
+          "de-DE": "Verknüpfungsfarbe"
+        },
+        "type": "color",
+        "value": "#484848",
+        "editable": true,
+        "tab": "footer",
+        "block": "footer"
+      },
+      "theme-footer-link-hover-color": {
+        "label": {
+          "en-GB": "Link color on mouseover",
+          "de-DE": "Link beim Mouseover"
+        },
+        "type": "color",
+        "value": "#722ED1",
+        "editable": true,
+        "tab": "footer",
+        "block": "footer"
+      },
+      "theme-footer-border-color": {
+        "label": {
+          "en-GB": "Border",
+          "de-DE": "Rahmen"
+        },
+        "type": "color",
+        "value": "#EBEBEB",
+        "editable": true,
+        "tab": "footer",
+        "block": "footer"
+      },
+      "theme-footer-column-headline-color": {
+        "label": {
+          "en-GB": "Header color",
+          "de-DE": "Kopfzeilenfarbe"
+        },
+        "type": "color",
+        "value": "#111111",
+        "editable": true,
+        "tab": "footer",
+        "block": "footer"
+      },
+      "theme-footer-column-headline-font-size": {
+        "label": {
+          "en-GB": "Header text size",
+          "de-DE": "Textgröße der Kopfzeile"
+        },
+        "type": "text",
+        "value": "20px",
+        "editable": true,
+        "tab": "footer",
+        "block": "footer"
+      },
+      "theme-footer-contact-link-color": {
+        "label": {
+          "en-GB": "Contact link color",
+          "de-DE": "Farbe des Kontaktlinks"
+        },
+        "type": "color",
+        "value": "#131313",
+        "editable": true,
+        "tab": "footer",
+        "block": "footer"
+      },
+      "theme-footer-contact-link-hover-color": {
+        "label": {
+          "en-GB": "Contact link color on mouseover",
+          "de-DE": "Kontaktlink beim Mouseover"
+        },
+        "type": "color",
+        "value": "#722ED1",
+        "editable": true,
+        "tab": "footer",
+        "block": "footer"
+      },
+      "theme-footer-social-icon-color": {
+        "label": {
+          "en-GB": "Social media icons color",
+          "de-DE": "Farbe der Symbole für soziale Medien"
+        },
+        "type": "color",
+        "value": "#FFFFFF",
+        "editable": true,
+        "tab": "footer",
+        "block": "footer-social"
+      },
+      "theme-footer-social-icon-bg": {
+        "label": {
+          "en-GB": "Social media icons background",
+          "de-DE": "Hintergrund der Social-Media-Symbole"
+        },
+        "type": "color",
+        "value": "#404040",
+        "editable": true,
+        "tab": "footer",
+        "block": "footer-social"
+      },
+      "theme-footer-social-icon-border": {
+        "label": {
+          "en-GB": "Social media icons border color",
+          "de-DE": "Rahmenfarbe der Social Media Icons"
+        },
+        "type": "color",
+        "value": "#404040",
+        "editable": true,
+        "tab": "footer",
+        "block": "footer-social"
+      },
+      "theme-footer-social-icon-hover-color": {
+        "label": {
+          "en-GB": "Social media icons color on mouseover",
+          "de-DE": "Symbole beim Mouseover"
+        },
+        "type": "color",
+        "value": "#722ED1",
+        "editable": true,
+        "tab": "footer",
+        "block": "footer-social"
+      },
+      "theme-footer-social-icon-bg-hover": {
+        "label": {
+          "en-GB": "Social media icons background on mouseover",
+          "de-DE": "Social Media Icons Hintergrund bei Mouseover"
+        },
+        "type": "color",
+        "value": "#FFFFFF",
+        "editable": true,
+        "tab": "footer",
+        "block": "footer-social"
+      },
+      "theme-footer-social-icon-border-hover": {
+        "label": {
+          "en-GB": "Social media icons border color on mouseover",
+          "de-DE": "Rahmenfarbe von Social-Media-Symbolen beim Mouseover"
+        },
+        "type": "color",
+        "value": "#EBEBEB",
+        "editable": true,
+        "tab": "footer",
+        "block": "footer-social"
+      },
+
+      "theme-newsletter-form-input-bg": {
+        "label": {
+          "en-GB": "Input Background",
+          "de-DE": "Input-Hintergrund"
+        },
+        "type": "color",
+        "value": "#FFFFFF",
+        "editable": true,
+        "tab": "footer",
+        "block": "newsletter"
+      },
+
+      "theme-newsletter-form-input-border": {
+        "label": {
+          "en-GB": "Input border",
+          "de-DE": "Input-Rahmen"
+        },
+        "type": "color",
+        "value": "#ECECE7",
+        "editable": true,
+        "tab": "footer",
+        "block": "newsletter"
+      },
+
+      "theme-newsletter-form-input-color": {
+        "label": {
+          "en-GB": "Text Color",
+          "de-DE": "Textfarbe"
+        },
+        "type": "color",
+        "value": "#555555",
+        "editable": true,
+        "tab": "footer",
+        "block": "newsletter"
+      },
+      "theme-newsletter-form-input-font-size": {
+        "label": {
+          "en-GB": "Font Size",
+          "de-DE": "Schriftgröße"
+        },
+        "type": "text",
+        "value": "14px",
+        "editable": true,
+        "tab": "footer",
+        "block": "newsletter"
+      },
+      "theme-newsletter-form-submit-bg": {
+        "label": {
+          "en-GB": "Button background",
+          "de-DE": "Button-Hintergrund"
+        },
+        "type": "color",
+        "value": "#404040",
+        "editable": true,
+        "tab": "footer",
+        "block": "newsletter"
+      },
+      "theme-newsletter-form-submit-color": {
+        "label": {
+          "en-GB": "Button text color",
+          "de-DE": "Textfarbe der Schaltfläche"
+        },
+        "type": "color",
+        "value": "#FFFFFF",
+        "editable": true,
+        "tab": "footer",
+        "block": "newsletter"
+      },
+      "theme-newsletter-form-submit-font-size": {
+        "label": {
+          "en-GB": "Button font size",
+          "de-DE": "Schriftgröße für Schaltflächen"
+        },
+        "type": "text",
+        "value": "16px",
+        "editable": true,
+        "tab": "footer",
+        "block": "newsletter"
+      },
+
+      "theme-quantity-counter-bg": {
+        "label": {
+          "en-GB": "Background",
+          "de-DE": "Hintergrund"
+        },
+        "type": "color",
+        "value": "#FFFFFF",
+        "editable": true,
+        "tab": "forms",
+        "block": "counter"
+      },
+
+      "theme-quantity-counter-font-size": {
+        "label": {
+          "en-GB": "Font size",
+          "de-DE": "Schriftgröße"
+        },
+        "type": "text",
+        "value": "18px",
+        "editable": true,
+        "tab": "forms",
+        "block": "counter"
+      },
+
+      "theme-quantity-counter-border": {
+        "label": {
+          "en-GB": "Border",
+          "de-DE": "Rahmen"
+        },
+        "type": "color",
+        "value": "#ECECE7",
+        "editable": true,
+        "tab": "forms",
+        "block": "counter"
+      },
+
+      "theme-quantity-counter-btn-bg": {
+        "label": {
+          "en-GB": "Button background",
+          "de-DE": "Button-Hintergrund"
+        },
+        "type": "color",
+        "value": "#F9F9F9",
+        "editable": true,
+        "tab": "forms",
+        "block": "counter"
+      },
+
+      "theme-quantity-offcanvas-counter-bg": {
+        "label": {
+          "en-GB": "Background",
+          "de-DE": "Hintergrund"
+        },
+        "type": "color",
+        "value": "#FFFFFF",
+        "editable": true,
+        "tab": "forms",
+        "block": "counteroffcanvas"
+      },
+
+      "theme-quantity-offcanvas-counter-font-size": {
+        "label": {
+          "en-GB": "Text size",
+          "de-DE": "Textgröße"
+        },
+        "type": "text",
+        "value": "14px",
+        "editable": true,
+        "tab": "forms",
+        "block": "counteroffcanvas"
+      },
+
+      "theme-header-bg": {
+        "label": {
+          "en-GB": "Header background",
+          "de-DE": "Header Hintergrund"
+        },
+        "type": "color",
+        "value": "#FFFFFF",
+        "editable": true,
+        "tab": "header",
+        "block": "header"
+      },
+
+      "theme-header-border": {
+        "label": {
+          "en-GB": "Header border color",
+          "de-DE": "Rahmen"
+        },
+        "type": "color",
+        "value": "#ECECE7",
+        "editable": true,
+        "tab": "header",
+        "block": "header"
+      },
+
+      "theme-header-top-bar-bg": {
+        "label": {
+          "en-GB": "Background",
+          "de-DE": "Hintergrund"
+        },
+        "type": "color",
+        "value": "#FFFFFF",
+        "editable": true,
+        "tab": "header",
+        "block": "topbar"
+      },
+
+      "theme-header-top-bar-border": {
+        "label": {
+          "en-GB": "Border color",
+          "de-DE": "Rahmen"
+        },
+        "type": "color",
+        "value": "#F4F3F7",
+        "editable": true,
+        "tab": "header",
+        "block": "topbar"
+      },
+
+      "theme-header-search-input-font-size": {
+        "label": {
+          "en-GB": "Text size (Font size)",
+          "de-DE": "Textgröße (Schriftgröße)"
+        },
+        "type": "text",
+        "value": "12px",
+        "editable": true,
+        "tab": "header",
+        "block": "search"
+      },
+      "theme-header-search-input-color": {
+        "label": {
+          "en-GB": "Text color",
+          "de-DE": "Textfarbe"
+        },
+        "type": "color",
+        "value": "#505050",
+        "editable": true,
+        "tab": "header",
+        "block": "search"
+      },
+      "theme-header-search-input-bg": {
+        "label": {
+          "en-GB": "Search box background",
+          "de-DE": "Hintergrundfarbe des Suchfelds"
+        },
+        "type": "color",
+        "value": "#FFFFFF",
+        "editable": true,
+        "tab": "header",
+        "block": "search"
+      },
+
+      "theme-header-search-input-border": {
+        "label": {
+          "en-GB": "Search box border color",
+          "de-DE": "Rahmenfarbe des Suchfelds"
+        },
+        "type": "color",
+        "value": "#ECECEC",
+        "editable": true,
+        "tab": "header",
+        "block": "search"
+      },
+
+      "theme-header-action-btn-icon-color": {
+        "label": {
+          "en-GB": "Icon color",
+          "de-DE": "Symbolfarbe"
+        },
+        "type": "color",
+        "value": "#131313",
+        "editable": true,
+        "tab": "header",
+        "block": "header"
+      },
+
+      "theme-header-action-btn-icon-hover-color": {
+        "label": {
+          "en-GB": "Icon on mouseover",
+          "de-DE": "Icon beim Mouseover"
+        },
+        "type": "color",
+        "value": "#F93C00",
+        "editable": true,
+        "tab": "header",
+        "block": "header"
+      },
+
+      "theme-announcement-banner-bg": {
+        "label": {
+          "en-GB": "Background",
+          "de-DE": "Hintergrund"
+        },
+        "type": "color",
+        "value": "#f4f3f7",
+        "editable": true,
+        "tab": "header",
+        "block": "announcement-banner"
+      },
+
+      "theme-announcement-banner-color": {
+        "label": {
+          "en-GB": "Text color",
+          "de-DE": "Textfarbe"
+        },
+        "type": "color",
+        "value": "#722ED1",
+        "editable": true,
+        "tab": "header",
+        "block": "announcement-banner"
+      },
+
+      "theme-announcement-banner-font-size": {
+        "label": {
+          "en-GB": "Text size (Font size)",
+          "de-DE": "Textgröße (Schriftgröße)"
+        },
+        "type": "text",
+        "value": "16px",
+        "editable": true,
+        "tab": "header",
+        "block": "announcement-banner"
+      },
+
+      "theme-base-slider-dots-bg": {
+        "label": {
+          "en-GB": "Slider dots background",
+          "de-DE": "Slider Button-Hintergrund"
+        },
+        "type": "color",
+        "value": "#722ED1",
+        "editable": true,
+        "tab": "slider",
+        "block": "nav"
+      },
+      "theme-base-slider-dots-hover-bg": {
+        "label": {
+          "en-GB": "Slider dots hover background",
+          "de-DE": "Slider Button-Hintergrund beim Mouseover"
+        },
+        "type": "color",
+        "value": "#D5D5D5",
+        "editable": true,
+        "tab": "slider",
+        "block": "nav"
+      }
+    }
+  }
+}

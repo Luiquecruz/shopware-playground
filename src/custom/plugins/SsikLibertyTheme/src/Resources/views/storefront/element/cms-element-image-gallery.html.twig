@@ -1,0 +1,7 @@
+{% sw_extends '@Storefront/storefront/element/cms-element-image-gallery.html.twig' %}
+
+{% block element_image_gallery_slider_dots_button %}
+    <button class="base-slider-dot" aria-label="next"
+            data-nav-dot="{{ loop.index }}"
+            tabindex="-1">next</button>
+{% endblock %}

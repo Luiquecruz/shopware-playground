@@ -1,0 +1,41 @@
+.category-navigation {
+    &-link {
+        position: relative;
+        padding: 1.25rem 0;
+        line-height: 1;
+        color: $ssik-category-navigation-link-color;
+
+        &.is-active, &:hover {
+            color: $ssik-category-navigation-link-color-hover;
+        }
+
+        .icon {
+            position: absolute;
+            top: 1.75rem;
+            right: 0;
+        }
+    }
+    &.level-0 > &-entry {
+        border-bottom: 1px solid $ssik-category-navigation-link-border;
+    }
+
+    &.level-0 > &-entry > &-link {
+        font-weight: 700;
+    }
+
+    &.level-0 > &-entry.is-dropdown > &-link.is-active {
+        padding-bottom: 0;
+    }
+
+    &.level-1 > &-entry > &-link {
+        padding: .5rem 0;
+        .icon {
+            top: 0.75rem;
+        }
+    }
+
+    .category-navigation {
+        padding-left: 1rem;
+        padding-bottom: .5rem;
+    }
+}

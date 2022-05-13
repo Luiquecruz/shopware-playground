@@ -1,0 +1,42 @@
+{% block ssik_newsletter_form %}
+    <div class="newsletter-form">
+        <div class="cms-block">
+            <div class="cms-element-form">
+                {% block ssik_newsletter_form_inner %}
+                    <form action="{{ path('frontend.form.newsletter.register.handle') }}"
+                        method="post"
+                        data-form-csrf-handler="true"
+                        data-form-validation="true">
+
+                        {{ sw_csrf('frontend.form.newsletter.register.handle') }}
+
+                        {% set formViolations = app.request.get('errors') %}
+
+                        <input type="hidden" name="option" value="subscribe"/>
+                        <input type="submit" class="submit--hidden d-none">
+
+                        <div class="newsletter-form-body">
+                            <div class="">
+                                
+                                <input name="email"
+                                    type="email"
+                                    id="footerNewsletterMail"
+                                    placeholder="{{ "account.personalMailPlaceholder"|trans }}{{ "general.required"|trans }}"
+                                    required="required"
+                                    value="{{ data.get('email') }}"
+                                    class="form-control newsletter-form-input {% if formViolations.getViolations('/email') %} is-invalid{% endif %}"
+                                    aria-describedby="footerNewsletterMailHelp"/>
+                            </div>
+                            <small id="footerNewsletterMailHelp" class="form-text">{{ 'ssik.newsletter.helptext'|trans|sw_sanitize }}</small>
+                        </div>
+                        <div id="newsletter-captcha" class="collapse">
+                            {% sw_include '@Storefront/storefront/component/captcha/base.html.twig' with { additionalClass : 'newsletter-form-captcha'} %}
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block newsletter-form-submit">{{ 'ssik.newsletter.submit'|trans|sw_sanitize }}</button>
+                    </form>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

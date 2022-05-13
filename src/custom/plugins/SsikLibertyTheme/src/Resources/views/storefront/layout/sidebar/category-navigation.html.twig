@@ -1,0 +1,43 @@
+{% sw_extends '@Storefront/storefront/layout/sidebar/category-navigation.html.twig' %}
+
+
+{% block layout_navigation_categories_list %}
+    {% if level == 0 %}
+        {% if not isBlockHeader %}
+            {% set title = "general.categories"|trans|sw_sanitize %}
+            <div class="section-title in-sideber">{{ title }}</div>
+        {% endif %}
+    {% endif %}    
+    {{ parent() }}
+{% endblock %}
+
+{% block layout_navigation_categories_link_children_name %}
+    {{ parent() }}
+    {% if item.children|length > 0 %} 
+        {% sw_icon 'icon-arrow' style { 'pack':'custom', 'namespace': 'SsikLibertyTheme', 'class':'ssik xxs' } %}
+    {% endif %}
+{% endblock %}
+
+{% block layout_navigation_categories_link_name %}
+    {{ parent() }}
+    {% if item.children|length > 0 %} 
+        {% sw_icon 'icon-arrow' style { 'pack':'custom', 'namespace': 'SsikLibertyTheme', 'class':'ssik xxs' } %}
+    {% endif %}
+{% endblock %}
+
+{% block layout_navigation_categories_list_entry %}
+    <li class="category-navigation-entry {% if item.children|length > 0 %}is-dropdown{% endif %}">
+        {% if (item.category.id in activeResult.id) or (item.category.id in activeResult.path) %}
+            {% block layout_navigation_categories_link_children %}
+                {{parent()}}
+            {% endblock %}
+            {% block layout_navigation_categories_recoursion %}
+                {{parent()}}
+            {% endblock %}
+        {% else %}
+            {% block layout_navigation_categories_link %}
+                {{parent()}}
+            {% endblock %}
+        {% endif %}
+    </li>
+{% endblock %}

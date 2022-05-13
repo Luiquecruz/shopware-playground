@@ -1,0 +1,146 @@
+{% sw_extends '@Storefront/storefront/layout/footer/footer.html.twig' %}
+
+{% block layout_footer_navigation_hotline %}
+    <div class="col-12 col-md-6 col-lg-3 footer-column js-footer-column">
+        {% block layout_footer_navigation_hotline_headline %}
+            {{parent()}}
+        {% endblock %}
+
+        {% block layout_footer_navigation_hotline_content %}
+            <div id="collapseFooterHotline"
+                    class="footer-column-content collapse js-footer-column-content footer-contact"
+                    aria-labelledby="collapseFooterHotlineTitle">
+                <div class="footer-column-content-inner">
+                    <p class="footer-contact-hotline">
+                        {{ 'footer.serviceHotline'|trans|sw_sanitize }}
+                    </p>
+                </div>
+                <div class="footer-contact-form">
+                    {{ 'footer.serviceContactLink'|trans({
+                        '%url%': path('frontend.cms.page', { id: config('core.basicInformation.contactPage') })
+                    })|raw }}
+                </div>
+                <div class="social-icons">
+                    {% if config('SsikLibertyTheme.config.youtube') %}
+                        <a href="{{ config('SsikLibertyTheme.config.youtube') }}" target="_blank" rel="noopener" title="youtube" aria-label="Youtube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    {% endif %}
+                    {% if config('SsikLibertyTheme.config.facebook') %}
+                        <a href="{{ config('SsikLibertyTheme.config.facebook') }}" target="_blank" rel="noopener" title="facebook" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    {% endif %}
+                    {% if config('SsikLibertyTheme.config.twitter') %}
+                        <a href="{{ config('SsikLibertyTheme.config.twitter') }}" target="_blank" rel="noopener" title="twitter" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    {% endif %}
+                    {% if config('SsikLibertyTheme.config.instagram') %}
+                        <a href="{{ config('SsikLibertyTheme.config.instagram') }}" target="_blank" rel="noopener" title="instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    {% endif %}
+                    {% if config('SsikLibertyTheme.config.whatsapp') %}
+                        <a href="{{ config('SsikLibertyTheme.config.whatsapp') }}" target="_blank" rel="noopener" title="whatsapp" aria-label="Whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    {% endif %}
+                    {% if config('SsikLibertyTheme.config.pinterest') %}
+                        <a href="{{ config('SsikLibertyTheme.config.pinterest') }}" target="_blank" rel="noopener" title="pinterest" aria-label="Pinterest">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                    {% endif %}
+                    {% if config('SsikLibertyTheme.config.tiktok') %}
+                        <a href="{{ config('SsikLibertyTheme.config.tiktok') }}" target="_blank" rel="noopener" title="tiktok" aria-label="Tiktok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block layout_footer_navigation_column %}
+    <div class="col-12 col-md-6 col-lg-3 footer-column js-footer-column">
+        {% block layout_footer_navigation_information_headline %}
+            <div class="footer-column-headline footer-headline js-collapse-footer-column-trigger"
+                    {{ dataBsTargetAttr }}="#collapseFooterTitle{{ loop.index }}" 
+                    data-target="#collapseFooterTitle{{ loop.index }}"
+                    aria-expanded="true"
+                    aria-controls="collapseFooter{{ loop.index }}">
+
+                {% if root.category.type == 'folder' %}
+                    {{ root.category.translated.name }}
+                {% else %}
+                    <a href="{{ category_url(root.category) }}"
+                        {% if category_linknewtab(root.category) %}target="_blank"{% endif %}
+                        title="{{ root.category.translated.name }}">
+                        {{ root.category.translated.name }}
+                    </a>
+                {% endif %}
+                {% block layout_footer_navigation_information_icons %}
+                    <div class="footer-column-toggle">
+                        <span class="footer-plus-icon">
+                            {% sw_icon 'plus' %}
+                        </span>
+                        <span class="footer-minus-icon">
+                            {% sw_icon 'minus' %}
+                        </span>
+                    </div>
+                {% endblock %}
+            </div>
+        {% endblock %}
+
+        {% block layout_footer_navigation_information_content %}
+            {{parent()}}
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block layout_footer_navigation_columns %}
+    {{ parent() }}
+    <div class="col-12 col-md-6 col-lg-3 footer-column js-footer-column">
+        {% block ssik_layout_footer_subscribe_headline %}
+            <div id="collapseFooterTitleSubscribe" class="footer-column-headline footer-headline js-collapse-footer-column-trigger"
+                data-target="#collapseFooterSubscribe"
+                aria-expanded="true"
+                aria-controls="collapseFooterSubscribe">
+
+                {{ 'ssik.footer.newsletter.title'|trans|sw_sanitize }}
+
+                {% block ssik_layout_footer_subscribe__icons %}
+                    <div class="footer-column-toggle">
+                        <span class="footer-plus-icon">
+                            {% sw_icon 'plus' %}
+                        </span>
+                        <span class="footer-minus-icon">
+                            {% sw_icon 'minus' %}
+                        </span>
+                    </div>
+                {% endblock %}
+            </div>
+        {% endblock %}
+
+        {% block ssik_layout_footer_subscribe_content %}
+            <div id="collapseFooterSubscribe"
+                class="footer-column-content collapse js-footer-column-content"
+                aria-labelledby="collapseFooterTitleSubscribe">
+
+                <div class="footer-column-content-inner">
+                    {% block ssik_layout_footer_subscribe_content_inner %}
+                        {% sw_include '@Storefront/storefront/ssik/newsletter-form.html.twig' %}
+                    {% endblock %}
+                </div>
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block layout_footer_copyright %}
+    <div class="footer-copyright">
+        {{ "ssik.footer.system.copy"|trans|sw_sanitize }}
+    </div>
+{% endblock %}
+

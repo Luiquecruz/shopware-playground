@@ -1,0 +1,41 @@
+{
+  "name": "ssik/liberty-theme",
+  "description": "LibertyTheme for Shopware 6",
+  "version": "v1.6.11",
+  "type": "shopware-platform-plugin",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Wonderthemes.de",
+      "homepage": "https://www.wonderthemes.de/"
+    }
+  ],
+  "require": {
+    "shopware/core": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "SsikLibertyTheme\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "SsikLibertyTheme\\SsikLibertyTheme",
+    "plugin-icon": "src/Resources/config/libertyLogo.png",
+    "label": {
+      "de-DE": "Free Liberty Responsive Theme",
+      "en-GB": "Free Liberty Responsive Theme"
+    },
+    "description": {
+      "de-DE": "Liberty ist ein völlig kostenloses mobiles Thema mit vielen anpassbaren Funktionen ermöglicht es Ihnen, das Aussehen Ihres Shops flexibel anzupassen und in kurzer Zeit Arbeit anzufangen.",
+      "en-GB": "Fully free, mobile theme with lots of customizable functions allows setting the skin of your shop flexibly and starting the work within a short time."
+    },
+    "manufacturerLink": {
+      "de-DE": "https://www.wonderthemes.de/",
+      "en-GB": "https://www.wonderthemes.de/"
+    },
+    "supportLink": {
+      "de-DE": "https://www.wonderthemes.de/",
+      "en-GB": "https://www.wonderthemes.de/"
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{% sw_extends '@Storefront/storefront/page/account/profile/index.html.twig' %}
+
+{% block page_account_profile_personal_welcome_intro %}
+    <div class="account-home-subtitle d-lg-none">
+        {{ "account.profileText"|trans|sw_sanitize }}
+    </div>
+{% endblock %}
+
+{% block page_account_profile_personal_header %}
+{% endblock %}
+
+{% block page_account_profile_personal_action_button_send %}
+    <button type="submit"
+            class="profile-form-submit btn btn-primary btn-block btn-sm"
+            title="{{ "account.profileSaveChanges"|trans|striptags }}">
+        {{ "account.profileSaveChanges"|trans|sw_sanitize }}
+    </button>
+{% endblock %}
+
+{% block page_account_profile_credentials %}
+    <div class="row">
+        <div class="col-md-8">
+            {{ parent() }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block page_account_profile_personal %}
+    <div class="row">
+        <div class="col-md-8">
+            {{ parent() }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block page_account_profile_mail_and_password %}
+    <div class="row">
+        <div class="col-md-8">
+            {{ parent() }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block page_account_profile_mail_collapse %}
+    <div class="card account-email">
+        {% block page_account_profile_mail_form %}
+            {{ parent() }}
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block page_account_profile_password %}
+    <div class="card account-password">
+        {% block page_account_profile_password_form %}
+            {{ parent() }}
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block page_account_profile_credentials_current_mail %}
+    <div class="col-12">
+        {% block page_account_profile_credentials_current_mail_label %}
+            {{ parent() }}
+        {% endblock %}
+    </div>
+{% endblock %}
+
+{% block page_account_profile_credentials_change_mail %}
+{% endblock %}
+
+{% block page_account_profile_credentials_change_password %}
+{% endblock %}

@@ -1,0 +1,31 @@
+.header-new {
+    .header-wrapper {
+        .header-logo-col {
+            flex-grow: unset;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            @include media-breakpoint-up(sm) {
+                width: 50%;
+            }
+        }
+
+        .header-info-col {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50%;
+
+            &-text {
+                line-height: 1.4;
+                a {
+                    font-weight: 700;
+                }
+            }
+
+            @include media-breakpoint-down(md) {
+                display: none;
+            }
+        }
+    }
+}

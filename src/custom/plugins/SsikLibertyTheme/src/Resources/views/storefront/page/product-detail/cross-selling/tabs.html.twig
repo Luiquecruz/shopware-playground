@@ -1,0 +1,24 @@
+{% sw_extends '@Storefront/storefront/page/product-detail/cross-selling/tabs.html.twig' %}
+
+{% block page_product_detail_cross_selling_tabs_navigation_container %}
+    <ul class="nav nav-tabs product-detail-tab-navigation-list"
+        id="product-detail-cross-selling-tabs"
+        role="tablist">
+        {% for item in crossSellings %}
+            {% set id = item.crossSelling.id %}
+            {% if item.crossSelling.active and item.getProducts().elements %}
+                <li class="nav-item" role="tab" aria-controls="cs-{{ id }}-tab-pane" aria-selected="true">
+                    <a class="nav-link product-detail-tab-navigation-link{% if loop.first %} active{% endif %}"
+                        id="cs-{{ id }}-tab"
+                        {{ dataBsToggleAttr }}="tab"
+                        href="#cs-{{ id }}-tab-pane">
+                        {{ item.crossSelling.translated.name }}
+                        <span class="product-detail-tab-navigation-icon">
+                            {% sw_icon 'arrow-medium-right' style {'pack':'solid'} %}
+                        </span>
+                    </a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endblock %}

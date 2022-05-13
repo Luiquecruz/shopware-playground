@@ -1,0 +1,290 @@
+//with aspect-ratio
+.ssik-standard {
+    .product-box {
+        border-radius: 0;
+
+        .card-body {
+            display: inherit;
+            flex-direction: inherit;
+            padding: 0;
+        }
+
+        .product-info {
+
+            text-align: center;
+
+            .product-info-brand {
+                text-align: center;
+                text-transform: uppercase;
+                font-size: 1.2rem;
+                font-weight: 300;
+                color: $ssik-base-color-text;
+                padding-top: .5rem;
+                margin: 0 0 .25rem 0;
+                min-height: 2rem;
+            }
+    
+            .product-rating {
+                margin: .25rem 0;
+                text-align: center;
+            
+                .product-review-rating {
+                    margin-right: unset;
+                }
+
+                .icon-star {
+                    width: 1.2rem;
+                    height: 1.2rem;
+                }
+            }
+    
+            .product-name {
+                text-align: center;
+                color: $ssik-base-link-color;
+                line-height: 1.1;
+                font-weight: 400;
+                font-size: 1.4rem;
+                margin-bottom: 0;
+                height: unset;
+                min-height: 3.2rem;
+                padding: 0 .5rem;
+                &:hover {
+                    color: $ssik-base-link-hover-color;
+                }
+                @include media-breakpoint-up(md) {
+                    font-size: 1.6rem;
+                    min-height: 3.8rem;
+                }
+            }
+    
+            .product-price-info {
+                margin-top: 0;
+                text-align: center;
+
+                .product-price-wrapper {
+                    min-height: 4rem;
+                    .product-price {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+            }
+        }
+
+        .product-image-wrapper-aspect-ratio {
+            position: relative;
+            display: flex;
+            
+            &::before {
+                content: '';
+                display: inline-block;
+                padding-bottom: calc(100% / (var(--aspect-ratio)));
+            }
+
+            &.is-loading {
+                @include is-loading($ssik-is-loading-color);
+            }
+
+            .product-image-wrapper {
+                position: relative;
+                display: block;
+                height: unset;
+                width: 100%;
+                flex-grow: unset;
+                flex-shrink: unset;
+                flex-basis: unset;
+                margin-bottom: 0;
+                overflow: hidden;
+
+                .product-image-link {
+                    position: relative;
+                    display: block;
+
+                    .product-image {
+                        max-height: unset;
+                        height: auto;
+                        object-fit: contain;
+                        font-family:unset;
+                
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        opacity: 1;
+                        transition: all .2s linear;
+                        &.hide {
+                            opacity: 0;
+                        }
+                        &.added {
+                            z-index: 2;
+                        }
+                    }
+                }
+            }
+        }
+
+        .product-variant-characteristics,
+        .product-description,
+        .product-price-info .product-price-unit,
+        .product-price-info .product-cheapest-price {
+            display: none;
+        }
+
+        .product-wishlist {
+            margin-top: 0;    
+            
+            &-not-added {
+                @include media-breakpoint-up(xl) {
+                    opacity: 0;
+                    transition: all .2s linear;
+                }
+            }
+
+            &-action-circle {
+                position: absolute;
+                width: 3rem;
+                height: 3rem;
+                background: #F9F9F9;
+                top: .5rem;
+                right: .5rem;
+                z-index: 101;
+                padding: unset;
+                &::before {
+                    content: none;
+                }
+            }
+
+            .icon-wishlist {
+                width: 1.5rem;
+                height: 1.5rem;
+                svg {
+                    top:2px;
+                }
+            }
+
+            .icon {
+                color:$ssik-header-action-btn-icon-color;
+            }
+            &:hover {
+                .icon {
+                    color:$ssik-header-action-btn-icon-hover-color;
+                }
+            }
+            .icon-wishlist-added {
+                color:$ssik-header-action-btn-icon-hover-color;
+            }
+        }
+
+        .easy-quick-btn {
+            @include media-breakpoint-up(xl) {
+                opacity: 0;
+                transition: all .2s linear;
+            }
+        }
+
+        .product-wishlist + .easy-quick-btn {
+            top: 4rem;
+            right: .5rem;
+        }
+
+        .product-badges {
+            position: absolute;
+            top:0;
+            left: 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            
+            .badge {
+                border-radius: 0;
+                font-weight: normal;
+                padding: .5rem .8rem;
+                width: auto;
+                height: auto;
+                margin: 0;
+                line-height: 1;
+                height: auto;
+                &-new {
+                    background: $ssik-product-badges-new-bg;
+                }
+                &-freeshipp {
+                    background: $ssik-product-badges-freeshipp-bg;
+                }
+                &-topseller {
+                    background: $ssik-product-badges-topseller-bg;
+                }
+                span {
+                    display: block;
+                    line-height: 1;
+                    @include font-size($ssik-product-badges-font-size);
+                    color: $ssik-product-badges-color;
+                }
+            }
+        }
+
+        .product-action {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            .btn {
+                display: inline-block;
+                width: auto;
+                height: auto;
+                font-size: 1rem;
+                padding: .5rem .5rem;
+                line-height: 1;
+                border-radius: .5rem;
+                margin: 0 auto;
+
+                @include media-breakpoint-up(md) {
+                    font-size: 1.4rem;
+                    padding: 1rem 1rem;
+                }
+            }     
+
+            div[data-swag-paypal-express-button="true"] {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }       
+        }
+
+        .product-action-wrapper {
+            @include media-breakpoint-up(lg){
+                order: -1;
+                position: absolute;
+                transition: all .2s linear;
+                top: 0;
+                padding-bottom: 0;
+                .product-action {
+                    margin: 0;
+                }
+            }
+        }
+
+        &:hover {
+            .easy-quick-btn,
+            .product-wishlist-not-added {
+                opacity: 1;
+            }
+            .product-name {
+                color: $ssik-base-link-hover-color;
+            }
+
+            box-shadow: 0 10px 10px -10px rgb(0 0 0 / 35%);
+        }
+    }    
+}
+
+.product-wishlist-info-item {
+    font-size: inherit;
+}
+
+.product-wishlist-remove {
+    .product-wishlist-btn-remove {
+        right: 5px;
+        top: 5px;
+        .icon > svg {
+            top: 6px;
+        }
+    }
+}

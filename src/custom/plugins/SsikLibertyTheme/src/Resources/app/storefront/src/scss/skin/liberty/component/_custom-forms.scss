@@ -1,0 +1,39 @@
+.custom-select {
+    border-radius: 0;
+    border-color: $ssik-input-border-color;
+    @include font-size(14px);
+    &:hover {
+        color: $ssik-input-color;
+        border-color: $ssik-input-border-color;
+    }
+    &:focus {
+        box-shadow: none;
+        border-color: $ssik-input-focus-border-color;
+    }
+}
+
+
+.custom-control-input {
+
+    .custom-control-label:before {
+        background: $ssik-custom-control-label-bg;
+    }
+
+    &:focus ~ .custom-control-label:before {
+        box-shadow: none;
+    }
+
+    &:checked ~ .custom-control-label:before {
+        border-color: $ssik-custom-control-label-active-bg;
+        background-color: $ssik-custom-control-label-active-bg;
+    }
+
+    &:focus:not(:checked) ~ .custom-control-label::before {
+        border-color: $ssik-custom-control-label-active-bg;
+    }
+
+    &:not(:disabled):active ~ .custom-control-label::before {
+        background-color: $ssik-custom-control-label-active-bg;
+        border-color: $ssik-custom-control-label-active-bg;
+    }
+}

@@ -1,0 +1,16 @@
+.card-tabs {
+    .nav-link {
+        color: $ssik-base-color-text;
+        border-bottom: 2px solid $ssik-input-border-color;
+
+        &:hover {
+            border-color: $ssik-input-focus-border-color;
+            color: $ssik-base-color-text;
+        }
+
+        &.active {
+            border-color: $ssik-input-focus-border-color;
+            color: $ssik-base-color-text;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+/*
+Override variable defaults
+==================================================
+This file is used to override default SCSS variables from the Shopware Storefront or Bootstrap.
+
+Because of the !default flags, theme variable overrides have to be declared beforehand.
+https://getbootstrap.com/docs/4.0/getting-started/theming/#variable-defaults
+*/
+$rfs-rem-value: 10;
+$root-font-size: 10px;
+
+$border-radius:0;
+$border-radius-lg: 0;
+$border-radius-sm: 0;
+$btn-border-radius:0;
+
+$modal-backdrop-opacity: 1;
+$modal-backdrop-bg: rgba(#000, 0.75);
+
+$input-btn-padding-y:         1rem;
+$input-btn-padding-x:         1.5rem;
+$input-btn-font-size:         1.3rem;
+
+$custom-control-gutter:                 .6rem;
+$custom-control-indicator-size:         1.6rem;

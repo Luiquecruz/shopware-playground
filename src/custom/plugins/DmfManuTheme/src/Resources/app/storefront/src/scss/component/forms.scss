@@ -1,0 +1,35 @@
+/*
+     _            __
+    | |          / _|
+  __| |_ __ ___ | |_
+ / _` | '_ ` _ \|  _|
+| (_| | | | | | | |
+ \__,_|_| |_| |_|_|
+
+Copyright (c) digital.manufaktur GmbH
+
+Form
+==============================================
+Custom skin styling for bootstrap forms.
+
+*/
+
+.form-label {
+    opacity: .5;
+}
+
+.input-group {
+    input {
+        border-radius: $btn-border-radius;
+    }
+}
+
+@if bool($dmf-account-showpassword-enable) == true {
+    .form-control[type="password"] {
+        &:valid, &.is-valid,
+        &:invalid, &.is-invalid {
+            background-image: none;
+            background: transparent;
+        }
+    }
+}

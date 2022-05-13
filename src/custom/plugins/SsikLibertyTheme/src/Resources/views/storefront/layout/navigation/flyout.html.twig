@@ -1,0 +1,10 @@
+{% sw_extends '@Storefront/storefront/layout/navigation/flyout.html.twig' %}
+
+{% block layout_navigation_flyout_bar_category_link_text %}
+    {{ "general.toCategory"|trans|sw_sanitize }} {{ name }}
+    <i class="icon-show-all fas fa-arrow-right"></i>
+{% endblock %}
+
+{% block layout_utilities_offcanvas_close_icon %}
+    <i class="icon-close far fa-times-circle"></i>
+{% endblock %}

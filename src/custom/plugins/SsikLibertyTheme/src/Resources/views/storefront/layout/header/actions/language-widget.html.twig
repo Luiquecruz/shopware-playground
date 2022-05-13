@@ -1,0 +1,30 @@
+{% sw_extends '@Storefront/storefront/layout/header/actions/language-widget.html.twig' %}
+
+
+{% block layout_header_actions_language_widget_content %}
+    {% set isoCode = page.header.activeLanguage.translationCode.code|lower|split('-') %}
+    {% set country = isoCode[0] %}
+    {% set language = isoCode[1] %}
+
+    <div class="languages-menu dropdown">
+        <button class="btn dropdown-toggle top-bar-nav-btn"
+                type="button"
+                id="languagesDropdown-{{ position }}"
+                {{ dataBsToggleAttr }}="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false">
+            <div class="top-bar-list-icon language-flag country-{{ country }} language-{{ language }}"></div>
+            <span class="top-bar-nav-text">{{ page.header.activeLanguage.name }}</span>
+            {% sw_icon 'icon-arrow' style { 'pack':'custom', 'namespace': 'SsikLibertyTheme', 'class':'ssik xxs' } %}
+        </button>
+        {% block layout_header_actions_languages_widget_form_items %}
+            {{parent()}}
+        {% endblock %}
+    </div>
+
+    <input name="redirectTo" type="hidden" value="{{ app.request.get('_route') }}"/>
+
+    {% for key, value in app.request.attributes.get('_route_params') %}
+        <input name="redirectParameters[{{ key }}]" type="hidden" value="{{ value }}">
+    {% endfor %}
+{% endblock %}

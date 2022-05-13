@@ -1,0 +1,7 @@
+.filter-boolean {
+    border:0;
+    padding-left: 0;
+    &:hover {
+        color: $ssik-custom-control-label-active-bg;
+    }
+}

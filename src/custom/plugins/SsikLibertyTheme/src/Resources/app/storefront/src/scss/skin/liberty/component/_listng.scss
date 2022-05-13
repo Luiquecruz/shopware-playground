@@ -1,0 +1,95 @@
+.ssik-listing {
+    .cms-listing-col {
+        flex: 0 0 100%;
+        max-width: 100%;
+        @include media-breakpoint-up(md) {
+            flex: 0 0 33.3333%;
+            max-width: 33.3333%;
+        }
+
+        @include media-breakpoint-up(xl) {
+            flex: 0 0 25%;
+            max-width: 25%;
+        }
+    }
+}
+
+.ssik-sidebar-content {
+    .cms-section-sidebar-sidebar-content {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0;
+    }
+
+    @include media-breakpoint-up(lg) {
+        &.is-sidebar-nav {
+            background: $ssik-sidebar-bg;
+        }
+    }
+}
+
+.ssik-sidebar-main-content {
+    .cms-section-sidebar-main-content {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0;
+    }
+
+    &.is-sidebar-nav {
+        padding-right: 0;
+
+        @include media-breakpoint-down(md) { 
+            padding-left: 0;
+        }
+
+        .cms-element-product-listing-actions {
+            margin-left: 0;
+            margin-right: 0;
+            .col-md-auto {
+                padding-right: 0;
+                padding-left: 0;
+            }
+    
+            .pagination-nav {
+                display: none;
+            }
+        }
+
+        .cms-element-product-listing .cms-listing-row {
+            margin-right: 0;
+            margin-left: 0;
+        }
+
+        .cms-element-product-listing {
+            .cms-listing-col {
+                padding-right: $cms-element-product-listing-gutter-width / 6;
+                padding-left: $cms-element-product-listing-gutter-width / 6;
+                margin-bottom: 2.5rem;
+
+                // &:nth-child(2n) {
+                //     padding-right: 0;
+                // }
+        
+                @include media-breakpoint-up(md) { 
+                    margin-bottom: 5rem;
+
+                    // &:nth-child(2n) {
+                    //     padding-right: $cms-element-product-listing-gutter-width / 3;
+                    // }
+                }
+
+                // @include media-breakpoint-between(md, lg) {
+                //     &:nth-child(3n) {
+                //         padding-right: 0;
+                //     }
+                // }
+
+                // @include media-breakpoint-only(xl) {
+                //     &:nth-child(4n) {
+                //         padding-right: 0;
+                //     }
+                // }
+            }
+        }
+    }
+}

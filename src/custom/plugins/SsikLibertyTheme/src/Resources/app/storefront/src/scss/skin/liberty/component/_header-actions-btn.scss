@@ -1,0 +1,72 @@
+.header-actions-btn {
+    position: relative;
+    line-height: 1;
+    padding: unset;
+    border: unset;
+    overflow:unset;
+    .icon {
+        color:$ssik-header-action-btn-icon-color;
+    }
+    &:hover {
+        .icon {
+            color:$ssik-header-action-btn-icon-hover-color;
+        }
+    }
+}
+
+.header-actions-btn {
+    padding: 0 .75rem;
+    @include media-breakpoint-up(lg) { 
+        padding: 0 2.5rem;
+    }
+}
+
+.account-menu-btn {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.header-wishlist-btn {
+    padding-left: 0;
+}
+
+.header-cart-btn {
+    padding-right: 0;
+    &-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        .badge.header-cart-badge {
+            right: unset;
+            left: 1rem;
+        }
+        .header-cart-total {
+            font-size: 1.2rem;
+            color: $ssik-base-color-text;
+        }
+    }
+}
+
+
+.header-actions-btn {
+    .badge {
+
+        right: .85rem;
+        top: -.5rem;
+
+        @include media-breakpoint-up(md) { 
+           
+        }
+    }
+}
+
+.header-account-menu {
+    .account-menu-inner {
+        .list-group-item {
+            color:$ssik-base-link-color;
+            &:hover {
+                color:$ssik-base-link-hover-color;
+            }
+        }
+    }
+}

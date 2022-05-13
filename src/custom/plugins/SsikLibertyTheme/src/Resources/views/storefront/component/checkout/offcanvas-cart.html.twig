@@ -1,0 +1,52 @@
+{% sw_extends '@Storefront/storefront/component/checkout/offcanvas-cart.html.twig' %}
+
+
+{% block component_offcanvas_cart %}
+    {% set isCartNotEmpty = (page.cart.lineItems|length > 0) %}
+
+    <div class="offcanvas-cart {% if config('SsikLibertyTheme.config.counterShow') is same as('true') %}is-counter{% endif %} ">
+        {% block component_offcanvas_cart_header %}
+            {{parent()}}
+        {% endblock %}
+
+        {% block component_offcanvas_cart_flashbags %}
+            {{parent()}}
+        {% endblock %}
+
+        {% if isCartNotEmpty %}
+            {% block component_offcanvas_cart_items %}
+                {{parent()}}
+            {% endblock %}
+        {% else %}
+            {% block component_offcanvas_cart_empty %}
+                {{parent()}}
+            {% endblock %}
+        {% endif %}
+
+        {% if isCartNotEmpty %}
+            {% block component_offcanvas_summary %}
+                {{parent()}}
+            {% endblock %}
+        {% endif %}
+
+        {% block component_offcanvas_cart_actions %}
+            {{parent()}}
+        {% endblock %}
+    </div>
+
+    {% block component_offcanvas_cart_hidden_line_items_information %}
+        {{parent()}}
+    {% endblock %}
+{% endblock %}
+
+{% block component_offcanvas_cart_actions_checkout %}
+    {% if isCartNotEmpty %}
+        {{parent()}}
+    {% endif %}
+{% endblock %}
+
+{% block component_offcanvas_cart_actions_cart %}
+    {% if isCartNotEmpty %}
+        {{parent()}}
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,61 @@
+.breadcrumb {
+    padding: 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    &-list {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        color:$ssik-breadcrumb-page-color;
+        @include font-size($ssik-breadcrumb-link-font-size);
+    }
+
+    a {
+        color:$ssik-breadcrumb-link-color;
+        @include font-size($ssik-breadcrumb-link-font-size);
+
+        &:hover {
+            color:$ssik-breadcrumb-link-hover-color;
+        }
+
+        &.is-active {
+            color:$ssik-breadcrumb-link-color;
+            font-weight: normal;
+        }
+    }
+
+    &-placeholder {
+        display: block;
+        .icon {
+            color:$ssik-breadcrumb-page-color;
+            transform: rotate(-90deg);        
+        }
+    }
+
+    &-item + &-item {
+        padding-left: 0;
+        &::before {
+            content: unset;
+        }
+    }
+
+    .is-act-home & {
+        display: none;
+    }
+}
+
+.is-ctl-product {
+    .breadcrumb {
+        &-list {
+            &-item {
+                @include media-breakpoint-down(sm) {
+                    &.last, &:last-child {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+.product-detail-configurator-option-input {
+
+    &.is-combinable + .product-detail-configurator-option-label {
+        border: 1px solid $ssik-input-border-color;
+    }
+
+    &:checked + .product-detail-configurator-option-label {
+        border: 1px solid $ssik-input-border-hover-color;
+    }
+
+    &.is-combinable + .product-detail-configurator-option-label,
+    + .product-detail-configurator-option-label {
+        &:hover,
+        &:active,
+        &:focus {
+            border: 1px solid $ssik-input-border-hover-color;
+        }
+    }
+}

@@ -1,0 +1,183 @@
+.navigation-offcanvas {
+   
+    &-headline {
+        @include font-size($ssik-navigation-offcanvas-headline-font-size);
+        color: $ssik-navigation-offcanvas-headline-color;
+    }
+    &-link {
+        color: $ssik-navigation-offcanvas-link-color;
+        
+        &.is-current-category {
+            color: $ssik-base-link-hover-color;
+        }
+
+        &.is-back-link {
+            border-top: 1px solid $ssik-navigation-list-item-border-color;
+            color: $ssik-navigation-offcanvas-link-color;
+        }
+
+        &.is-home-link {
+            color: $ssik-navigation-offcanvas-link-color;
+            .icon {
+                color: $ssik-navigation-offcanvas-link-color;
+            }
+        }
+
+        .icon {
+            width: 1.2rem;
+            height: 1.2rem;
+            color: $ssik-navigation-offcanvas-link-color;
+        }
+    }
+
+    &-list-item {
+        border-top: 1px solid $ssik-navigation-list-item-border-color;
+        &:last-child {
+            border-bottom: 1px solid $ssik-navigation-list-item-border-color;
+        }
+    }    
+}
+
+.offcanvas {
+    .offcanvas-close {
+        @include button-variant($ssik-offcanvas-cart-close-button-bg, $ssik-offcanvas-cart-close-button-bg);
+    }
+}
+
+//new
+.navigation-offcanvas {
+    .offcanvas-close {
+        .ssik-base & {
+            display: none;
+        }
+    }
+    .offcanvas-content-container {
+        .ssik-base & {
+            height: 100%;
+        }
+    }
+}
+
+.ssik-navigation-offcanvas {
+    position: relative;
+    height: 100%;
+
+    &-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 2rem 1rem 2rem;
+    }
+
+    &-close {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        display: block;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 100%;
+        background: $ssik-offcanvas-cart-close-button-bg;
+        border: 0;
+        padding: 0;
+        &::before, &::after {
+            content: '';
+            position: absolute;
+            top: .7rem;
+            left: 1.2rem;
+            display: block;
+            width: .1rem;
+            height: 1rem;
+            background: #131313;
+            transform: rotate(-45deg);
+        }
+        &::after {
+            transform: rotate(45deg);
+        }
+    }
+
+    &-container {
+        display: flex;
+        flex-direction: column;
+
+        .header-info-col {
+            display: flex;
+            justify-content: space-between;
+            padding: 2rem;
+            order: 5;
+            & > div {
+                margin-right: 1rem;
+            }
+
+            &-text {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                font-size: 1.2rem;
+
+                .icon {
+                    margin-right: .75rem;
+                }
+            }
+        }
+
+        &-footer { 
+            // position: absolute;
+            // bottom: 0;
+            // z-index: 1;
+            width: 100%;
+            order: -1;
+        }
+
+        nav.navigation-offcanvas-actions {
+            border-top: 1px solid $ssik-navigation-list-item-border-color;
+            border-bottom: 1px solid $ssik-navigation-list-item-border-color;
+            .top-bar-nav-item {
+                width: 50%;
+                margin: 0;
+                padding: .5rem 2rem;
+                .top-bar-nav-btn {
+                    &::after {
+                        content: unset;
+                    }
+                }
+
+                .top-bar-list-icon {
+                    display: none;
+                }
+                .top-bar-nav-text {
+                    display: block;
+                    font-weight: 700;
+                }
+                .language-form, .currency-form {
+                    width: 100%;
+                }
+                .top-bar-nav-btn {
+                    position: relative;
+                    display: flex;
+                    width: 100%;
+                    text-align: left;
+                    .icon {
+                        position: absolute;
+                        right: 1rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .navigation-offcanvas {
+
+        &-headline {
+            padding: 1rem 2rem 1rem;
+            color: #6c6d74;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        &-link {
+            padding: 1rem 2rem;
+            font-weight: 400;
+        }
+    }
+}

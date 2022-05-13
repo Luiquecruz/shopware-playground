@@ -1,0 +1,40 @@
+{% set uspheadericon1 = config('SsikLibertyTheme.config.uspheadericon1') %}
+{% set uspheadericon2 = config('SsikLibertyTheme.config.uspheadericon2') %}
+
+{% block ssik_header_info_col %}
+    <div class="header-info-col {% if asDropdown %}dropdown{% endif %}">
+        {% if asDropdown %}
+            <button class="header-info-col-button" type="button" id="ssikHeaderInfoWidget" 
+                aria-haspopup="true"
+                data-toggle="dropdown"
+                aria-expanded="false">
+                <span class="header-info-col-button-text">
+                    {{ "ssik.header.info.mobile"|trans|sw_sanitize }}
+                </span>
+                {% sw_icon 'icon-arrow' style { 'pack':'custom', 'namespace': 'SsikLibertyTheme', 'class':'ssik xxs' } %}
+            </button>
+        {% endif %}
+        {% if asDropdown %} 
+            <div class="dropdown-menu header-info-col-inner" aria-labelledby="ssikHeaderInfoWidget">
+        {% endif %}
+            {% if not 'ssik.header.upsheader.one'|trans is empty %}
+                <div class="header-info-col-text">    
+                    {% if uspheadericon1 is not empty  %}
+                        <i class="icon {{uspheadericon1}}"></i>  
+                    {% endif %}
+                    <span> {{ "ssik.header.upsheader.one"|trans|sw_sanitize }}</span>
+                </div>
+            {% endif %}
+            {% if not 'ssik.header.upsheader.two'|trans is empty %}
+                <div class="header-info-col-text">       
+                    {% if uspheadericon2 is not empty  %}
+                        <i class="icon {{uspheadericon2}}"></i>  
+                    {% endif %}                         
+                    <span> {{ "ssik.header.upsheader.two"|trans|sw_sanitize }}</span>
+                </div>
+            {% endif %}
+        {% if asDropdown %} 
+        </div>
+        {% endif %}
+    </div>  
+{% endblock %}

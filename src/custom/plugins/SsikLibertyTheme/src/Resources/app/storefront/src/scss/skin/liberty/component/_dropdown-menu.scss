@@ -1,0 +1,54 @@
+.dropdown-menu {
+    &-list {
+        display: none;
+        position: absolute;
+        z-index: 3000;
+        padding: 0;
+        margin: 0;
+        box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.15);
+        min-width: 22rem;
+        background: #fff;
+        list-style: none;
+    }
+    &-item {
+        position: relative;
+    }
+
+    &-item &-list {
+        top:0;
+        left: 100%;
+    }
+    &-item:hover > &-list {
+        display: block;
+    }
+
+    &-link {
+        position: relative;
+        display: block;
+        font-size: 1.4rem;
+        padding: 1.2rem 1.5rem;
+        color: $ssik-base-color-text;
+        border-left: 2px solid transparent;
+        &:hover {
+            text-decoration:none;
+            color: $ssik-main-navigation-item-hover-color;
+            border-left-color: $ssik-main-navigation-item-hover-border;
+        }
+        .icon {
+            position: absolute;
+            top: 1.7rem;
+            right: 1rem;
+            transform: rotate(-90deg);
+        }
+    }
+    &-item:not(:last-child) &-link {
+        border-bottom: 1px solid $ssik-input-border-color;
+        &:hover {
+            border-left-color: $ssik-main-navigation-item-hover-border;
+        }
+    }
+
+    &-item:hover > &-link {
+        color: $ssik-main-navigation-item-hover-color;
+    }
+}

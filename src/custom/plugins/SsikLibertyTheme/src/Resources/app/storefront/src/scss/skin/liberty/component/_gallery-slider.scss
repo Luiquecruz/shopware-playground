@@ -1,0 +1,11 @@
+.gallery-slider-thumbnails-item {
+    &.tns-nav-active {
+        .gallery-slider-thumbnails-item-inner {
+            border-color: $ssik-input-border-hover-color;
+        }
+    }
+}
+
+.gallery-slider-thumbnails-item-inner {
+    border: 1px solid $ssik-input-border-color;
+}

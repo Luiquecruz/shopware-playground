@@ -1,0 +1,36 @@
+.pagination-nav {
+    margin-top: 4.5rem;
+    .pagination {
+
+        justify-content: center;
+
+        .page-item {
+            .page-link {
+                text-align: center;
+                padding: .5rem 1rem;
+                width: 3.3rem;
+                border: 0;
+                //border-bottom:1px solid $ssik-pagination-page-link-border;
+                background: $ssik-pagination-page-link-bg;
+                color: $ssik-pagination-page-link-color;
+                @include font-size($ssik-pagination-page-link-font-size);
+            }
+
+
+            &.active .page-link {
+                border-bottom:2px solid $ssik-pagination-page-link-border;
+                //border-color: $ssik-pagination-page-link-active-bg;
+                //background: $ssik-pagination-page-link-bg;
+                //color: $ssik-pagination-page-link-active-color;
+            }
+
+            &.disabled .page-link {
+                border-color: $ssik-pagination-page-link-border;
+            }
+        }
+
+        @include media-breakpoint-up(md) {
+            justify-content: flex-end;
+        }
+    }
+}

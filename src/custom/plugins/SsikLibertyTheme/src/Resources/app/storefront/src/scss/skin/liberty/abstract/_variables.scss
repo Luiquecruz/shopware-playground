@@ -1,0 +1,194 @@
+$ssik-base-h1-color: $sw-headline-color; // $theme-base-h1-color;
+$ssik-buy-btn-bg: $sw-color-buy-button; //#0647b6;//#4785EF; #4785EF
+$ssik-buy-btn-color: $sw-color-buy-button-text;//#F5F5FB;
+$ssik-user-btn-bg: $sw-color-buy-button;
+$ssik-user-btn-color: $sw-color-buy-button-text;
+$ssik-border-default-color: #ECECE7;//$theme-border-default-color;
+
+$ssik-top-container-bg: $theme-header-top-bar-bg;//$theme-top-container-bg;
+$ssik-top-container-border: $theme-header-top-bar-border;//$theme-top-container-bg;
+
+//Badge
+$ssik-badge-default-bg:        #f93c00;         //$theme-badge-default-bg;
+$ssik-badge-default-color:       #FFFFFF;   //$theme-badge-default-color;
+
+$ssik-input-border-color:                       #EAEBF0; //$theme-input-border-color;          //#EAEBF0;
+
+//ICONS
+$ssik-icon-review: #FFC700;
+
+//COFIG
+//base
+$ssik-base-font-family:             $sw-font-family-base;//$sw-font-family-base;           //'Ubuntu', sans-serif;
+$ssik-font-family-headline:         $sw-font-family-headline;
+$ssik-base-color-text:              $sw-text-color;                 //#131313;
+$ssik-base-font-size:               $theme-base-font-size; //16px;
+$ssik-base-background-color:        $sw-background-color;
+$ssik-base-link-color:              $theme-base-link-color;       //#484848;
+$ssik-base-link-hover-color:        $theme-base-link-hover-color;      //#722ED1;
+$ssik-background-color:             $sw-background-color;
+
+//header
+$ssik-header-bg:                            $theme-header-bg; //#FFFFFF; 
+$ssik-header-border-bottom:                 $theme-header-border;
+$ssik-header-action-btn-icon-color:         $theme-header-action-btn-icon-color; //#131313;
+$ssik-header-action-btn-icon-hover-color:   $theme-header-action-btn-icon-hover-color; //#f93c00;
+//announcement-banner
+$ssik-announcement-banner-bg:               $theme-announcement-banner-bg; //#F93C00;
+$ssik-announcement-banner-color:            $theme-announcement-banner-color; //#FFFFFF;
+$ssik-announcement-banner-font-size:        $theme-announcement-banner-font-size; //16px; 
+
+// Header Search Form
+$ssik-header-search-input-font-size:    $theme-header-search-input-font-size; //12px;
+$ssik-header-search-input-color:        $theme-header-search-input-color;
+$ssik-header-search-input-bg:           $theme-header-search-input-bg;  //#FFFFFF;
+$ssik-header-search-input-border:       $theme-header-search-input-border; //#ECECEC;
+
+//Forms
+$ssik-input-bg:                     $theme-input-bg; //#FFFFFF;
+$ssik-input-font-size:              $theme-input-font-size;//14px;
+$ssik-input-color:                  $theme-input-color;//#131313;
+$ssik-input-border-color:           $theme-input-border-color; //#ECECE7;
+$ssik-input-focus-bg:               $theme-input-focus-bg;              //#FFFFFF;
+$ssik-input-border-hover-color:     $theme-input-border-hover-color;    //#397DEB;
+$ssik-input-focus-color:            $theme-input-focus-color;           //#397DEB;
+$ssik-input-focus-border-color:     $theme-input-focus-border-color; //#397DEB;
+
+//Pagination
+$ssik-pagination-page-link-bg:              $theme-pagination-page-link-bg;         //#FFFFFF; 
+$ssik-pagination-page-link-color:           $theme-pagination-page-link-color;      //#333333; 
+$ssik-pagination-page-link-border:          $theme-pagination-page-link-border;     //#397DEB;
+$ssik-pagination-page-link-font-size:       $theme-pagination-page-link-font-size; //16px;
+//filter
+$ssik-filter-panel-item-color:                    $theme-filter-panel-item-color;                             //#677791;
+$ssik-filter-panel-item-border-color:             $theme-filter-panel-item-border-color;                      //#dcdce2;
+$ssik-filter-panel-item-active-color:             $theme-filter-panel-item-active-color;                      //#FF7B8C;
+$ssik-filter-panel-item-font-size:                $theme-filter-panel-item-font-size;                         //16px;
+$ssik-filter-panel-item-toogle-bg:                $theme-filter-panel-item-toogle-bg;                         //#EAEBF0;
+$ssik-filter-panel-item-toogle-icon-color:        $theme-filter-panel-item-toogle-icon-color;                 //#111111;
+$ssik-filter-panel-item-toogle-active-bg:         $theme-filter-panel-item-toogle-active-bg;                  //#464646;
+$ssik-filter-panel-item-toogle-icon-active-color: $theme-filter-panel-item-toogle-icon-active-color;          //#FFC700;
+//breadcrumb
+$ssik-breadcrumb-page-color:                      $theme-breadcrumb-page-color;          //#677791;
+$ssik-breadcrumb-link-color:                      $theme-breadcrumb-link-color;         //#677791;
+$ssik-breadcrumb-link-hover-color:                $theme-breadcrumb-link-hover-color;   //#808183;
+$ssik-breadcrumb-link-font-size:                  $theme-breadcrumb-link-font-size;     //12px;
+
+//sidebar
+$ssik-sidebar-bg:                                 $theme-sidebar-bg; //#f5f5fa;
+$ssik-category-navigation-link-color:             $theme-category-navigation-link-color; //#677791; 
+$ssik-category-navigation-link-border:            $theme-category-navigation-link-border; //#DDDDE2;
+$ssik-category-navigation-link-color-hover:       $theme-category-navigation-link-color-hover; //#FF7B8C;
+$ssik-category-navigation-link-font-size:         $theme-category-navigation-link-font-size; //14px;
+
+//Main navigation
+$ssik-main-navigation-bg:                       $theme-main-navigation-bg;                  //#F5F5FB;
+$ssik-main-navigation-item-hover-bg:            $theme-main-navigation-item-hover-bg;       //#E5EFFE;
+$ssik-main-navigation-item-hover-color:         $theme-main-navigation-item-hover-color;    //#131313;
+$ssik-main-navigation-item-hover-border:        $theme-main-navigation-item-hover-border;   //#397DEB;
+$ssik-main-navigation-font-size:                $theme-main-navigation-font-size;           //16px;
+$ssik-main-navigation-color-text:               $theme-main-navigation-color-text;          //#677791;
+$ssik-main-navigation-home-link-hover-color:    $theme-main-navigation-home-link-hover-color;   //#FDC501;
+$ssik-main-navigation-align:                    flex-start;//$theme-main-navigation-align;                   //flex-start;
+$ssik-main-navigation-text-style:               none;//$theme-main-navigation-text-style;              // none;
+
+//Sticky Nav
+$ssik-sticky-navigation-bg:                       $theme-sticky-navigation-bg;                  //#F5F5FB;
+$ssik-sticky-navigation-item-hover-bg:            $theme-sticky-navigation-item-hover-bg;       //#E5EFFE;
+$ssik-sticky-navigation-item-hover-color:         $theme-sticky-navigation-item-hover-color;    //#131313;
+$ssik-sticky-navigation-item-hover-border:        $theme-sticky-navigation-item-hover-border;   //#397DEB;
+$ssik-sticky-navigation-font-size:                $theme-sticky-navigation-font-size;           //16px;
+$ssik-sticky-navigation-color-text:               $theme-sticky-navigation-color-text;          //#677791;
+$ssik-sticky-navigation-home-link-hover-color:    $theme-sticky-navigation-home-link-hover-color;   //#FDC501;
+
+$ssik-sticky-cart-btn-bg: $theme-sticky-cart-btn-bg;
+$ssik-sticky-cart-btn-color: $theme-sticky-cart-btn-color;
+
+//navigation-flyout
+$ssik-navigation-flyout-bg:                       $theme-navigation-flyout-bg;                        //#FFFFFF;
+$ssik-navigation-flyout-link-color:               $theme-navigation-flyout-link-color;                //#414A98;
+$ssik-navigation-flyout-link-hover-color:         $theme-navigation-flyout-link-hover-color;          //#FF7B8C;
+$ssik-navigation-flyout-link-font-size:           $theme-navigation-flyout-link-font-size;            //14px;
+$ssik-navigation-flyout-category-link-font-size:  $theme-navigation-flyout-category-link-font-size;   //16px;
+
+//navigation-offcanvas
+$ssik-navigation-offcanvas-headline-color: $ssik-base-color-text;                   //#131313;
+$ssik-navigation-offcanvas-headline-font-size: 16px;
+$ssik-navigation-offcanvas-link-color: $ssik-base-link-color;                       //#131313;
+$ssik-navigation-list-item-border-color: $ssik-input-border-color;                  //#EFEFEF;
+//Footer
+$ssik-footer-bg:                        $theme-footer-bg;                       //#F5F5FB;
+$ssik-footer-border:                    $theme-footer-border-color;             //#D5D9E3
+$ssik-footer-column-headline-color:     $theme-footer-column-headline-color;    //#677791;
+$ssik-footer-column-headline-font-size: $theme-footer-column-headline-font-size;
+$ssik-footer-link-color:                $theme-footer-link-color;  //#677791;
+$ssik-footer-link-color-hover:          $theme-footer-link-hover-color;  //#FF7B8C;
+$ssik-social-icon-bg:                   $theme-footer-social-icon-bg; //#FFFFFF;
+$ssik-social-icon-border:               $theme-footer-social-icon-border; //#ECECE7;
+$ssik-social-icon-color:                $theme-footer-social-icon-color; //#677791;
+$ssik-social-icon-bg-hover:             $theme-footer-social-icon-bg-hover; //#FFFFFF;
+$ssik-social-icon-border-hover:         $theme-footer-social-icon-border-hover; //#FF7B8C;
+$ssik-social-icon-color-hover:          $theme-footer-social-icon-hover-color; //#FF7B8C;
+//newsletter
+$ssik-newsletter-form-input-bg:             $theme-newsletter-form-input-bg;            //#FFFFFF;
+$ssik-newsletter-form-input-border:         $theme-newsletter-form-input-border;        //#ECECE7;
+$ssik-newsletter-form-input-color:          $theme-newsletter-form-input-color;         //#555555;
+$ssik-newsletter-form-input-font-size:      $theme-newsletter-form-input-font-size;     //14px;
+$ssik-newsletter-form-submit-bg:            $theme-newsletter-form-submit-bg;           //#BFC5D2;
+$ssik-newsletter-form-submit-color:         $theme-newsletter-form-submit-color;        //#161616; //#0BA
+$ssik-newsletter-form-submit-font-size:     $theme-newsletter-form-submit-font-size;    //16px;
+//counter
+$ssik-quantity-counter-bg:                  $theme-quantity-counter-bg;   //#FFFFFF;
+$ssik-quantity-counter-font-size:           $theme-quantity-counter-font-size; //18px;
+$ssik-quantity-counter-border:              $theme-quantity-counter-border; //#ECECE7;
+$ssik-quantity-counter-btn-bg:              $theme-quantity-counter-btn-bg; //#F9F9F9;
+$ssik-quantity-offcanvas-counter-bg:         $theme-quantity-offcanvas-counter-bg;   //#FFFFFF;
+$ssik-quantity-offcanvas-counter-font-size:  $theme-quantity-offcanvas-counter-font-size; //14px;
+
+
+///////////
+
+$ssik-custom-control-label-bg:                          $sw-background-color; //$theme-custom-control-label-bg;                             //#EAEBF0;
+$ssik-custom-control-label-color:                       $sw-text-color; //$theme-custom-control-label-color;                          //#2D2D2D;
+$ssik-custom-control-label-active-bg:                   $sw-color-brand-primary; //$theme-custom-control-label-active-bg;                      //#464646;
+$ssik-custom-control-label-active-color:                #FFFFFF; //$theme-custom-control-label-active-color;                   //#FFFFFF;
+$ssik-custom-control-label-font-size:                   13px;   //$theme-custom-control-label-font-size;                      //13px;
+//scroll-up-button
+$ssik-scroll-up-button-bg:  #131313; //$theme-scroll-up-button-bg;
+$ssik-scroll-up-button-color:  #FFFFFF; //$theme-scroll-up-button-color;
+$ssik-scroll-up-button-bg-hover:  #E9E9E9; //$theme-scroll-up-button-bg-hover;
+$ssik-scroll-up-button-color-hover:  #131313; //$theme-scroll-up-button-color-hover;
+//Basket Sidebar
+$ssik-offcanvas-cart-close-button-bg: #DEDEDE;
+$ssik-offcanvas-cart-close-button-font-size: 16px;
+$ssik-offcanvas-cart-close-button-color: #3A3A3A; 
+$ssik-offcanvas-cart-header-count-color: $ssik-base-color-text;
+//Cart items
+$ssik-cart-item-border-color:#ECECEC;
+$ssik-cart-item-img-border-color: $ssik-cart-item-border-color;
+$ssik-cart-item-label-color: #1865AB; //$ssik-product-name-color;
+$ssik-begin-checkout-btn-bg: #4785EF;
+$ssik-begin-checkout-btn-color:#FFFFFF;
+$ssik-begin-checkout-btn-font-size: 16px;
+$ssik-offcanvas-cart-promobtn-bg: #EAEBEF;
+$ssik-offcanvas-cart-promobtn-color: #0C0C0C;
+//Checkout
+$ssik-checkout-action-btn-primary-font-size: 16px;
+$ssik-checkout-action-btn-primary-bg: $ssik-buy-btn-bg;
+$ssik-checkout-action-btn-primary-color: $ssik-buy-btn-color;
+$ssik-checkout-shipping-btn-font-size: 14px;
+$ssik-checkout-shipping-btn-bg: #ECECEC;
+$ssik-checkout-shipping-btn-color: #131313;
+//Badges
+$ssik-product-badges-color:                             #FFFFFF; //$theme-product-badges-color; //#FFFFFF;
+$ssik-product-badges-font-size:                         11px;//$theme-product-badges-font-size; //11px;
+$ssik-product-badges-new-bg:                            #93CA79; //$theme-product-badges-new-bg;   //#93CA79;
+$ssik-product-badges-freeshipp-bg:                      #385075;//#4397b7;//$theme-product-badges-freeshipp-bg;   //#DEDEDE;
+$ssik-product-badges-topseller-bg:                      #a01506;//$theme-product-badges-topseller-bg;   //#F56556;
+
+$ssik-is-loading-color: #722ED1;
+
+//Slider
+
+$ssik-base-slider-dots-bg:                  $theme-base-slider-dots-bg;                 //#131313;
+$ssik-base-slider-dots-hover-bg:            $theme-base-slider-dots-hover-bg;           //#FFC700;

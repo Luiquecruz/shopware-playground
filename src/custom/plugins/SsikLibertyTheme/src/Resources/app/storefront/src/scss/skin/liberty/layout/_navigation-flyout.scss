@@ -1,0 +1,90 @@
+.navigation-flyout {
+    top:0;
+    background-color: $ssik-navigation-flyout-bg;
+}
+
+.navigation-flyout-link {
+    
+    font-weight: normal;
+    color: $ssik-navigation-flyout-link-color;
+    @include font-size($ssik-navigation-flyout-link-font-size);
+    
+
+    &.is-level-0 {
+        font-weight: normal;
+    }
+
+    span {
+        display: inline-block;
+        line-height: 1.6;
+        border-bottom: 1px solid rgba($ssik-navigation-flyout-link-color, .1);
+    }
+
+    &.active, &:hover {
+        color: $ssik-navigation-flyout-link-hover-color;
+
+        span {
+            border-bottom: 1px solid rgba($ssik-navigation-flyout-link-hover-color, .2);
+        }
+    }
+
+}
+
+.navigation-flyout-categories {
+    &:not(.is-level-0) {
+        margin-left: 0;
+    }
+    &.is-level-0 {
+        > .navigation-flyout-col {
+            &::before {
+                border-left: 0;
+            }
+        }
+    }
+}
+
+.navigation-flyout-category-link {
+    text-transform: uppercase;
+    font-weight: normal;
+    @include font-size($ssik-navigation-flyout-category-link-font-size);
+    .nav-link {
+        color: $ssik-navigation-flyout-link-color;
+        &:hover {
+            color: $ssik-navigation-flyout-link-hover-color;
+        }
+    }
+}
+
+.navigation-flyout-secondary {
+    display: flex; 
+    align-self: center;
+    list-style: none; 
+    margin-bottom: 0;
+    justify-content: flex-start;
+    .navigation-flyout-col {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    .navigation-flyout-link {
+        padding: 0;
+        line-height: 1;
+        text-transform: none;
+        color: $ssik-main-navigation-item-hover-color;
+        border-bottom: 1px solid $ssik-main-navigation-item-hover-color;
+        &:hover {
+            padding-left: 0;
+            border-color: transparent;
+        }
+    }
+}
+
+.navigation-flyout-close {
+    .icon-close {
+        color: $ssik-navigation-flyout-link-color;
+    }
+    &:hover {
+        .icon-close {
+            color: $ssik-navigation-flyout-link-hover-color;
+        }
+    }
+}

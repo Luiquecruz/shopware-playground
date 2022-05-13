@@ -1,0 +1,23 @@
+{% block ssik_login_form_modal %}
+    {% if (controllerAction is not same as('accountRegisterPage')) and (controllerAction is not same as('loginPage')) %}
+        {% if not context.customer %}
+            <div class="modal login-form-modal" id="ssikLoginFormModal" tabindex="-1" aria-labelledby="ssikLoginFormModal" aria-hidden="true">
+                {% block ssik_login_form_modal_inner %}
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">
+                                    {{"account.loginHeader"|trans|sw_sanitize}}
+                                </h5>
+                                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                {% sw_include '@SsikLibertyTheme/storefront/component/account/login-form.html.twig' %}
+                            </div>
+                        </div>
+                    </div>
+                {% endblock %}
+            </div>
+        {% endif %}
+    {% endif %}
+{% endblock %}

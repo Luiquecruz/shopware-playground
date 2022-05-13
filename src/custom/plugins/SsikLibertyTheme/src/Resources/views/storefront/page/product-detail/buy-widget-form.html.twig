@@ -1,0 +1,24 @@
+{% sw_extends '@Storefront/storefront/page/product-detail/buy-widget-form.html.twig' %}
+
+{% block page_product_detail_buy_quantity %}
+    {% if config('SsikLibertyTheme.config.counterShow') is same as('true') %}
+        {% sw_include '@SsikLibertyTheme/storefront/ssik/ssik-buy-widget-quantity.html.twig' with {
+            quantityId: product.id,
+            minPurchase: product.minPurchase,
+            maxPurchase: product.calculatedMaxPurchase,
+            step: product.purchaseSteps
+        } %}
+    {% endif %} 
+    {{parent()}}
+{% endblock %}
+
+{% block page_product_detail_buy_button %}
+    {{parent()}}
+    {% if config('core.cart.wishlistEnabled') %} 
+        {% sw_include '@Storefront/storefront/component/product/card/wishlist.html.twig' with {
+            showText: false,
+            size: 'md',
+            productId: product.id
+        } %}
+    {% endif %} 
+{% endblock %}

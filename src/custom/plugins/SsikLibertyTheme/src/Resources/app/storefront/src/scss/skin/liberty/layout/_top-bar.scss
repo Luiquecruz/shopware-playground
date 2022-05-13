@@ -1,0 +1,100 @@
+.ssik-top-bar {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-container {
+        padding: 1rem 0;
+        border-bottom: 1px solid $ssik-top-container-border;
+        background: $ssik-top-container-bg;
+    }
+
+    &-info {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+        flex-direction: column;
+        @include media-breakpoint-up(md) { 
+            flex-direction: row;
+            & > * {
+                padding-right: .5rem;
+            }
+        }
+        @include media-breakpoint-up(lg) { 
+            width: 50%;
+            justify-content: flex-start;
+            
+        }
+    }
+    .top-bar {
+        display: none;
+        @include media-breakpoint-up(lg) { 
+            display: flex;
+            width: 50%;
+            justify-content: flex-end;
+        }
+    }
+
+    .top-bar-nav-btn {
+        border:unset;
+        line-height: 1;
+
+        display: flex;
+        align-items: center;
+
+        font-size: 1.2rem;
+
+        &::after {
+            content: none;
+        }
+        .icon {
+            margin-left: .5rem;
+        }
+
+        &.btn {
+            color:$ssik-base-color-text;
+            &:hover {
+                color:$ssik-base-link-hover-color;
+                .icon {
+                    color:$ssik-base-link-hover-color;
+                }
+            }
+            .dropdown.show & {
+                color:$ssik-base-link-hover-color;
+                .icon {
+                    color:$ssik-base-link-hover-color;
+                }
+            }
+        }
+    }
+    .top-bar-list-label {
+        font-size: 1.2rem;
+        color: $ssik-base-link-color;
+        &:hover {
+            color:$ssik-base-link-hover-color;
+        }
+    }
+}
+
+
+
+.language-flag {
+    height: 2.4rem;
+    width: 2rem;
+    border: unset;
+    margin-top: unset;
+    background-position: center center;
+}
+
+.ssik-base {
+    .ssik-top-bar-container {
+        .container {
+            width: 100%;
+            max-width: 140rem;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+    }
+}

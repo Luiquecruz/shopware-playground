@@ -1,0 +1,9 @@
+.cms-section {
+    &-sidebar-main-content {
+        padding-right: 0;
+        @include media-breakpoint-down(md) {
+            padding-left: 0;
+        }
+    }
+}
+
