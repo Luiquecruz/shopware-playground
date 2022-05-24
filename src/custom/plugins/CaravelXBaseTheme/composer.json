@@ -1,0 +1,18 @@
+{
+  "name": "swag/theme-skeleton",
+  "description": "Theme skeleton plugin",
+  "type": "shopware-platform-plugin",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "CaravelXBaseTheme\\": "src/"
+    }
+  },
+  "extra": {
+    "shopware-plugin-class": "CaravelXBaseTheme\\CaravelXBaseTheme",
+    "label": {
+      "de-DE": "Theme CaravelXBaseTheme plugin",
+      "en-GB": "Theme CaravelXBaseTheme plugin"
+    }
+  }
+}
