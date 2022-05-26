@@ -1,0 +1,36 @@
+{% sw_extends '@Storefront/storefront/component/product/card/box-standard.html.twig' %}
+
+{% block component_product_box_content %}
+    <div class="card-body">
+        {{ block('component_product_box_badges') }}
+
+        {{ block('component_product_box_image') }}
+
+        {% block component_product_box_info %}
+            <div class="product-info">
+                {{ block('component_product_box_name') }}
+
+                {% block component_product_box_rating %}
+                    {% if config('core.listing.showReview') %}
+                        {% if product.ratingAverage %}
+                            {{ parent() }}
+                        {% endif %}
+                    {% endif %}
+                {% endblock %}
+
+                {% block component_product_box_variant_characteristics %}
+                    {% if variation|length > 0 %}
+                        {{ parent() }}
+                    {% endif %}
+                {% endblock %}
+
+                {#{{ block('component_product_box_description') }}#}
+                {% block component_product_box_description %}{% endblock %}
+
+                {{ block('component_product_box_price') }}
+
+                {{ block('component_product_box_action') }}
+            </div>
+        {% endblock %}
+    </div>
+{% endblock %}
