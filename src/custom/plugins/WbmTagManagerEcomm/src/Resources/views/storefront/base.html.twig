@@ -1,0 +1,13 @@
+{% sw_extends '@Storefront/storefront/base.html.twig' %}
+
+{% block base_noscript %}
+    {% block wbm_base_tag_manager_noscript %}
+        {% if wbmTagManagerConfig.gtmContainerId %}
+            <noscript>
+                <iframe src="https://www.googletagmanager.com/ns.html?id={{ wbmTagManagerConfig.gtmContainerId|raw }}"
+                        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+            </noscript>
+        {% endif %}
+    {% endblock %}
+    {{ parent() }}
+{% endblock %}

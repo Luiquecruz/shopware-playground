@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/master/src/Core/System/SystemConfig/Schema/config.xsd">
+
+    <card>
+        <title>Basic Configuration</title>
+        <title lang="de-DE">Grundeinstellungen</title>
+
+        <input-field>
+            <name>containerId</name>
+            <copyable>true</copyable>
+            <label>GTM Container ID</label>
+            <label lang="de-DE">GTM Container ID</label>
+            <placeholder>GTM-XXXXXX</placeholder>
+            <placeholder lang="de-DE">GTM-XXXXXX</placeholder>
+            <helpText>The ID of the container can be found after the creation within the Google Tag Manager backend.</helpText>
+            <helpText lang="de-DE">Die ID des Containers findet sich nach Erstellung eines solchen im Google Tag Manager Backend.</helpText>
+        </input-field>
+
+        <input-field type="bool">
+            <name>isInactive</name>
+            <label>Deactivate GTM Container</label>
+            <label lang="de-DE">Deaktivere GTM Container</label>
+        </input-field>
+
+        <input-field type="bool">
+            <name>isTrackingProductClicks</name>
+            <label>Track product clicks in listings</label>
+            <label lang="de-DE">Produkt-Clicks in Listings tracken</label>
+        </input-field>
+    </card>
+
+    <card>
+        <title>Cookie consent configuration</title>
+        <title lang="de-DE">Cookie Consent Konfiguration</title>
+
+        <input-field type="bool">
+            <name>hasSWConsentSupport</name>
+            <defaultValue>true</defaultValue>
+            <label>Shopware Cookie consent support</label>
+            <label lang="de-DE">Shopware Cookie Consent Unterstützung</label>
+            <helpText>Activate for integration into Shopware consent manager. Deactivate this, if you plan to use external cookie consent manager</helpText>
+            <helpText lang="de-DE">Deaktivieren, wenn Sie einen externen Cookie Consent Manager benutzen möchten</helpText>
+        </input-field>
+    </card>
+
+    <card>
+        <title>Manipulate TagManager Script</title>
+        <title lang="de-DE">TagManager Script manipulieren</title>
+
+        <component name="wbm-config-warning">
+            <name>configWarning</name>
+        </component>
+
+        <input-field type="text">
+            <name>scriptTagAttributes</name>
+            <defaultValue>type="text/javascript"</defaultValue>
+            <copyable>true</copyable>
+            <label>Script-Tag attributes (optional/expert)</label>
+            <label lang="de-DE">Script-Tag Attribute (optional/expert)</label>
+            <value/>
+            <helpText><![CDATA[
+                Add your Script-Tag attributes here. They will be parsed to the opening script-tag. e.g.
+                <br>type="text/javascript" data-some="thing"<br> becomes
+                &lt;script type="text/javascript" data-some="thing"&gt; <hr>
+                Changes to the content of this field can break the funcionality of Google Tag Manager and should
+                therefore only be done by experienced users.
+            ]]></helpText>
+            <helpText lang="de-DE"><![CDATA[
+                Schreiben Sie die Script-Tag Attribute hier rein. Diese werden unverändert dem öffenden Script-Tag
+                hinzugfügt. z.B: <br>type="text/javascript" data-some="thing"<br> wird zu
+                &lt;script type="text/javascript" data-some="thing"&gt; <hr>
+                Änderungen am Inhalt dieses Feldes können dazu führen, dass der Google Tag Manager nicht mehr
+                ordnungsgemäß funktioniert und sollte daher nur von erfahrenden Nutzern durchgeführt werden.
+            ]]></helpText>
+        </input-field>
+        <input-field type="bool">
+            <name>removeAtDataLayerTag</name>
+            <defaultValue>false</defaultValue>
+            <label>Don't set attributes to datalayer script-tag</label>
+            <label lang="de-DE">Setze diese Attribute nicht an das dataLayer Script-Tag</label>
+        </input-field>
+
+        <input-field type="text">
+            <name>extendedURLParameter</name>
+            <copyable>true</copyable>
+            <label>Extended URL parameter</label>
+            <label lang="de-DE">Zusätzliche URL Parameter</label>
+            <placeholder><![CDATA[&amp;gtm_auth=sOmeR4nd0mh45h&amp;gtm_preview=env-69&amp;gtm_cookies_win=x]]></placeholder>
+            <helpText><![CDATA[
+                Add your extending GTM-URL parameter for test/stage environments here. These will be added to the
+                googetagmanger.com URL. e.g.
+                <br>&amp;gtm_auth=sOmeR4nd0mh45h&amp;gtm_preview=env-69&amp;gtm_cookies_win=x <hr>
+                Changes to the content of this field can break the functionality of Google Tag Manager and should
+                therefore only be done by experienced users.
+            ]]></helpText>
+            <helpText lang="de-DE"><![CDATA[
+                Schreiben Sie zusätzliche GTM-URL Paramter für Test/Staging Umgebung hier rein. Diese werden an die
+                googetagmanger.com URL angehängt. z.B.
+                <br>&amp;gtm_auth=sOmeR4nd0mh45h&amp;gtm_preview=env-69&amp;gtm_cookies_win=x <hr>
+                Änderungen am Inhalt dieses Feldes können dazu führen, dass der Google Tag Manager nicht mehr
+                ordnungsgemäß funktioniert und sollte daher nur von erfahrenden Nutzern durchgeführt werden.
+            ]]></helpText>
+        </input-field>
+
+        <input-field type="textarea">
+            <name>gtmFunctionOverwrite</name>
+            <copyable>true</copyable>
+            <label>Overwrite GTM function</label>
+            <label lang="de-DE">GTM Funktion überschreiben</label>
+            <placeholder><![CDATA[function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl';f.parentNode.insertBefore(j,f);};]]></placeholder>
+            <helpText><![CDATA[
+                If this field is filled, the complete googletagmanager-function is overwritten. Values from
+                "Extended URL parameter" will be ignored then.<hr>
+                Changes to the content of this field can break the functionality of Google Tag Manager and should
+                therefore only be done by experienced users.
+            ]]></helpText>
+            <helpText lang="de-DE"><![CDATA[
+                Falls dieses Feld gefüllt ist, wird die googletagmanager-function überschrieben. Der Inhalt von
+                "Zusätzliche URL Parameter" wird dann ignoriert.<hr>
+                Änderungen am Inhalt dieses Feldes können dazu führen, dass der Google Tag Manager nicht mehr
+                ordnungsgemäß funktioniert und sollte daher nur von erfahrenden Nutzern durchgeführt werden.
+            ]]></helpText>
+        </input-field>
+    </card>
+
+</config>

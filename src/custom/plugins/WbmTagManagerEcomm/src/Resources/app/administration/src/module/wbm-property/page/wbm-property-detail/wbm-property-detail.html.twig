@@ -1,0 +1,35 @@
+{% block wbm_property_detail %}
+    <sw-card-view>
+        <sw-card v-if="property" :isLoading="isLoading">
+            <sw-field :label="$t('wbm-tagmanager.properties.nameLabel')" v-model="property.name"></sw-field>
+
+            <sw-code-editor
+                    :label="$t('wbm-tagmanager.properties.valueLabel')"
+                    name="value"
+                    identifier="value"
+                    completionMode="entity"
+                    v-model="property.value">
+            </sw-code-editor>
+
+            <sw-checkbox-field
+                :label="$t('wbm-tagmanager.properties.onEventLabel')"
+                :helpText="$t('wbm-tagmanager.properties.onEventLabel-helpText')"
+                v-model="property.onEvent"
+                v-if="!property.parentId">
+            </sw-checkbox-field>
+            <sw-field :label="$t('wbm-tagmanager.properties.eventNameLabel')"
+                      v-model="property.eventName"
+                      v-if="property.onEvent">
+            </sw-field>
+
+            <sw-button-process
+                    :isLoading="isLoading"
+                    :processSuccess="processSuccess"
+                    variant="primary"
+                    @process-finish="saveFinish"
+                    @click="onClickSave">
+                {{ $t('wbm-tagmanager.properties.saveButton') }}
+            </sw-button-process>
+        </sw-card>
+    </sw-card-view>
+{% endblock %}
