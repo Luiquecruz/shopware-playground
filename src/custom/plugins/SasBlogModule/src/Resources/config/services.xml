@@ -1,0 +1,115 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+
+        <service id="Sas\BlogModule\Content\Blog\BlogEntriesDefinition">
+            <tag name="shopware.entity.definition" entity="sas_blog_entries" />
+        </service>
+
+        <service id="Sas\BlogModule\Content\Blog\BlogTranslation\BlogTranslationDefinition">
+            <tag name="shopware.entity.definition"/>
+        </service>
+
+        <service id="Sas\BlogModule\Content\BlogCategory\BlogCategoryDefinition">
+            <tag name="shopware.entity.definition"/>
+        </service>
+
+        <service id="Sas\BlogModule\Content\BlogCategory\BlogCategoryTranslation\BlogCategoryTranslationDefinition">
+            <tag name="shopware.entity.definition"/>
+        </service>
+
+        <service id="Sas\BlogModule\Content\Blog\Aggregate\BlogCategoryMappingDefinition">
+            <tag name="shopware.entity.definition"/>
+        </service>
+
+        <service id="Sas\BlogModule\Content\BlogAuthor\BlogAuthorDefinition">
+            <tag name="shopware.entity.definition"/>
+        </service>
+
+        <service id="Sas\BlogModule\Content\BlogAuthor\BlogAuthorTranslation\BlogAuthorTranslationDefinition">
+            <tag name="shopware.entity.definition"/>
+        </service>
+
+        <service id="Sas\BlogModule\Resources\snippet\en_GB\SnippetFile_en_GB" public="true">
+            <tag name="shopware.snippet.file"/>
+        </service>
+
+        <service id="Sas\BlogModule\Resources\snippet\de_DE\SnippetFile_de_DE" public="true">
+            <tag name="shopware.snippet.file"/>
+        </service>
+
+        <service id="Sas\BlogModule\Controller\BlogController" public="true">
+            <argument id="Shopware\Core\System\SystemConfig\SystemConfigService" type="service"/>
+            <argument id="Shopware\Storefront\Page\GenericPageLoader" type="service"/>
+            <argument id="Shopware\Core\Content\Cms\SalesChannel\SalesChannelCmsPageLoader" type="service"/>
+            <argument id="sas_blog_entries.repository" type="service"/>
+            <argument id="Sas\BlogModule\Page\Search\BlogSearchPageLoader" type="service"/>
+            <call method="setContainer">
+                <argument type="service" id="service_container"/>
+            </call>
+        </service>
+
+        <service id="Sas\BlogModule\Controller\StoreApi\BlogController" public="true">
+            <argument id="sas_blog_entries.repository" type="service"/>
+        </service>
+
+        <service id="Sas\BlogModule\Content\Blog\DataResolver\BlogCmsElementResolver">
+            <argument type="service" id="Symfony\Contracts\EventDispatcher\EventDispatcherInterface"/>
+            <tag name="shopware.cms.data_resolver" />
+        </service>
+
+        <service class="Sas\BlogModule\Content\Blog\DataResolver\BlogDetailCmsElementResolver" id="sas.blog_module.data_resolver.blog_detail_cms_element_resolver">
+            <tag name="shopware.cms.data_resolver"/>
+        </service>
+
+        <service id="Sas\BlogModule\Content\Blog\BlogSeoUrlRoute">
+            <argument type="service" id="Sas\BlogModule\Content\Blog\BlogEntriesDefinition"/>
+            <tag name="shopware.seo_url.route"/>
+        </service>
+
+        <service id="Sas\BlogModule\Content\Blog\BlogSeoUrlListener">
+            <argument type="service" id="Shopware\Core\Content\Seo\SeoUrlUpdater"/>
+            <tag name="kernel.event_subscriber"/>
+        </service>
+
+        <service id="Sas\BlogModule\Content\BlogCategory\BlogCategoryIndexer">
+            <argument type="service" id="Doctrine\DBAL\Connection"/>
+            <argument type="service" id="Shopware\Core\Framework\DataAbstractionLayer\Dbal\Common\IteratorFactory"/>
+            <argument type="service" id="sas_blog_category.repository"/>
+            <argument type="service" id="Shopware\Core\Framework\DataAbstractionLayer\Indexing\ChildCountUpdater"/>
+            <argument type="service" id="Shopware\Core\Framework\DataAbstractionLayer\Indexing\TreeUpdater"/>
+            <tag name="shopware.entity_indexer"/>
+        </service>
+
+        <service id="Sas\BlogModule\Content\Blog\DataResolver\BlogSingleSelectDataResolver">
+            <tag name="shopware.cms.data_resolver"/>
+        </service>
+
+        <service id="Sas\BlogModule\Content\SalesChannel\Suggest\ProductSuggestDecorated" decorates="Shopware\Core\Content\Product\SalesChannel\Suggest\ProductSuggestRoute" public="true">
+            <argument type="service" id="Sas\BlogModule\Content\SalesChannel\Suggest\ProductSuggestDecorated.inner"/>
+            <argument type="service" id="sas_blog_entries.repository"/>
+            <argument id="Shopware\Core\System\SystemConfig\SystemConfigService" type="service"/>
+        </service>
+
+        <service id="Sas\BlogModule\Page\Search\BlogSearchPageLoader">
+            <argument type="service" id="Shopware\Storefront\Page\GenericPageLoader"/>
+            <argument id="sas_blog_entries.repository" type="service"/>
+            <argument type="service" id="event_dispatcher"/>
+        </service>
+
+        <service id="Sas\BlogModule\Core\Content\Sitemap\Provider\BlogUrlProvider" >
+            <argument type="service" id="sas_blog_entries.repository" />
+            <argument type="service" id="Doctrine\DBAL\Connection"/>
+            <tag name="shopware.sitemap_url_provider" />
+        </service>
+        
+        <service id="Sas\BlogModule\Content\Blog\Subscriber\BlogSubscriber" >
+            <tag name="kernel.event_subscriber" />
+        </service>
+
+    </services>
+</container>

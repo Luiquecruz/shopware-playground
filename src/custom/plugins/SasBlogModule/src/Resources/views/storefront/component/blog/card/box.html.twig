@@ -1,0 +1,88 @@
+{% block sas_blog_card %}
+    <article class="card blog-card">
+        {% block sas_blog_card_teaser_image %}
+            <a href="{{ seoUrl('sas.frontend.blog.detail', {'articleId': article.id}) }}"
+                   title="{{ article.translated.title }}"
+                   class="blog-image-link">
+                    {% if article.media.url %}
+                        {% set attributes = {
+                            'class': 'blog-image card-img-top',
+                            'alt': (article.media.translated.alt ?: article.media.fileName),
+                            'title': (article.media.translated.title ?: article.media.fileName)
+                        } %}
+
+                        {% sw_thumbnails 'blog-image-thumbnails' with {
+                            media: article.media,
+                            sizes: {
+                                'xs': '330px',
+                                'lg': '650px'
+                            }
+                        } %}
+                    {% else %}
+                        <div class="blog-image-placeholder">
+                            {% sw_icon 'placeholder' style {
+                                'size': 'fluid'
+                            } %}
+                        </div>
+                    {% endif %}
+                </a>
+        {% endblock %}
+        {% block sas_blog_card_body %}
+            <div class="card-body">
+                <div class="d-flex flex-column">
+                    {% block sas_blog_card_title_date %}
+                        <p class="mt-2 mb-1 d-flex align-items-center blog-date">
+                            <small>{{ article.publishedAt|format_date('short', locale=app.request.locale) }}</small>
+                        </p>
+                    {% endblock %}
+                    {% block sas_blog_card_title %}
+                        <h2 class="card-title mt-0">
+                            {% block sas_blog_card_title_link %}
+                                <a href="{{ seoUrl('sas.frontend.blog.detail', { articleId: article.id }) }}"
+                                   title="{{ article.translated.title }}"
+                                   class="text-decoration-none">
+                                    {{ article.translated.title }}
+                                </a>
+                            {% endblock %}
+                        </h2>
+                    {% endblock %}
+                </div>
+                {% block sas_blog_card_teaser %}
+                    <p class="card-text font-size-small mb-0">{{ article.translated.teaser }}</p>
+                {% endblock %}
+            </div>
+        {% endblock %}
+
+        {% block sas_blog_card_footer %}
+        <div class="card-footer text-muted">
+            {% block sas_blog_card_footer_author %}
+                {% if shopware.config.SasBlogModule.config.showAuthor %}
+                    {% if article.author.media.url %}
+                        {% set attributes = {
+                            'class': 'blog-author-avatar',
+                            'alt': (article.author.media.translated.alt ?: article.author.media.fileName),
+                            'title': (article.author.media.translated.title ?: article.author.media.fileName)
+                        } %}
+
+                        {% sw_thumbnails 'blog-author-avatar-thumbnails' with {
+                            media: article.author.media,
+                            sizes: {
+                            'xs': '80px'
+                        }
+                            } %}
+                    {% else %}
+                        <div class="blog-image-placeholder">
+                            {% sw_icon 'placeholder' style {
+                                'size': 'fluid'
+                                } %}
+                        </div>
+                    {% endif %}
+                    <p class="blog-author-display-name">{{ article.author.displayName }}<br>
+                        <small class="text-muted">{{ article.author.blogs|length }} {{ 'sas-blog.box.author.countEntries'|trans|sw_sanitize }}</small>
+                    </p>
+                {% endif %}
+            {% endblock %}
+        </div>
+        {% endblock %}
+    </article>
+{% endblock %}

@@ -1,0 +1,9 @@
+{
+  "name": "Resources",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "slugify": "^1.4.6"
+  }
+}

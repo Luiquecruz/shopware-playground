@@ -1,0 +1,44 @@
+{
+    "name": "sas/blog-module",
+    "description": "Blog Module",
+    "version": "1.5.7",
+    "type": "shopware-platform-plugin",
+    "keywords": ["blog", "news"],
+    "license":"MIT",
+    "authors":[
+        {
+            "name":"Shape & Shift",
+            "email": "hello@shapeandshift.dev",
+            "role": "Manufacturer"
+        }
+    ],
+    "require": {
+        "shopware/core": "~6.4.0"
+    },
+    "extra": {
+        "shopware-plugin-class": "Sas\\BlogModule\\SasBlogModule",
+        "plugin-icon": "src/Resources/config/plugin.png",
+        "copyright": "(c) by SMK Shape & Shift LTD",
+        "label": {
+            "de-DE": "Blog Module",
+            "en-GB": "Blog Module"
+        },
+        "description": {
+            "de-DE": "Blog Funktion",
+            "en-GB": "Blog Functionality"
+        },
+        "manufacturerLink": {
+            "en-GB": "https://shapeandshift.dev",
+            "de-DE": "https://shapeandshift.dev"
+        },
+        "supportLink": {
+            "de-DE": "https://shapeandshift.dev",
+            "en-GB": "https://shapeandshift.dev"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Sas\\BlogModule\\": "src/"
+        }
+    }
+}

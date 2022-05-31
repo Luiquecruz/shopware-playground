@@ -1,0 +1,230 @@
+{
+    "sas-blog": {
+        "general": {
+            "mainMenuItemGeneral": "Blog",
+            "mainMenuItemList": "Blog",
+            "mainMenuItemAdd": "Blog Eintrag anlegen",
+            "descriptionTextModule": "Verwaltung von Blog Einträge.",
+            "placeholderSearchBar": "Durchsuche alle Einträge",
+            "tooltipLanguageSwitch": "Du musst zuerst einen Eintrag in der Systemsprache anlegen"
+        },
+        "list": {
+            "textBlogOverview": "Blog Einträge",
+            "buttonAddBlogEntry": "Blog Eintrag erstellen",
+            "messageEmpty": "Keine Einträge vorhanden",
+            "table": {
+                "title": "Titel",
+                "active": "Aktiv",
+                "author": "Autor"
+            }
+        },
+        "detail": {
+            "saveBlogEntry": "Eintrag speichern",
+            "buttonCancel": "Abbrechen",
+            "activeLable": "Artikel aktiv",
+            "contentLable": "Markdown Inhalt",
+            "slugLable": "Slug",
+            "titleLabel": "Titel",
+            "mediaLable": "Teaser Image",
+            "teaserLabel": "Teaser",
+            "teaserImageLabel": "Teaser Bild",
+            "teaserPlaceholder": "Der Teaser Text, welcher im Blog Listing angezeigt wird ...",
+            "editorCardTitle": "Dein Artikel",
+            "editorLabel": "Blog Inhalt",
+            "editorPlaceholder": "Starte deinen Blog Beitrag ...",
+            "publishedAtLabel": "Erstellungsdatum",
+            "visibility": {
+                "label": "Artikel aktiv"
+            },
+            "detailTeaser": {
+                "label": "Zeige Teaser Image auf Detailseite"
+            },
+            "editor": {
+                "headerPlaceholder": "Überschrift",
+                "paragraphPlaceholder": "Fange an zu schreiben ...",
+                "warningTitle": "Titel der Warnung",
+                "warningMessage": "Deine Warnung ...",
+                "quotePlaceholder": "Verrate mir dein Zitat ...",
+                "quoteCaption": "... und den Autor"
+            },
+            "notification": {
+                "save-success": {
+                    "title": "Erfolreich!",
+                    "text": "Dein Blog Artikel wurde gespeichert."
+                },
+                "error": {
+                    "missingCategory": "Bitte wähle mind. eine Kategorie!"
+                }
+            },
+            "author": {
+                "label": "Autor",
+                "placeholder": "Wähle einen Autor"
+            },
+            "category": {
+                "label": "Kategorien",
+                "placeholder": "Wähle eine Kategorie"
+            }
+        },
+        "elements": {
+            "listing": {
+                "config": {
+                    "paginationCount": "Pagination count",
+                    "showFilter": {
+                        "label": "Zeige Filter",
+                        "options": {
+                            "all": "Alle",
+                            "select": "Filter auswählen",
+                            "filter": {
+                                "category": "Zeige Kategorie Filter",
+                                "author": "Zeige Autor Filter"
+                            }
+                        }
+                    },
+                    "showType": {
+                        "label": "Anzeigetyp",
+                        "options": {
+                            "all": "Alle",
+                            "select": "Kategorien auswählen"
+                        }
+                    },
+                    "blogCategories": {
+                        "label": "Kategorien",
+                        "placeholder": "Kategorien auswählen"
+                    }
+                },
+                "component": {
+                    "elementHeadline": "Blog Listen Element",
+                    "infoText": "Der Blog Listen Inhalt wird automatisch in der Storefront ausgespielt."
+                }
+            },
+            "detail": {
+                "config": {
+                    "showMeta": {
+                        "label": "Detail Ansicht Meta Informationen",
+                        "showAuthor": "Zeige Autor",
+                        "showCategory": "Zeige Kategorie"
+                    }
+                },
+                "component": {
+                    "elementHeadline": "Blog Detail Element",
+                    "infoText": "Der Blog Inhalt wird automatisch in der Storefront ausgespielt. Derzeit gibt es keine Element Konfiguration."
+                }
+            },
+            "single-select": {
+                "label": "Blog Single Select",
+                "selectFieldLabel": "Wähle einen Blog Eintrag",
+                "previewText": "Lorem Ipsum Dolor"
+            }
+        },
+        "blocks": {
+            "blog": {
+                "listing": {
+                    "previewTitle": "Blog Liste",
+                    "label": "Blog Listen Ansicht"
+                },
+                "detail": {
+                    "previewTitle": "Blog Detail",
+                    "label": "Blog Detail"
+                },
+                "singleEntry": {
+                    "previewTitle": "Einzelner Blogeintrag",
+                    "label": "Einzelner Blogeintrag"
+                }
+            }
+        }
+    },
+    "sas-blog-category": {
+        "general": {
+            "treeHeadline": "Blog Kategorien",
+            "mainMenuItemIndex": "Kategorien",
+            "mainMenuItemList": "Overview",
+            "descriptionTextModule": "Verwalte hier deine Kategorien.",
+            "headlineCategories": "Kategorien",
+            "placeholderSearchBar": "Suche in Kategorien...",
+            "buttonCreate": "Kategorie erstellen",
+            "buttonSafeCategory": "Speichern",
+            "descriptionLabel": "Beschreibung",
+            "messageSaveSuccess": "Kategorie \"{name}\" wurde gespeichert.",
+            "useAsLogo": "Use as display image",
+            "treeHeadSelected": "{count} ausgewählt",
+            "emptyStateHeadline": "Keine Kategorie ausgewählt",
+            "actions": {
+                "actionsDisabledInLanguage": "Kategorien können nur in der Default Sprache erstellt werden.",
+                "createSub": "Neue Unterkategorie",
+                "createBefore": "Neue Kategorie davor",
+                "createAfter": "Neue Kategorie danach"
+            }
+        },
+        "modal": {
+            "textDeleteMultipleConfirm": "Möchtest Du diese {count} blogs Kategorien wirklich löschen?"
+        }
+    },
+    "sas-blog-author": {
+        "general": {
+            "mainMenuItemList": "Autor"
+        },
+        "list": {
+            "textBlogOverview": "Autoren",
+            "buttonAdd": "Autor erstellen",
+            "messageEmpty": "Keine Autoren ...",
+            "table": {
+                "fullName": "Voller Name",
+                "displayName": "Anzeigename",
+                "email": "Email",
+                "salutation": "Anrede"
+            }
+        },
+        "detail": {
+            "title": "Autor",
+            "messageSaveSuccess": "Autor \"{name}\" wurde gespeichert.",
+            "buttonSave": "Speichern",
+            "buttonCancel": "Abbrechen",
+            "buttonEdit": "Editieren",
+            "firstName": {
+                "label": "Vorname",
+                "placeholder": "Gebe den Vornamen des Autors ein"
+            },
+            "lastName": {
+                "label": "Nachname",
+                "placeholder": "Gebe den Nachnamen des Autors ein"
+            },
+            "displayName": {
+                "label": "Anzeigename",
+                "placeholder": "Gebe den Anzeigenamen des Autors ein"
+            },
+            "email": {
+                "label": "Email",
+                "placeholder": "Gebe die Email Adresse des Autors ein"
+            },
+            "description": {
+                "label": "Beschreibung",
+                "placeholder": "Gebe eine kurze Beschreibung des Autors ein"
+            },
+            "salutation": {
+                "label": "Anrede",
+                "placeholder": "Anrede"
+            },
+            "media": {
+                "label": "Avatar des Autors"
+            }
+        }
+    },
+    "sas-blog-tree-item": {
+        "actions": {
+            "edit": "Editieren"
+        }
+    },
+    "sw-privileges": {
+        "permissions": {
+            "sas-blog": {
+                "label": "Blog"
+            },
+            "sas-blog-author": {
+                "label": "Blog Autor"
+            },
+            "sas-blog-category": {
+                "label": "Blog Kategorien"
+            }
+        }
+    }
+}

@@ -1,0 +1,41 @@
+{% block sas_element_blog_listing %}
+
+    {# @var result \Shopware\Core\Framework\DataAbstractionLayer\Search\EntitySearchResult #}
+    {% set searchResult = element.data %}
+    {% set config = element.fieldConfig.elements %}
+
+    {% set slot = page.cmsPage.firstElementOfType('blog') %}
+
+    {% set filterUrl = null %}
+    {% set dataUrl = null %}
+
+    {% if page.header.navigation.active.id %}
+        {% set filterUrl = url('frontend.cms.navigation.filter', { navigationId: page.header.navigation.active.id }) %}
+        {% set dataUrl = url('frontend.cms.navigation.page', { navigationId: page.header.navigation.active.id }) %}
+    {% endif %}
+
+    {% set params = { slots: slot.id, 'no-aggregations': 1 } %}
+
+    {% block sas_element_blog_listing_wrapper %}
+        {% block sas_block_filter_panel %}
+            {% if config.showCategoryFilter.value or config.showAuthorFilter.value %}
+                <div id="filter-panel-wrapper"
+                     class="filter-panel-wrapper"
+                     data-offcanvas-filter-content="true">
+                    {% sw_include '@Storefront/storefront/component/listing/blog-filter-panel.html.twig' with {
+                        listing: searchResult,
+                        sidebar: false
+                    } %}
+                </div>
+            {% endif %}
+        {% endblock %}
+
+        {% sw_include '@Storefront/storefront/component/blog/listing.html.twig' with {
+            searchResult: searchResult,
+            dataUrl: dataUrl,
+            filterUrl: filterUrl,
+            params: params,
+            config: config
+        } %}
+    {% endblock %}
+{% endblock %}

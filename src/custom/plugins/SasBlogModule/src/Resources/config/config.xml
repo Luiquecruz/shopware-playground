@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/platform/master/src/Core/System/SystemConfig/Schema/config.xsd">
+    <card>
+        <title>CMS page blog detail assignment</title>
+        <title lang="de-DE">CMS Seite Detail Ansicht zuweisen</title>
+        <component name="sw-entity-single-select">
+            <name>cmsBlogDetailPage</name>
+            <entity>cms_page</entity>
+            <title>Choose a CMS page for the blog detail page</title>
+            <title lang="de-DE">Wähle eine CMS Seite für die Blog Detail Ansicht aus</title>
+        </component>
+    </card>
+
+    <card>
+        <title>SEO Meta Configuration</title>
+        <title lang="de-DE">SEO Metakonfiguration</title>
+
+        <input-field type="int">
+            <name>maximumMetaTitleCharacter</name>
+            <label>Maximum meta title characters</label>
+            <label lang="de-DE">Maximale Zeichen des Meta Titels</label>
+            <defaultValue>60</defaultValue>
+        </input-field>
+
+        <input-field type="int">
+            <name>maximumMetaDescriptionCharacter</name>
+            <label>Maximum meta description characters</label>
+            <label lang="de-DE">Maximale Zeichen der Meta Beschreibung</label>
+            <defaultValue>160</defaultValue>
+        </input-field>
+    </card>
+
+    <card>
+        <title>Article box configuration</title>
+        <title lang="de-DE">Artikel Box Konfiguration</title>
+
+        <input-field type="bool">
+            <name>showAuthor</name>
+            <label>Show author</label>
+            <label lang="de-DE">Autor anzeigen</label>
+            <defaultValue>1</defaultValue>
+        </input-field>
+
+    </card>
+
+    <card>
+        <title>Search box configuration</title>
+        <title lang="de-DE">Suche Box Konfiguration</title>
+
+        <input-field type="bool">
+            <name>enableSearchBox</name>
+            <label>Show Search Box</label>
+            <label lang="de-DE">Anzeigen Suche Box</label>
+            <defaultValue>1</defaultValue>
+        </input-field>
+
+    </card>
+
+    <!--
+    <card>
+        <title>Comment Configuration</title>
+        <title lang="de-DE">Kommentar Einstellungen</title>
+        <input-field>
+            <name>disqus</name>
+            <copyable>true</copyable>
+            <label>Disqus comment integration</label>
+            <label lang="de-DE">Disqus Kommentar Integration</label>
+            <placeholder>YOUR_ID</placeholder>
+            <placeholder lang="de-DE">DEINE_ID</placeholder>
+            <helpText>Please fill in the ID of your Disqus account</helpText>
+            <helpText lang="de-DE">Bitte trage deine persönliche E-Mail Adresse ein</helpText>
+        </input-field>
+    </card>
+    -->
+</config>

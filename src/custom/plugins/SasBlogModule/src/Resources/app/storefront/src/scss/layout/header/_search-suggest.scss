@@ -1,0 +1,10 @@
+@include media-breakpoint-up(md) {
+    .search-suggest-container {
+        width: 700px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .search-suggest-container-width {
+        width: 500px;
+    }
+}
